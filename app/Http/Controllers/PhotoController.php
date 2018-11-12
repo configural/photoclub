@@ -12,8 +12,6 @@ use App\Comment;
 use App\Category;
 use claviska\SimpleImage;
 
-
-
 class PhotoController extends Controller
 {
     // показать одно фото
