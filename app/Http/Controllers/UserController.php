@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\User;
 use App\Photo;
+use App\Category;
 use Auth;
+use DB;
 
 
 class UserController extends Controller
@@ -17,8 +19,23 @@ class UserController extends Controller
     public function userPhotos (Request $request) {
 
         $user = User::where('id', $request->id)->first();
+
+/*
+SELECT `categories`.`id`, `categories`.`name`, count(`photos`.`id`) FROM 
+`categories`
+left join `photos` ON
+`photos`.`category_id`=`categories`.`id`
+WHERE `photos`.`user_id`=3
+GROUP BY `categories`.`id`
+ */        
         
-        dump($request->cat_id);
+        $cats_list = DB::table('categories')
+                ->leftjoin('photos', 'photos.category_id', '=', 'categories.id')
+                ->select('categories.name', 'categories.id')
+                ->groupBy('categories.id')->get();
+                
+        
+        
         
         if ($request->cat_id) {
             $photo = Photo::where('user_id', $request->id)->where('category_id', $request->cat_id)->orderBy('id', 'desc')->paginate(12);
@@ -29,7 +46,7 @@ class UserController extends Controller
         
         }
         
-        return view('user', ['user' => $user, 'photo' => $photo]);
+        return view('user', ['user' => $user, 'photo' => $photo, 'cats_list'=>$cats_list]);
 
     }
 

@@ -12,8 +12,7 @@
             </div>
         <div class="col-md-10">
             <div class="panel panel-default">
-                <div class="panel-heading"><a href="{{url('/addphoto')}}" class="btn btn-primary">Загрузить фотографию</a>
-                </div>
+                <div class="panel-heading">Мои фотографии</div>
 
                 <div class="panel-body">
                     

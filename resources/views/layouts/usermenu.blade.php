@@ -13,7 +13,7 @@
                     @endif
                     
                     
-                    <p><a href="{{url('/editprofile')}}" class="btn  btn-default">Редактировать профиль</a></p>
+                    <a href="{{url('/addphoto')}}" class="btn btn-primary">Загрузить фотографию</a>
 
 
                 </div>

@@ -6,6 +6,7 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\User;
 use App\Photo;
+use DB;
 use Auth;
 
 class HomeController extends Controller
@@ -29,7 +30,13 @@ class HomeController extends Controller
     {
         
         $cat_id = $request->id;
-        //dd($cat_id);
+        
+
+        $cats_list = DB::table('categories')
+                ->leftjoin('photos', 'photos.category_id', '=', 'categories.id')
+                ->select('categories.name', 'categories.id')
+                ->groupBy('categories.id')->get();
+
         
         if ($cat_id) {
             $photos = Photo::select()->where('category_id', $cat_id)->orderby('id', 'desc')->paginate(20);
@@ -40,7 +47,7 @@ class HomeController extends Controller
         
 
 
-        return view('welcome', ['photos' => $photos ]);
+        return view('welcome', ['photos' => $photos, 'cats_list' => $cats_list ]);
     }
 
 

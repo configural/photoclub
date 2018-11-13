@@ -28,7 +28,19 @@
                         @endif
                     
                 </div>
+                            </div>
+                
+            <div class="panel panel-default">
+                <div class="panel-heading">Категории
+                </div>
+
+                <div class="panel-body">
+                @foreach($cats_list as $cl)
+                <p><a href="{{url('/')}}/user/{{$user->id}}/{{$cl->id}}">{{ $cl->name }}</a></p>
+                @endforeach
+                </div>
             </div>
+
         </div>
         
         
