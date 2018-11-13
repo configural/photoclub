@@ -24,7 +24,7 @@
 
 
 
-                        <img src="/public/photos/{{ $photo->user_id }}/{{$photo->url}}" class="photo">
+                        <img src="{{url('/')}}/photos/{{ $photo->user_id }}/{{$photo->url}}" class="photo">
 
                 </center>
                    <br/>

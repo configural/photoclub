@@ -14,7 +14,7 @@
 
                     <div class="col-md-3 preview-block">
                     {{ $photo->name }}<br/>
-                    <a href="{{ url('/') }}/photo/{{ $photo->id }}"><img src="{{ url('/home') }}/photos/{{ $photo->user_id}}/{{ $photo->url }}" class="preview"></a>
+                    <a href="{{ url('/') }}/photo/{{ $photo->id }}"><img src="{{ url('/') }}/photos/{{ $photo->user_id}}/{{ $photo->url }}" class="preview"></a>
                     </div>
 
                     @endforeach
