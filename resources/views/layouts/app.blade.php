@@ -27,8 +27,8 @@
     </style>
 </head>
 <body id="app-layout">
-    <nav class="navbar navbar-default navbar-static-top">
-        <div class="container">
+    <nav class="navbar navbar-default navbar-static-top navbar-inverse">
+        <div class="container-fluid">
             <div class="navbar-header">
 
                 <!-- Collapsed Hamburger -->
@@ -48,7 +48,7 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Мой профиль</a></li>
+                    <li><a href="{{ url('/home') }}">Моя страница</a></li>
                     <li><a href="{{ url('/users') }}">Авторы</a></li>
                 </ul>
 

@@ -3,26 +3,10 @@
 @section('content')
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">Мой профиль</div>
-
-                <div class="panel-body">
-                    
-                    
-                    @if(Auth::user()->name)
-                    <p>{{ Auth::user()->name }}, вы успешно вошли в систему!</p>
-                    @else
-                    <p>Вы успешно вошли в систему! Пожалуйста, укажите свое имя в настройках профиля!</p>
-                    @endif
-                    
-                    
-                    <p><a href="{{url('/editprofile')}}" class="btn  btn-default">Редактировать профиль</a></p>
-
-
-                </div>
+        <div class="col-md-2">
+            @include('layouts.usermenu')
             </div>
-
+        <div class="col-md-10">
             <div class="panel panel-default">
                 <div class="panel-heading"><a href="{{url('/addphoto')}}" class="btn btn-primary">Загрузить фотографию</a>
                 </div>

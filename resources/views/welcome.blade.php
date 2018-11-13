@@ -3,16 +3,21 @@
 @section('content')
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-10 col-md-offset-1">
+        
+        <div class="col-sm-2">
+            @include('layouts.usermenu')
+
+        </div>
+        <div class="col-sm-10">
             <div class="panel panel-default">
-                <div class="panel-heading">Добро пожаловать!</div>
+                <div class="panel-heading">Фотографии</div>
 
                 <div class="panel-body">
 
                     @foreach($photos as $photo)
 
 
-                    <div class="col-md-3 preview-block">
+                    <div class="col-sm-3 preview-block">
                     {{ $photo->name }}<br/>
                     <a href="{{ url('/') }}/photo/{{ $photo->id }}"><img src="{{ url('/') }}/photos/{{ $photo->user_id}}/{{ $photo->url }}" class="preview"></a>
                     </div>
