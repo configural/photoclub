@@ -24,7 +24,7 @@
 
                    <div class="col-md-3 preview-block">
                    {{$p->name}}<br/>
-                   <a href="/public/photo/{{ $p->id }}"><img src="/public/photos/{{$p->user_id}}/{{$p->url}}" class="preview"></a>
+                   <a href="{{ url('/') }}/photo/{{ $p->id }}"><img src="{{ url('/') }}/photos/{{$p->user_id}}/{{$p->url}}" class="preview"></a>
                    <br/>
                    Просмотров: {{$p->views}}
                    </div>

@@ -11,7 +11,7 @@
 
                 @foreach($users as $user)
 
-                <div class="col-md-3"><a href="/public/user/{{$user->id}}">{{$user->name}}</a></div>
+                <div class="col-md-3"><a href="{{ url('/') }}/user/{{$user->id}}">{{$user->name}}</a></div>
 
                 @endforeach
                 <div class="row"></div>
