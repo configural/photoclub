@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class PhotosTableDeleted extends Migration
+class PhotoDescription extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,9 @@ class PhotosTableDeleted extends Migration
      */
     public function up()
     {
-        Schema::table('photos', function (Blueprint $table) {
-            //
-            $table->softDeletes();
+        //
+        Schema::table('photos', function(Blueprint $table) {
+            $table->text('description');
         });
     }
 
@@ -25,9 +25,9 @@ class PhotosTableDeleted extends Migration
      */
     public function down()
     {
-        Schema::table('photos', function (Blueprint $table) {
-            //
-            $table->dropColumn('deleted_at');
+        //
+           Schema::table('photos', function(Blueprint $table) {
+            $table->dropColumn('description');
         });
     }
 }

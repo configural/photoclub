@@ -18,7 +18,7 @@ class PhotoController extends Controller
 
     public function showPhoto(Request $id) {
 
-    $photo = Photo::select('id','name', 'url', 'views', 'user_id')
+    $photo = Photo::select('id','name', 'url', 'views', 'user_id', 'description')
            ->where('id', Request()->id)->first();
     
     $comments = Comment::select('id','text', 'user_id','created_at', 'updated_at')
@@ -32,6 +32,34 @@ class PhotoController extends Controller
         $categories = Category::select('id', 'name')->where('active', 1)->get();
         return view('addphoto', ['categories' => $categories]);
     }
+    
+    public function editPhoto(Request $request) {
+        $this->validate($request, [
+            'id' => 'integer' 
+        ]);
+        
+        $photo = Photo::find($request->id);
+        $categories = Category::select('id', 'name')->where('active', 1)->get();
+        
+        return view('editphoto', ['photo' => $photo, 'categories' => $categories]);
+    }
+    
+    public function storePhoto(Request $request) {
+          $this->validate($request, [
+              "name" => "required:max256",
+              "description" => "max:2048"
+          ]);
+          
+          $data = $request->all();
+          $photo = Photo::find($request->id);
+          $photo->fill($data);
+          $photo->save();
+          
+          return redirect('home');
+          
+          
+    }
+    
     
     public function uploadPhoto(Request $request)     {
 

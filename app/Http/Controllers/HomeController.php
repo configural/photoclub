@@ -38,12 +38,9 @@ class HomeController extends Controller
     public function home()
     {
 
-           $me = Auth::user();
-           $photos = Photo::select()->where('user_id', $me->id)->orderby('id', 'desc')->paginate(20);
-
-           //dd($me);
-
-           return view('home', ['me' => $me, 'photos' => $photos]);
+           $photos = Photo::select()->where('user_id', Auth::user()->id)->orderby('id', 'desc')->paginate(20);
+           
+           return view('home', ['photos' => $photos]);
            
     }
 

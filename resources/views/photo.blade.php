@@ -27,8 +27,9 @@
                         <img src="{{url('/')}}/photos/{{ $photo->user_id }}/{{$photo->url}}" class="photo">
 
                 </center>
-                   <br/>
-                   Просмотров: {{$photo->views}}
+                    <hr>
+                    <p>{{ $photo->description }}</p>
+                    <p>Просмотров: {{$photo->views}}</p>
                    </div>
 
 

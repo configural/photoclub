@@ -22,6 +22,8 @@ Route::post('/editprofile', 'UserController@storeProfile')->middleware('auth');
 
 Route::get('/addphoto', 'PhotoController@addPhoto')->middleware('auth');
 Route::post('/addphoto', 'PhotoController@uploadPhoto')->name('Photo.upload')->middleware('auth');
+Route::get('/editphoto/{id}', 'PhotoController@editPhoto')->middleware('auth');
+Route::post('/storephoto', 'PhotoController@storePhoto')->middleware('auth');
 Route::post('/addcomment', 'PhotoController@addComment')->middleware('auth');
 Route::get('/editcomment/{id}', 'PhotoController@editComment')->middleware('auth');
 Route::post('/editcomment', 'PhotoController@updateComment')->middleware('auth');

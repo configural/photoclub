@@ -10,14 +10,14 @@
                 <div class="panel-body">
                     
                     
-                    @if($me->name)
-                    <p>{{ $me->name }}, вы успешно вошли в систему!</p>
+                    @if(Auth::user()->name)
+                    <p>{{ Auth::user()->name }}, вы успешно вошли в систему!</p>
                     @else
                     <p>Вы успешно вошли в систему! Пожалуйста, укажите свое имя в настройках профиля!</p>
                     @endif
                     
                     
-                    <p><a href="{{url('/editprofile')}}" class="btn btn-secondary">Редактировать профиль</a></p>
+                    <p><a href="{{url('/editprofile')}}" class="btn  btn-default">Редактировать профиль</a></p>
 
 
                 </div>
@@ -39,10 +39,10 @@
 
                         <div class="col-md-10">
                                 <h4>{{$photo->name}}</h4>
-                                <p>Рекомендации: 10 | 2 | 8</p>
+                                
                                 <p>Просмотров: {{$photo->views}}</p>
                                 <p>Комментариев: </p>
-                           
+                                <p><a href="{{url('editphoto')}}/{{$photo->id}}" class="btn btn-default">Редактировать</a></p>
                         </div>
                     </div> <!-- row -->
                     
