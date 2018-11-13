@@ -43,6 +43,19 @@
 
                 <p><button class="btn btn-success">Обновить информацию</button></p>
                 </form>
+                
+                <hr>
+                <h3>Удаление фотографии</h3>
+                Для удаления фотографии нажмите пометьте галочку и нажмите кнопку "Удалить". Все комментарии к фотографии также будут удалены. <br><br>
+                <form name="delete" action="{{ url('/deletephoto')}}" method="post">
+                    
+                    <input type="hidden" name="id" value="{{$photo->id}}">
+                    <p><input type="checkbox" required> Я действительно хочу удалить фотографию</p>
+                    <p><button class="btn btn-danger">Удалить фотографию</button></p>
+                                    {{ csrf_field() }}
+
+                    
+                </form>
 
 
 

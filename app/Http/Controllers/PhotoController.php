@@ -100,7 +100,16 @@ class PhotoController extends Controller
         
     }
     
-    public function deletePhoto(Request $id) {
+    public function deletePhoto(Request $request) {
+        
+        $photo = Photo::find($request->id);
+        
+        if ($photo->user_id == Auth::user()->id) {
+                    $photo->delete();
+                    Comment::select()->where('photo_id', $request->id)->delete();
+
+        }
+        return redirect('/home'); 
         
     }
     

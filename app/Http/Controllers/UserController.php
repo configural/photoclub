@@ -32,6 +32,8 @@ GROUP BY `categories`.`id`
         $cats_list = DB::table('categories')
                 ->leftjoin('photos', 'photos.category_id', '=', 'categories.id')
                 ->select('categories.name', 'categories.id')
+                ->where('photos.user_id', $user->id)
+                ->where('deleted_at', NULL)
                 ->groupBy('categories.id')->get();
                 
         
