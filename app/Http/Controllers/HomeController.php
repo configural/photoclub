@@ -25,10 +25,19 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-
-        $photos = Photo::select()->orderby('id', 'desc')->paginate(20);
+        
+        $cat_id = $request->id;
+        //dd($cat_id);
+        
+        if ($cat_id) {
+            $photos = Photo::select()->where('category_id', $cat_id)->orderby('id', 'desc')->paginate(20);
+            
+        } else {
+            $photos = Photo::select()->orderby('id', 'desc')->paginate(20);
+        }
+        
 
 
         return view('welcome', ['photos' => $photos ]);

@@ -16,9 +16,9 @@ class PhotoController extends Controller
 {
     // показать одно фото
 
-    public function showPhoto(Request $id) {
-
-    $photo = Photo::select('id','name', 'url', 'views', 'user_id', 'description')
+    public function showPhoto(Request $request) {
+    
+    $photo = Photo::select('id','name', 'url', 'views', 'user_id', 'description', 'category_id')
            ->where('id', Request()->id)->first();
     
     $comments = Comment::select('id','text', 'user_id','created_at', 'updated_at')

@@ -14,6 +14,7 @@
 Route::auth();
 
 Route::get('/', 'HomeController@index');
+Route::get('/category/{id}', 'HomeController@index');
 
 Route::get('/home', 'HomeController@home')->middleware('auth');
 
@@ -36,4 +37,5 @@ Route::get('/deletecomment/{id}', 'PhotoController@deleteComment')->middleware('
 Route::get('/photo/{id}', 'PhotoController@showPhoto');
 Route::get('/users', 'UserController@users');
 Route::get('user/{id}', 'UserController@userPhotos');
+Route::get('user/{id}/{cat_id}', 'UserController@userPhotos');
 

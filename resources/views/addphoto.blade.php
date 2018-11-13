@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+загрузка фотографии
+@endsection
+
 @section('content')
 <div class="container-fluid">
     <div class="row">

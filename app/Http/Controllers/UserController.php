@@ -14,10 +14,21 @@ class UserController extends Controller
 {
     //  показать фотки конкретного автора
 
-    public function userPhotos (Request $id) {
+    public function userPhotos (Request $request) {
 
-        $user = User::where('id', Request()->id)->first();
-        $photo = Photo::where('user_id', Request()->id)->orderBy('id', 'desc')->paginate(12);
+        $user = User::where('id', $request->id)->first();
+        
+        dump($request->cat_id);
+        
+        if ($request->cat_id) {
+            $photo = Photo::where('user_id', $request->id)->where('category_id', $request->cat_id)->orderBy('id', 'desc')->paginate(12);
+        }
+            
+        else {
+            $photo = Photo::where('user_id', $request->id)->orderBy('id', 'desc')->paginate(12);
+        
+        }
+        
         return view('user', ['user' => $user, 'photo' => $photo]);
 
     }

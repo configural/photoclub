@@ -1,19 +1,42 @@
 @extends('layouts.app')
 
+@section('title')
+{{$user->name}}
+@endsection
+
 @section('content')
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h1>
+                    
                         @if($user->name)
                         {{ $user->name }}
                         @else
                         id{{ $user->id }}
                         @endif
                     
-                    </h1></div>
+                        
+                </div>
+                <div class="panel-body">
+                    
+                    @if($user->avatar) 
+                        
+                        @else 
+                        <div class="no_avatar">Нет аватара</div>
+                        @endif
+                    
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="col-md-10">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                Фотографии
+                </div>
 
                 <div class="panel-body">
 

@@ -1,11 +1,16 @@
 @extends('layouts.app')
 
+@section('title')
+{{$photo->name}}
+@endsection
+
+
 @section('content')
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">{{ $photo->name }}
+                <div class="panel-heading">{{$photo->category->name}} / {{ $photo->name }}
                 
                     <span class="pull-right">Автор: <a href="{{ url('/user/'.$photo->user->id.'')}}">
                             
@@ -28,8 +33,13 @@
 
                 </center>
                     <hr>
+                    <p class="pull-right">Просмотров: {{$photo->views}}</p>
                     <p>{{ $photo->description }}</p>
-                    <p>Просмотров: {{$photo->views}}</p>
+                    
+                    @if (Auth::user()->id == $photo->user_id)
+                        <p><a href="{{url('editphoto')}}/{{$photo->id}}" class="btn btn-default">Редактировать описание фото</a></p>
+                    @endif
+                    
                    </div>
 
 
