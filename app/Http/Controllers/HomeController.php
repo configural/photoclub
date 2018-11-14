@@ -55,8 +55,8 @@ class HomeController extends Controller
     {
 
            $photos = Photo::select()->where('user_id', Auth::user()->id)->orderby('id', 'desc')->paginate(20);
-           
-           return view('home', ['photos' => $photos]);
+           $user = User::find(Auth::user()->id);
+           return view('home', ['photos' => $photos, 'user' => $user]);
            
     }
 

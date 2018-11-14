@@ -22,7 +22,7 @@
                 <div class="panel-body">
                     
                     @if($user->avatar) 
-                        
+                    <img src="{{ url('/') }}/photos/{{$user->id}}/avatar.jpg" class="preview">
                         @else 
                         <div class="no_avatar">Нет аватара</div>
                         @endif

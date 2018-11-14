@@ -5,15 +5,21 @@
 
                 <div class="panel-body">
                     
+                    @if(Auth::user()->avatar) 
+                    <p><a href="{{ url('/home')}}"><img src="{{ url('/') }}/photos/{{Auth::user()->id}}/avatar.jpg" class="preview"></a></p>
+                    @else 
+                    <div class="no_avatar">Нет аватара</div>
+                    @endif
+                    
                     
                     @if(Auth::user()->name)
-                    <p>{{ Auth::user()->name }}, вы успешно вошли в систему!</p>
+                    <p><a href="{{ url('/home')}}">{{ Auth::user()->name }}</a>, добро пожаловать!</p>
                     @else
                     <p>Вы успешно вошли в систему! Пожалуйста, укажите свое имя в настройках профиля!</p>
                     @endif
                     
                     
-                    <a href="{{url('/addphoto')}}" class="btn btn-primary">Загрузить фотографию</a>
+                    <a href="{{url('/addphoto')}}" class="btn btn-lg btn-primary">Загрузить фотографию</a>
 
 
                 </div>

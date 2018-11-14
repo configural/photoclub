@@ -62,7 +62,12 @@ class PhotoController extends Controller
     
     
     public function uploadPhoto(Request $request)     {
-
+           $this->validate($request, [
+           'name' => 'required|max:255',
+           'description' => 'email|max:2048',
+           'file' => 'mimes:jpeg,png'
+            
+           ]);
         
         if($request->isMethod('post')){
             if($request->hasFile('file')) {

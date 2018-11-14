@@ -10,6 +10,8 @@ use App\Photo;
 use App\Category;
 use Auth;
 use DB;
+use claviska\SimpleImage;
+
 
 
 class UserController extends Controller
@@ -76,12 +78,39 @@ GROUP BY `categories`.`id`
 
            $this->validate($request, [
            'name' => 'required|max:255',
-           'email' => 'email|max:255'
+           'email' => 'email|max:255',
+           'avatar' => 'mimes:jpeg,png'
+            
            ]);
+           
+           //dd($request);
+           $avatar = 0;
+           
+           if($request->isMethod('post')){
+                if($request->hasFile('avatar')) {
+                    
+                $newfile = "avatar.jpg";
+                $file = $request->file('avatar');
+                $file->move(public_path() . '/photos/' . Auth::user()->id. '/', $newfile);
+                $avatar = 1;
+                }
+           }
+           
+           $image = new SimpleImage();
+                $dst = public_path() . '/photos/' . Auth::user()->id. '/avatar.jpg';
+                $image->fromFile($dst);
+                
+                if ($image->getHeight()>400 or $image->getWidth()>400) {
+                    $image->bestFit(400, 400);
+                }
+                
+                $image->toFile($dst);
+           
 
            $data = $request->all();
            $user = User::find(Auth::user()->id);
            $user->fill($data);
+           $user->avatar = $avatar;
            $user->save();
 
            return redirect(url('/home'));

@@ -13,10 +13,15 @@
 
                 <div class="panel-body">
 
-                <form name="editprofile" method="post">
-                <p>
-                <label for="name">Аватар (рекомендуется квадратное изображение)</label><br/>
-                <input type="text" name="name" value="{{ $user->avatar }}">
+                <form name="editprofile" method="post"  enctype="multipart/form-data">
+                <label for="avatar">Ваше фото, аватар (рекомендуется изображение разрешением не менее 400 пикселей по длинной стороне в формате jpeg)</label><br/>
+                <input type="file" name="avatar">
+                    <p>
+                    @if ($user->avatar) 
+                <p>Текущий аватар:</p>
+                <p><img src="{{ url('/') }}/photos/{{ $user->id }}/avatar.jpg"></p>
+                    @endif
+                
                 </p>
                     
                 <p>
