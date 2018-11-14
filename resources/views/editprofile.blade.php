@@ -15,6 +15,11 @@
 
                 <form name="editprofile" method="post">
                 <p>
+                <label for="name">Аватар (рекомендуется квадратное изображение)</label><br/>
+                <input type="text" name="name" value="{{ $user->avatar }}">
+                </p>
+                    
+                <p>
                 <label for="name">Имя пользователя</label><br/>
                 <input type="text" name="name" value="{{ $user->name }}">
                 </p>
