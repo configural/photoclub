@@ -19,7 +19,7 @@
                     @endif
                     
                     
-                    <a href="{{url('/addphoto')}}" class="btn btn-lg btn-primary">Загрузить фотографию</a>
+                   
 
 
                 </div>

@@ -15,6 +15,8 @@ Route::auth();
 
 Route::get('/', 'HomeController@index');
 Route::get('/category/{id}', 'HomeController@index');
+Route::get('/rules', function() { return view('rules');});
+
 
 Route::get('/home', 'HomeController@home')->middleware('auth');
 
@@ -30,9 +32,8 @@ Route::post('/addcomment', 'PhotoController@addComment')->middleware('auth');
 Route::get('/editcomment/{id}', 'PhotoController@editComment')->middleware('auth');
 Route::post('/editcomment', 'PhotoController@updateComment')->middleware('auth');
 Route::get('/deletecomment/{id}', 'PhotoController@deleteComment')->middleware('auth');
+
         
-        //->middleware('auth');
-//Route::post('/deletecomment/{$id}', 'PhotoController@deleteComment')->middleware('auth');
 
 
 Route::get('/photo/{id}', 'PhotoController@showPhoto')->middleware('auth');

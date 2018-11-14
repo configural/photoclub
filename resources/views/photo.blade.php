@@ -8,7 +8,7 @@
 @section('content')
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">{{$photo->category->name}} / {{ $photo->name }}
                 
@@ -37,7 +37,7 @@
                     <p>{{ $photo->description }}</p>
                     
                     @if (Auth::user()->id == $photo->user_id)
-                        <p><a href="{{url('editphoto')}}/{{$photo->id}}" class="btn btn-default">Редактировать описание фото</a></p>
+                    <p><center><a href="{{url('editphoto')}}/{{$photo->id}}" class="btn btn-default">Редактировать описание фото</a></center></p>
                     @endif
                     
                    </div>
