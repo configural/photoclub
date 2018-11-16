@@ -2,3 +2,6 @@
 .preview-block {height: 320px; text-align: center;}
 .photo {max-width: 100%;}
 .no_avatar {height: 300px; width: 100%; display: block; background: #eee; text-align: center; padding-top: 140px;}
+.avatar {max-width: 100%; max-height: 400px;}
+.comment img {max-width: 100%;}
+textarea {min-height: 200px;}

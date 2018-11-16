@@ -15,7 +15,7 @@
 
                 <form name="editcomment" method="post" action="{{ url('/editcomment')}}">
                     
-                    @if(Auth::user()->id == $comment->user_id)
+                    @if(Auth::user()->id == $comment->user_id  || Auth::user()->admin)
                     
                     <p><textarea name="text" class="form-control">{{ $comment->text }}</textarea></p>
                     <input type="hidden" name="id" value="{{ $comment->id }}">

@@ -6,7 +6,7 @@
                 <div class="panel-body">
                     
                     @if(Auth::user()->avatar) 
-                    <p><a href="{{ url('/home')}}"><img src="{{ url('/') }}/photos/{{Auth::user()->id}}/avatar.jpg" class="preview"></a></p>
+                    <p><a href="{{ url('/home')}}"><img src="{{ url('/') }}/photos/{{Auth::user()->id}}/avatar.jpg" class="avatar"></a></p>
                     @else 
                     <div class="no_avatar">Нет аватара</div>
                     @endif

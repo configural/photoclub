@@ -109,7 +109,7 @@ class PhotoController extends Controller
         
         $photo = Photo::find($request->id);
         
-        if ($photo->user_id == Auth::user()->id) {
+        if ($photo->user_id == Auth::user()->id || Auth::user()->admin) {
                     $photo->delete();
                     Comment::select()->where('photo_id', $request->id)->delete();
 
@@ -149,7 +149,7 @@ class PhotoController extends Controller
         $data = $request->all();
         $comment = Comment::find($request->id);
         
-        if (Auth::user()->id == $comment->user_id) {
+        if (Auth::user()->id == $comment->user_id || Auth::user()->admin) {
             
             $comment->fill($data);
             $comment->save();

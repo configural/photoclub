@@ -8,7 +8,7 @@
 <div class="container-fluid">
     <div class="row">
         
-        <div class="col-sm-2">
+        <div class="col-sm-3">
             @include('layouts.usermenu')
 
 
@@ -26,8 +26,7 @@
         
 
         
-        <div class="col-sm-10">
-            <div class="panel panel-default">
+        <div class="col-sm-9 panel-default">
                 <div class="panel-heading">Фотографии</div>
 
                 <div class="panel-body">
