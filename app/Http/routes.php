@@ -15,6 +15,7 @@ Route::auth();
 
 Route::get('/', 'HomeController@index');
 Route::get('/category/{id}', 'HomeController@index');
+Route::get('/comments', 'PhotoController@commentsList');
 Route::get('/rules', function() { return view('rules');});
 
 

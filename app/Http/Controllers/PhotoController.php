@@ -27,6 +27,14 @@ class PhotoController extends Controller
 
     }
     
+    public function commentsList() {
+        
+        $comments = Comment::select()->paginate(20);
+        
+        return view('comments', ["comments" => $comments]);
+        
+    }
+    
     public function addPhoto() {
         
         $categories = Category::select('id', 'name')->where('active', 1)->get();
