@@ -29,7 +29,7 @@ class PhotoController extends Controller
     
     public function commentsList() {
         
-        $comments = Comment::select()->paginate(20);
+        $comments = Comment::select()->orderby('id', 'desc')->paginate(20);
         
         return view('comments', ["comments" => $comments]);
         

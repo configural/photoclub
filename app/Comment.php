@@ -25,8 +25,10 @@ class Comment extends Model
         $text = str_ireplace("[i]", "<i>", $text);
         $text = str_ireplace("[/i]", "</i>", $text);
 
-        $text = str_ireplace("[img]", "<img src='", $text);
+        $text = str_ireplace("[img]", "<br/><img src='", $text);
         $text = str_ireplace("[/img]", "'>", $text);
+        
+        $text = str_ireplace("\r\n", "<br/>", $text);
 
     return $text;
     
@@ -37,6 +39,11 @@ class Comment extends Model
          
             return $this->hasOne('\App\User', 'id', 'user_id');
         }
+    
         
+    public function photo() {
+         
+            return $this->hasOne('\App\Photo', 'id', 'photo_id');
+        }
         
 }

@@ -8,12 +8,18 @@
 @section('content')
 <div class="container-fluid">
 
-    <!-- Комментарии -->
+    <h1>Комментарии к фотографиям</h1>
     
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
+            
                 
                 @foreach($comments as $comment)
+                <div class="row">
+                <div class="col-md-2">
+                    <a href="{{url('/')}}/photo/{{$comment->photo_id}}"><img src="{{ url('/')}}/photos/{{$comment->photo->user_id}}/{{$comment->photo->url}}" class="preview"></a>
+                    <p><a href="{{ url('/')}}/users/{{$comment->photo->user_id}}">{{$comment->photo->user->name}}</p>
+                    
+                </div>
+                <div class="col-md-10">    
                 <a name="{{ $comment->id }}"></a>
                 <div class="panel panel-default comment">
                     <div class="panel-heading">
@@ -51,7 +57,8 @@
                     @endif
                     
                     @endif 
-                    
+                </div>
+                </div>
                 </div>
                 @endforeach
                 
