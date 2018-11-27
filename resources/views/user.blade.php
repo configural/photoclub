@@ -59,9 +59,9 @@
 
                    <div class="col-md-3 preview-block">
                    {{$p->name}}<br/>
-                   <a href="{{ url('/') }}/photo/{{ $p->id }}"><img src="{{ url('/') }}/photos/{{$p->user_id}}/{{$p->url}}" class="preview"></a>
-                   <br/>
-                   Просмотров: {{$p->views}}
+                   <a href="{{ url('/') }}/photo/{{ $p->id }}"><img src="{{ url('/') }}/photos/{{$p->user_id}}/_{{$p->url}}" class="preview"></a>
+                   <br/>Просмотров: {{$p->views}}
+                   <br/>Комментариев: {{$p->commentsCount()}}
                    </div>
 
                 @endforeach

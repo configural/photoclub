@@ -1,4 +1,5 @@
            
+
 @if(Auth::user())
 <div class="panel panel-default">
                 <div class="panel-heading">Мой профиль</div>

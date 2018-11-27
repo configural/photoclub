@@ -10,17 +10,21 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading">{{$photo->category->name}} / {{ $photo->name }}
+                <div class="panel-heading">
                 
-                    <span class="pull-right">Автор: <a href="{{ url('/user/'.$photo->user->id.'')}}">
+                    <a href="{{ url('/user/'.$photo->user->id.'')}}">
                             
                             @if ($photo->user->name)
                                 {{ $photo->user->name }}
                             @else
                                 id{{ $photo->user->id }}
                             @endif
-                          </a></span>
-                
+                          </a>:
+                    
+                    {{$photo->category->name}} / {{ $photo->name }}
+                    
+                    <p class="pull-right">Просмотров: {{$photo->views}}, комментариев: {{$comments->count()}}</p>
+
                 
                 </div>
 
@@ -31,10 +35,10 @@
 
                         <img src="{{url('/')}}/photos/{{ $photo->user_id }}/{{$photo->url}}" class="photo">
 
-                </center>
+                
                     <hr>
-                    <p class="pull-right">Просмотров: {{$photo->views}}</p>
                     <p>{{ $photo->description }}</p>
+                    </center>
                     
                     @if (Auth::user()->id == $photo->user_id || Auth::user()->admin)
                     <p><center><a href="{{url('editphoto')}}/{{$photo->id}}" class="btn btn-default">Редактировать описание фото</a></center></p>

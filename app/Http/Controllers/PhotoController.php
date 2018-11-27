@@ -23,6 +23,13 @@ class PhotoController extends Controller
     
     $comments = Comment::select('id','text', 'user_id','created_at', 'updated_at')
                 ->where('photo_id', Request()->id)->orderby('id')->get();
+    
+    $photo->views += 1;
+    $photo->save();
+    
+    
+    //dump($comments->count());
+    
     return view('photo', ['photo' => $photo,  'comments' => $comments,  ]);
 
     }
@@ -96,14 +103,16 @@ class PhotoController extends Controller
                 
                 $image = new SimpleImage();
                 $dst = public_path() . '/photos/' . Auth::user()->id . '/' . $newfile;
+                $dst1 = public_path() . '/photos/' . Auth::user()->id . '/_' . $newfile;
                 $image->fromFile($dst);
                 
                 if ($image->getHeight()>1200 or $image->getWidth()>1200) {
                     $image->bestFit(1200, 1200);
                 }
-                
                 $image->toFile($dst);
                 
+                $image->bestFit(300,300);
+                $image->toFile($dst1);
                 
                 return redirect('home');
             }

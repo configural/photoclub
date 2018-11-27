@@ -27,4 +27,8 @@ class Photo extends Model
             return $this->hasOne('\App\Category', 'id','category_id');
         }
         
+        public function commentsCount() {
+            return $this->hasMany('\App\Comment')->wherePhotoId($this->id)->count();
+        }
+        
 }

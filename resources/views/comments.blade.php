@@ -14,12 +14,24 @@
                 
                 @foreach($comments as $comment)
                 <div class="row">
-                <div class="col-md-2">
-                    <a href="{{url('/')}}/photo/{{$comment->photo_id}}"><img src="{{ url('/')}}/photos/{{$comment->photo->user_id}}/{{$comment->photo->url}}" class="preview"></a>
-                    <p><a href="{{ url('/')}}/users/{{$comment->photo->user_id}}">{{$comment->photo->user->name}}</p>
-                    
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                        @if ($comment->photo->user->name)
+                            <a href="{{ url('/')}}/users/{{$comment->photo->user_id}}">{{$comment->photo->user->name}}</a>
+                            @else
+                            <a href="{{ url('/')}}/users/{{$comment->photo->user_id}}">id{{$comment->photo->user_id}}</a>
+                            @endif
+                             / {{ $comment->photo->name }}</div>
+                        
+                        <div class="panel-body">
+                            
+                    <a href="{{url('/')}}/photo/{{$comment->photo_id}}"><img src="{{ url('/')}}/photos/{{$comment->photo->user_id}}/_{{$comment->photo->url}}" class="preview"></a>
+                    <p></p>
+                        </div>
+                        </div>
                 </div>
-                <div class="col-md-10">    
+                <div class="col-md-9">    
                 <a name="{{ $comment->id }}"></a>
                 <div class="panel panel-default comment">
                     <div class="panel-heading">

@@ -9,7 +9,7 @@
     <div class="row">
         
         <div class="col-sm-3">
-            @include('layouts.usermenu')
+           
 
 
         <div class="panel panel-default">
@@ -26,7 +26,8 @@
         
 
         
-        <div class="col-sm-9 panel-default">
+        <div class="col-sm-9">
+            <div class="panel panel-default">
                 <div class="panel-heading">Фотографии</div>
 
                 <div class="panel-body">
@@ -36,7 +37,9 @@
 
                     <div class="col-sm-3 preview-block">
                     {{ $photo->name }}<br/>
-                    <a href="{{ url('/') }}/photo/{{ $photo->id }}"><img src="{{ url('/') }}/photos/{{ $photo->user_id}}/{{ $photo->url }}" class="preview"></a>
+                    <a href="{{ url('/') }}/photo/{{ $photo->id }}"><img src="{{ url('/') }}/photos/{{ $photo->user_id}}/_{{ $photo->url }}" class="preview"></a>
+                    <br/>Просмотров: {{ $photo->views }}
+                    <br/>Комментариев: {{ $photo->commentsCount() }}
                     </div>
 
                     @endforeach
@@ -47,6 +50,7 @@
 
                <center>{{ $photos->links() }}</center>
             </div>
+    </div>
         </div>
     </div>
 </div>
