@@ -52,6 +52,7 @@
                     <li><a href="{{ url('/comments') }}">Комментарии</a></li>
                     <li><a href="{{ url('/users') }}">Авторы</a></li>
                     <li><a href="{{ url('/rules') }}">Правила</a></li>
+                    <li><a href="{{ url('/contacts') }}">Контакты</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
