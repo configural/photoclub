@@ -42,3 +42,4 @@ Route::get('/users', 'UserController@users');
 Route::get('user/{id}', 'UserController@userPhotos');
 Route::get('user/{id}/{cat_id}', 'UserController@userPhotos');
 
+//Route::get('/rebuild', 'PhotoController@rebuildPreviews');

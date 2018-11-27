@@ -179,6 +179,21 @@ class PhotoController extends Controller
     }
     
     
-    
+   public function rebuildPreviews() {
+   
+       $photo = Photo::select()->get();
+       dump($photo);
+       
+       foreach($photo as $p) {
+        echo "<pre>$p->url / $p->user_id\r\n</pre>";
+                $image = new SimpleImage();
+                $dst = public_path() . '/photos/' . $p->user_id . '/' . $p->url;
+                $dst1 = public_path() . '/photos/' . $p->user_id . '/_' . $p->url;
+                $image->fromFile($dst);
+                $image->bestFit(300, 300);
+                $image->toFile($dst1);
+        
+       }
+   }
     
 }
