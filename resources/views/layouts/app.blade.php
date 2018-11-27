@@ -67,7 +67,9 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{url('/editprofile')}}"><i class="fa fa-btn fa-user"></i>Редактировать профиль</a></li>
+                                <li><a href="{{url('/home')}}"><i class="fa fa-btn fa-user"></i>Моя страница</a></li>
+                                <li><a href="{{url('/addphoto')}}"><i class="fa fa-btn fa-upload"></i>Загрузить фото</a></li>
+                                <li><a href="{{url('/editprofile')}}"><i class="fa fa-btn fa-gear"></i>Редактировать профиль</a></li>
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Выйти</a></li>
                             </ul>
                         </li>

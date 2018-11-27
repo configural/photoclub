@@ -22,7 +22,7 @@
                 <div class="panel-body">
                     
                     @if($user->avatar) 
-                    <img src="{{ url('/') }}/photos/{{$user->id}}/avatar.jpg" class="preview">
+                    <img src="{{ url('/') }}/photos/{{$user->id}}/avatar.jpg" class="avatar">
                         @else 
                         <div class="no_avatar">Нет аватара</div>
                         @endif
@@ -60,8 +60,10 @@
                    <div class="col-md-3 preview-block">
                    {{$p->name}}<br/>
                    <a href="{{ url('/') }}/photo/{{ $p->id }}"><img src="{{ url('/') }}/photos/{{$p->user_id}}/_{{$p->url}}" class="preview"></a>
-                   <br/>Просмотров: {{$p->views}}
-                   <br/>Комментариев: {{$p->commentsCount()}}
+                   <div class="photoStatus"><i class="fa fa-eye"></i> {{$p->views}}
+                       &nbsp;&nbsp;&nbsp;<i class="fa fa-comments-o"></i> {{$p->commentsCount()}}
+                       
+                   </div>
                    </div>
 
                 @endforeach

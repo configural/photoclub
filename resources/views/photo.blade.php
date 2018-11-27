@@ -28,7 +28,7 @@
                 
                 </div>
 
-                <div class="panel-body">
+                <div class="panel-body photobackground">
                 <center>
 
 
@@ -36,12 +36,11 @@
                         <img src="{{url('/')}}/photos/{{ $photo->user_id }}/{{$photo->url}}" class="photo">
 
                 
-                    <hr>
                     <p>{{ $photo->description }}</p>
                     </center>
                     
                     @if (Auth::user()->id == $photo->user_id || Auth::user()->admin)
-                    <p><center><a href="{{url('editphoto')}}/{{$photo->id}}" class="btn btn-default">Редактировать описание фото</a></center></p>
+                    <p><center><a href="{{url('editphoto')}}/{{$photo->id}}" class="btn btn-default"><i class="fa fa-gear"></i> Редактировать описание</a></center></p>
                     @endif
                     
                    </div>
