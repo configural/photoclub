@@ -12,6 +12,18 @@
                 <div class="panel-heading"><h1>Загрузка фотографии</h1></div>
 
                 <div class="panel-body">
+                    
+                    
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+                    
 
                 <form name="editcomment" method="post" action="{{ route('Photo.upload') }}" enctype="multipart/form-data">
                     <p><label>Название фотографии: </label>
