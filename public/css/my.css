@@ -7,5 +7,6 @@
 textarea {min-height: 200px;}
 .panel img {max-width: 100%;}
 .photoStatus {color: #999}
-.photobackground {background: #ccc; color: white; padding: 50px;}
+.photobackground {background: #ccc; color: white; padding: 20px;}
 .photobackground img {border: #eee solid 1px;}
+.footer-inverse {background: #262626; color: white; padding: 20px;}

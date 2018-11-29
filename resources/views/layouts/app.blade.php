@@ -82,7 +82,59 @@
     </nav>
 
     @yield('content')
+<footer class="footer footer-inverse">
+    <div class="container-fluid">
+        
+        <div class="row-fluid">
+            
+            <div class="col-sm-2"><a href="{{ url('/rules')}}">Правила Фотоклуба</a></div>
+            <div class="col-sm-2"><a href="/terms.pdf">Пользовательское соглашение</a></div>
+            <div class="col-sm-2"><a href="/policy.pdf">Политика конфиденциальности</a></div>
+            <div class="col-sm-2">Сайт использует cookies</div>
+            <div class="col-sm-2">Возрастное ограничение 16+</div>
+            <div class="col-sm-2">
+                
+                <!-- Yandex.Metrika informer -->
+<a href="https://metrika.yandex.ru/stat/?id=3048703&amp;from=informer"
+target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/3048703/2_1_FFFFFFFF_FFFFFFFF_0_pageviews"
+style="width:80px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры)" class="ym-advanced-informer" data-cid="3048703" data-lang="ru" /></a>
+<!-- /Yandex.Metrika informer -->
 
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter3048703 = new Ya.Metrika2({
+                    id:3048703,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/tag.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks2");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/3048703" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+                
+            </div>
+        </div>
+        
+    </div>
+</footer>
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
