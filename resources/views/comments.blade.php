@@ -14,28 +14,29 @@
                 
                 @foreach($comments as $comment)
                 <div class="row">
-                <div class="col-md-3">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                        @if ($comment->photo->user->name)
+
+                <div class="col-md-12">    
+                <a name="{{ $comment->id }}"></a>
+                <div class="panel panel-default comment">
+                    <div class="panel-heading">
+                @if ($comment->photo->user->name)
                             <a href="{{ url('/')}}/users/{{$comment->photo->user_id}}">{{$comment->photo->user->name}}</a>
                             @else
                             <a href="{{ url('/')}}/users/{{$comment->photo->user_id}}">id{{$comment->photo->user_id}}</a>
                             @endif
-                             / {{ $comment->photo->name }}</div>
-                        
-                        <div class="panel-body">
-                            
-                    <a href="{{url('/')}}/photo/{{$comment->photo_id}}"><img src="{{ url('/')}}/photos/{{$comment->photo->user_id}}/_{{$comment->photo->url}}" class="preview"></a>
-                    <p></p>
-                        </div>
-                        </div>
-                </div>
-                <div class="col-md-9">    
-                <a name="{{ $comment->id }}"></a>
-                <div class="panel panel-default comment">
-                    <div class="panel-heading">
-                        <a href="{{ url('/user/'. $comment->user->id .'') }}">
+                             / {{ $comment->photo->name }}
+                    
+
+                    
+                    </div>
+                    <div class="panel panel-body" id="">
+                        <div class="row">
+                            <div class="col-md-2">
+                        <a href="{{url('/')}}/photo/{{$comment->photo_id}}"><img src="{{ url('/')}}/photos/{{$comment->photo->user_id}}/_{{$comment->photo->url}}" class="preview"></a>
+                    
+                            </div>
+                            <div class="col-md-10">
+                            <a href="{{ url('/user/'. $comment->user->id .'') }}">
                             @if ($comment->user->name)
                                 {{ $comment->user->name }}
                             @else
@@ -52,23 +53,25 @@
                           / обновлено: {{ $comment->updated_at }}
                         @endif
                         </span>
-                    
-                    </div>
-                    <div class="panel panel-body" id="">{!! $comment->bbCode($comment->text) !!}</div>
+                    <hr/>
+                        {!! $comment->bbCode($comment->text) !!}</div>
                     
 
 
                     
                     @if (Auth::user())
                     
-                    @if (Auth::user()->id == $comment->user_id  || Auth::user()->admin)
-                    <center>
-                        [<a href="{{ url('/editcomment')}}/{{ $comment->id }}">Редактировать</a>] 
-                        [<a href="{{ url('/deletecomment')}}/{{ $comment->id }}" onclick="return confirm('Действительно удалить?');">Удалить</a>]
-                    </center>
-                    @endif
+                        @if (Auth::user()->id == $comment->user_id  || Auth::user()->admin)
+                        <!--
+                            [<a href="{{ url('/editcomment')}}/{{ $comment->id }}">Редактировать</a>] 
+                            [<a href="{{ url('/deletecomment')}}/{{ $comment->id }}" onclick="return confirm('Действительно удалить?');">Удалить</a>]
+                        -->
+                        </center>
+                        @endif
                     
                     @endif 
+                    </div>
+                    </div>
                 </div>
                 </div>
                 </div>
