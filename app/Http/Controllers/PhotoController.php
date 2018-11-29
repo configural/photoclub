@@ -80,8 +80,7 @@ class PhotoController extends Controller
            $this->validate($request, [
            'name' => 'required|max:255',
            'description' => 'email|max:2048',
-           'file' => 'mimes:jpg,jpeg,png'
-            
+           'file' => 'mimes:jpeg,png'
            ]);
         
         if($request->isMethod('post')){
@@ -111,6 +110,7 @@ class PhotoController extends Controller
                 }
                 $image->toFile($dst);
                 
+                $image->fromFile($dst);
                 $image->bestFit(300,300);
                 $image->toFile($dst1);
                 
