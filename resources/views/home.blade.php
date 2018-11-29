@@ -17,9 +17,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-sm-4"><a href="{{url('/addphoto')}}" class="btn btn-lg btn-primary">Загрузить фотографию</a></div>
-                        <div class="col-sm-8">Вы можете загружать 1 фото в день.
-                        
-                        </div>
+                        <div class="col-sm-8"></div>
                         
                     </div>
                     <hr>
