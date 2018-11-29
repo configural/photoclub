@@ -89,7 +89,7 @@
             
             <div class="col-sm-2"><a href="{{ url('/rules')}}">Правила Фотоклуба</a></div>
             <div class="col-sm-2"><a href="/terms.pdf">Пользовательское соглашение</a></div>
-            <div class="col-sm-2"><a href="/policy.pdf">Политика конфиденциальности</a></div>
+            <div class="col-sm-2"><a href="/privacy.pdf">Политика конфиденциальности</a></div>
             <div class="col-sm-2">Сайт использует cookies</div>
             <div class="col-sm-2">Возрастное ограничение 16+</div>
             <div class="col-sm-2">

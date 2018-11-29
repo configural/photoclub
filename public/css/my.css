@@ -10,3 +10,4 @@ textarea {min-height: 200px;}
 .photobackground {background: #ccc; color: white; padding: 20px;}
 .photobackground img {border: #eee solid 1px;}
 .footer-inverse {background: #262626; color: white; padding: 20px;}
+.footer-inverse  a {color: white; text-decoration: underline;}
