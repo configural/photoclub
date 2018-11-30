@@ -1,6 +1,7 @@
 .preview {max-width: 100%; max-height: 200px;}
 .preview-block {height: 320px; text-align: center;}
 .photo {max-width: 100%;}
+.photo-description {display: block; box-sizing: border-box; background: #eee; color: black; max-width: 1200px; padding: 20px; text-align: justify;}
 .no_avatar {height: 300px; width: 100%; display: block; background: #eee; text-align: center; padding-top: 140px;}
 .avatar {max-width: 100%; max-height: 400px;}
 .comment img {max-width: 100%;}

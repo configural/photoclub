@@ -35,8 +35,9 @@
 
                         <img src="{{url('/')}}/photos/{{ $photo->user_id }}/{{$photo->url}}" class="photo">
 
-                
-                    <p>{{ $photo->description }}</p>
+                     @if ($photo->description)
+                    <div class="photo-description">{{ $photo->description }}</div>
+                    @endif
                     </center>
                     
                     @if (Auth::user()->id == $photo->user_id || Auth::user()->admin)
