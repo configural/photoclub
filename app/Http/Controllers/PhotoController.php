@@ -95,6 +95,7 @@ class PhotoController extends Controller
                 $photo = new Photo;
                 $photo->name = $request->name;
                 $photo->category_id = $request->category_id;
+                $photo->description = $request->description;
                 $photo->user_id = Auth::user()->id;
                 $photo->url = $newfile;
                 $photo->save();
