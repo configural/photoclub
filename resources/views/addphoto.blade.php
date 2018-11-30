@@ -27,7 +27,7 @@
 
                 <form name="editcomment" method="post" action="{{ route('Photo.upload') }}" enctype="multipart/form-data">
                     <p><label>Название фотографии: </label>
-                        <input name="name" class="form-control" type="text"></p>
+                        <input name="name" class="form-control" type="text" required></p>
                     
                     <p><label>Категория: </label>
                         <select name="category_id" class="form-control">
@@ -36,7 +36,7 @@
                         @endforeach
                         </select>
                     <p><label>Прикрепить файл: </label>
-                        <input name="file" class="form-control" type="file">
+                        <input name="file" class="form-control" type="file" required="">
                     Допустимый тип файла - JPEG, максимальный размер - 16 мегабайт. При загрузке полноразмерной фотографии она будет отмасштабирована до разрешения 1200 пикселей по длинной стороне, при этом возможна потеря качества. Если для вас это критично, рекомендуется заранее уменьшать фото до этого разрешения.
                        
                     <p><label>Описание фотографии:</label>
