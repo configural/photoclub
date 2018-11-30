@@ -23,7 +23,7 @@
                     
                     {{$photo->category->name}} / {{ $photo->name }}
                     
-                    <p class="pull-right">Просмотров: {{$photo->views}}, комментариев: {{$comments->count()}}</p>
+                    <p class="pull-right"><i class="fa fa-eye"></i> {{$photo->views}}&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-comments-o"></i> {{$comments->count()}}</p>
 
                 
                 </div>
@@ -70,11 +70,11 @@
                     
                         <span class="pull-right">
                         @if ($comment->created_at) 
-                            Написано: {{ $comment->created_at }}
+                            
                         @endif
                         
                         @if ($comment->updated_at) 
-                          / обновлено: {{ $comment->updated_at }}
+                        <i class="fa fa-calendar"></i> {{ $comment->updated_at }}
                         @endif
                         </span>
                     
