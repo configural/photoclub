@@ -20,9 +20,9 @@
                 <div class="panel panel-default comment">
                     <div class="panel-heading">
                 @if ($comment->photo->user->name)
-                            <a href="{{ url('/')}}/users/{{$comment->photo->user_id}}">{{$comment->photo->user->name}}</a>
+                            <a href="{{ url('/')}}/user/{{$comment->photo->user_id}}">{{$comment->photo->user->name}}</a>
                             @else
-                            <a href="{{ url('/')}}/users/{{$comment->photo->user_id}}">id{{$comment->photo->user_id}}</a>
+                            <a href="{{ url('/')}}/user/{{$comment->photo->user_id}}">id{{$comment->photo->user_id}}</a>
                             @endif
                              / {{ $comment->photo->name }}
                     

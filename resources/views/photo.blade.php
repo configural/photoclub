@@ -33,10 +33,10 @@
 
 
 
-                        <img src="{{url('/')}}/photos/{{ $photo->user_id }}/{{$photo->url}}" class="photo">
+                        <img src="{{url('/')}}/photos/{{ $photo->user_id }}/{{$photo->url}}" class="photo" id="photo">
 
                      @if ($photo->description)
-                    <div class="photo-description">{{ $photo->description }}</div>
+                    <div class="photo-description" id="description">{{ $photo->description }}</div>
                     @endif
                     </center>
                     
@@ -141,5 +141,11 @@
     </div>
 </div>
 
+<script>
+
+document.getElementById('description').style.width = document.getElementById('photo').width + "px";
+</script>
+
 
 @endsection
+
