@@ -12,7 +12,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                 
-                    <a href="{{ url('/user/'.$photo->user->id.'')}}">
+                    <a href="{{ url('/user/'.$photo->user->id.'')}}" class="user-link">
                             
                             @if ($photo->user->name)
                                 {{ $photo->user->name }}
