@@ -60,7 +60,7 @@
                 <a name="{{ $comment->id }}"></a>
                 <div class="panel panel-default comment">
                     <div class="panel-heading">
-                        <a href="{{ url('/user/'. $comment->user->id .'') }}">
+                        <a href="{{ url('/user/'. $comment->user->id .'') }}" class="user-link">
                             @if ($comment->user->name)
                                 {{ $comment->user->name }}
                             @else
@@ -141,10 +141,6 @@
     </div>
 </div>
 
-<script>
-
-document.getElementById('description').style.width = document.getElementById('photo').width + "px";
-</script>
 
 
 @endsection
