@@ -79,7 +79,7 @@ GROUP BY `categories`.`id`
            $this->validate($request, [
            'name' => 'required|max:255',
            'email' => 'email|max:255',
-           'avatar' => 'mimes:jpeg,png'
+           'avatar' => 'image|max:16834'
             
            ]);
            
@@ -93,10 +93,9 @@ GROUP BY `categories`.`id`
                 $file = $request->file('avatar');
                 $file->move(public_path() . '/photos/' . Auth::user()->id. '/', $newfile);
                 $avatar = 1;
-                }
-           }
-           
-           $image = new SimpleImage();
+                
+                
+                $image = new SimpleImage();
                 $dst = public_path() . '/photos/' . Auth::user()->id. '/avatar.jpg';
                 $image->fromFile($dst);
                 
@@ -105,6 +104,13 @@ GROUP BY `categories`.`id`
                 }
                 
                 $image->toFile($dst);
+                
+                
+                
+                }
+           }
+           
+
            
 
            $data = $request->all();
