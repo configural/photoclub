@@ -21,6 +21,11 @@ class PhotoController extends Controller
     $photo = Photo::select('id','name', 'url', 'views', 'user_id', 'description', 'category_id')
            ->where('id', Request()->id)->first();
     
+    $next = Photo::select('id')->where('id','<', $photo->id)->orderby('id', 'desc')->limit(1)->first();
+    $previous = Photo::select('id')->where('id','>', $photo->id)->limit(1)->first();
+    
+    //dd($next->id);
+    
     $comments = Comment::select('id','text', 'user_id','created_at', 'updated_at')
                 ->where('photo_id', Request()->id)->orderby('id')->get();
     
@@ -30,7 +35,7 @@ class PhotoController extends Controller
     
     //dump($comments->count());
     
-    return view('photo', ['photo' => $photo,  'comments' => $comments,  ]);
+    return view('photo', ['photo' => $photo,  'comments' => $comments,  'next' => $next, 'previous' => $previous]);
 
     }
     

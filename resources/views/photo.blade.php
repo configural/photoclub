@@ -31,9 +31,23 @@
                 <div class="panel-body photobackground">
                 <center>
 
-
-
+                   @if($next)
+                    <a href="{{url('/')}}/photo/{{ $next->id }}" title="Щелкните для перехода к следующему фото">
+                   @endif
+                        
                         <img src="{{url('/')}}/photos/{{ $photo->user_id }}/{{$photo->url}}" class="photo" id="photo">
+                    @if($next)
+                       </a>
+                   @endif
+                    <div class="photo-nav">
+                        @if ($previous) 
+                        <a href="{{url('/')}}/photo/{{ $previous->id }}" title="Предыдущее фото" class="btn btn-default"><i class="fa fa-chevron-left"></i> Назад </a> 
+                        @endif
+                        &nbsp;
+                        @if ($next)                        
+                        <a href="{{url('/')}}/photo/{{ $next->id }}" title="Следующее фото"  class="btn btn-default"> Вперед <i class="fa fa-chevron-right"></i></a>
+                        @endif
+                    </div>
 
                      @if ($photo->description)
                     <div class="photo-description" id="description">{{ $photo->description }}</div>
