@@ -11,6 +11,7 @@ use App\User;
 use App\Comment;
 use App\Category;
 use claviska\SimpleImage;
+use Carbon\Carbon;
 
 class PhotoController extends Controller
 {
@@ -18,8 +19,10 @@ class PhotoController extends Controller
 
     public function showPhoto(Request $request) {
     
-    $photo = Photo::select('id','name', 'url', 'views', 'user_id', 'description', 'category_id')
+    $photo = Photo::select('id','name', 'url', 'views', 'user_id', 'description', 'category_id', 'created_at')
            ->where('id', Request()->id)->first();
+    
+    $published_at = $photo->created_at->format('d.m.Y H:i');
     
     $next = Photo::select('id')->where('id','<', $photo->id)->orderby('id', 'desc')->limit(1)->first();
     $previous = Photo::select('id')->where('id','>', $photo->id)->limit(1)->first();
@@ -35,7 +38,7 @@ class PhotoController extends Controller
     
     //dump($comments->count());
     
-    return view('photo', ['photo' => $photo,  'comments' => $comments,  'next' => $next, 'previous' => $previous]);
+    return view('photo', ['photo' => $photo,  'comments' => $comments,  'next' => $next, 'previous' => $previous, 'published_at' => $published_at]);
 
     }
     

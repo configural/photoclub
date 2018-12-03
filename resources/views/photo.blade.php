@@ -23,7 +23,7 @@
                     
                     {{$photo->category->name}} / {{ $photo->name }}
                     
-                    <p class="pull-right"><i class="fa fa-eye"></i> {{$photo->views}}&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-comments-o"></i> {{$comments->count()}}</p>
+                    <p class="pull-right"><i class="fa fa-calendar"></i> {{ $published_at }} &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-eye"></i> {{$photo->views}}&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-comments-o"></i> {{$comments->count()}}</p>
 
                 
                 </div>
