@@ -114,7 +114,7 @@
                 
                 <a name="comments"></a>
                 
-                 <div class="panel panel-default">
+                 <div class="panel  panel-primary">
                      <div class="panel-heading">Добавить комментарий</div>
                      <div class="panel panel-body">
                       
@@ -143,6 +143,7 @@
                          
                          
                      </div>
+                     
                  </div>
 
                 
