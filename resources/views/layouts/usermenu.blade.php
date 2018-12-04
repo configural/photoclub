@@ -1,7 +1,7 @@
            
 @if(Auth::user())
 <div class="panel panel-default">
-                <div class="panel-heading">Мой профиль</div>
+                <div class="panel-heading">{{ Auth::user()->name }}</div>
 
                 <div class="panel-body">
                     
@@ -13,14 +13,13 @@
                     
                     
                     @if(Auth::user()->name)
-                    <p><a href="{{ url('/home')}}">{{ Auth::user()->name }}</a>, добро пожаловать!</p>
+                    
                     @else
                     <p>Вы успешно вошли в систему! Пожалуйста, укажите свое имя в настройках профиля!</p>
                     @endif
-                    
-                    
-                   
-
+                    <p>
+                        Публичная ссылка на мой профиль: <small><a href="{{url('/')}}/user/{{Auth::user()->id}}">{{url('/')}}/user/{{Auth::user()->id}}</a></small>
+                    </p>
 
                 </div>
             </div>
