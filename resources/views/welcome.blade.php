@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-Главная страница
+только красивые фотографии!
 @endsection
 
 @section('content')
