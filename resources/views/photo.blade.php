@@ -54,8 +54,10 @@
                     @endif
                     </center>
                     
+                    @if(Auth::user())
                     @if (Auth::user()->id == $photo->user_id || Auth::user()->admin)
                     <p><center><a href="{{url('editphoto')}}/{{$photo->id}}" class="btn btn-default"><i class="fa fa-gear"></i> Редактировать описание</a></center></p>
+                    @endif
                     @endif
                     
                    </div>
@@ -137,7 +139,7 @@
                             </form>
 
                             @else 
-                            Для комментирования нужно зарегистрироваться или залогиниться
+                            Для комментирования нужно <a href="{{ url('/')}}/register">зарегистрироваться</a> или <a href="{{ url('/')}}/login">залогиниться</a>
 
                             @endif
                          

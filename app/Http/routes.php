@@ -39,7 +39,7 @@ Route::get('/deletecomment/{id}', 'PhotoController@deleteComment')->middleware('
         
 
 
-Route::get('/photo/{id}', 'PhotoController@showPhoto')->middleware('auth');
+Route::get('/photo/{id}', 'PhotoController@showPhoto');
 Route::get('/users', 'UserController@users');
 Route::get('user/{id}', 'UserController@userPhotos');
 Route::get('user/{id}/{cat_id}', 'UserController@userPhotos');
