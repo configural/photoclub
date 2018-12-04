@@ -45,12 +45,9 @@
                         </a>
                     
                         <span class="pull-right">
-                        @if ($comment->created_at) 
-                            Написано: {{ $comment->created_at }}
-                        @endif
-                        
+
                         @if ($comment->updated_at) 
-                          / обновлено: {{ $comment->updated_at }}
+                        <i class="fa fa-calendar"></i> {{ $comment->updated_at }}
                         @endif
                         </span>
                     <hr/>
