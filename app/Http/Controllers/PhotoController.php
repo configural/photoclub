@@ -24,8 +24,23 @@ class PhotoController extends Controller
     
     $published_at = $photo->created_at->format('d.m.Y H:i');
     
+    
+    $session_user_id = session('user_id');
+    $session_cat_id = session('cat_id');
+    
+    if ($session_user_id) {
+    $next = Photo::select('id')->where('id','<', $photo->id)->where('user_id', $session_user_id)->orderby('id', 'desc')->limit(1)->first();
+    $previous = Photo::select('id')->where('id','>', $photo->id)->where('user_id', $session_user_id)->limit(1)->first();
+    } else if ($session_cat_id) {
+    $next = Photo::select('id')->where('id','<', $photo->id)->where('category_id', $session_cat_id)->orderby('id', 'desc')->limit(1)->first();
+    $previous = Photo::select('id')->where('id','>', $photo->id)->where('category_id', $session_cat_id)->limit(1)->first();
+    } 
+    else {
     $next = Photo::select('id')->where('id','<', $photo->id)->orderby('id', 'desc')->limit(1)->first();
-    $previous = Photo::select('id')->where('id','>', $photo->id)->limit(1)->first();
+    $previous = Photo::select('id')->where('id','>', $photo->id)->limit(1)->first();    
+    };
+        
+    
     
     //dd($next->id);
     
@@ -36,7 +51,9 @@ class PhotoController extends Controller
     $photo->save();
     
     
-    //dump($comments->count());
+    //dump($session_user_id);
+//    dump($session_cat_id);
+    
     
     return view('photo', ['photo' => $photo,  'comments' => $comments,  'next' => $next, 'previous' => $previous, 'published_at' => $published_at]);
 
@@ -45,6 +62,9 @@ class PhotoController extends Controller
     public function commentsList() {
         
         $comments = Comment::select()->orderby('id', 'desc')->paginate(20);
+        
+        session(['user_id' => null]);
+        session(['cat_id' => null]);
         
         return view('comments', ["comments" => $comments]);
         

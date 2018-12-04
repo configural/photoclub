@@ -22,15 +22,6 @@ class UserController extends Controller
 
         $user = User::where('id', $request->id)->first();
 
-/*
-SELECT `categories`.`id`, `categories`.`name`, count(`photos`.`id`) FROM 
-`categories`
-left join `photos` ON
-`photos`.`category_id`=`categories`.`id`
-WHERE `photos`.`user_id`=3
-GROUP BY `categories`.`id`
- */        
-        
         $cats_list = DB::table('categories')
                 ->leftjoin('photos', 'photos.category_id', '=', 'categories.id')
                 ->select('categories.name', 'categories.id')
@@ -40,15 +31,27 @@ GROUP BY `categories`.`id`
                 
         
         
+        session(['user_id' => $request->id]);
+        
+        
+
         
         if ($request->cat_id) {
             $photo = Photo::where('user_id', $request->id)->where('category_id', $request->cat_id)->orderBy('id', 'desc')->paginate(12);
+            session(['cat_id' => $request->cat_id]);
         }
             
         else {
             $photo = Photo::where('user_id', $request->id)->orderBy('id', 'desc')->paginate(12);
+            session(['cat_id' => null]);
         
         }
+        
+        $session_user_id = session('user_id');
+        $session_cat_id = session('cat_id');
+        
+        //dump($session_user_id);
+        //dump($session_cat_id);
         
         return view('user', ['user' => $user, 'photo' => $photo, 'cats_list'=>$cats_list]);
 
