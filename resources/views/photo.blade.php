@@ -124,6 +124,17 @@
                          
                          @if(Auth::user())
                          <p>Вы вошли как {{ Auth::user()->name }}.</p>
+                         <p>
+                         <details><summary style="border-bottom: "><span style="border-bottom: 1px dashed black; cursor: pointer">Как вставить ссылку и картинку в комментарий (bb-код)</span></summary>
+                             <p>
+                                 [i]текст[/i] - курсив</br>
+                                 [b]текст[/b] - полужирный</br>
+                                 [img]http://example.com/image.jpg[/img] - вставка картинки<br/>
+                                 [url]http://example.com/page.html[/url] - вставка ссылки<br/>
+                                 
+                             </p>
+                         </details>
+                         </p>
 
                             <form name="addcomment" action="{{ url('/addcomment')}}" method="post">
 
