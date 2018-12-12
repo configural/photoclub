@@ -59,8 +59,12 @@
                         Камера: {{ $exif['Model'] }}<br/> 
                      @endif
 
+                     @if($exif['ExposureProgram'])     
+                        Режим {{$exif['ExposureProgram']}}, 
+                     @endif
+                     
                      @if($exif['FocalLength'])     
-                        Фокусное расстояние: {{$exif['FocalLength']}} мм, 
+                       фокусное расстояние: {{$exif['FocalLength']}} мм, 
                      @endif
                      
                      @if($exif['ExposureTime'])

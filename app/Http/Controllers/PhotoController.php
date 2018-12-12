@@ -52,6 +52,19 @@ class PhotoController extends Controller
     
     $image = new SimpleImage('photos/' . $photo->user_id . '/'.$photo->url);
     
+    $exposureModes = [
+        '0' => 'n/a',
+        '1' => 'M',
+        '2' => 'P',
+        '3' => 'AV(A)',
+        '4' => 'TV(S)',
+        '5' => 'Creative (Slow speed)',
+        '6' => 'Action (High speed)', 
+        '7' => 'портрет', 
+        '8' => 'пейзаж', 
+        '9' => 'Bulb',
+    ];
+    
         $exif = $image->getExif();
     
         if (!isset($exif['Model'])) $exif['Model'] = '';
@@ -60,7 +73,7 @@ class PhotoController extends Controller
         if (!isset($exif['ExposureBiasValue'])) $exif['ExposureBiasValue'] = '0';
         if (!isset($exif['FNumber'])) $exif['FNumber'] = '';
         if (!isset($exif['ISOSpeedRatings'])) $exif['ISOSpeedRatings'] = '';
-        
+        if (!isset($exif['ExposureProgram'])) $exif['ExposureProgram'] = '';       
         if (!isset($exif['Software'])) $exif['Software'] = '';
     
         if ($f = $exif['FocalLength']) {
@@ -75,9 +88,14 @@ class PhotoController extends Controller
         
         if ($e = $exif['ExposureBiasValue']) {
             $tmp = explode('/', $e);
-            if ($tmp[1]) $exif['ExposureBiasValue'] = $tmp[0]/$tmp[1];
+            if ($tmp[1]) $exif['ExposureBiasValue'] = round($tmp[0]/$tmp[1], 2);
         }
- //   dump($exif);
+        
+        if ($m = $exif['ExposureProgram']) {
+            $exif['ExposureProgram'] = $exposureModes[$exif['ExposureProgram']];
+        }
+        
+    //dump($exif);
     //dump($session_user_id);
 //    dump($session_cat_id);
     
