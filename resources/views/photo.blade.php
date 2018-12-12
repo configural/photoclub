@@ -52,6 +52,39 @@
                      @if ($photo->description)
                     <div class="photo-description" id="description">{{ $photo->description }}</div>
                     @endif
+                    
+                    
+                    <small>
+                     @if($exif['Model'])   
+                        Камера: {{ $exif['Model'] }}<br/> 
+                     @endif
+
+                     @if($exif['FocalLength'])     
+                        Фокусное расстояние: {{$exif['FocalLength']}} мм, 
+                     @endif
+                     
+                     @if($exif['ExposureTime'])
+                        выдержка: {{$exif['ExposureTime']}} сек, 
+                     @endif
+                     
+                     @if($exif['FNumber'])
+                        диафрагма: {{$exif['FNumber']}}, 
+                     @endif
+                     
+                     @if($exif['ISOSpeedRatings'])
+                        ISO{{$exif['ISOSpeedRatings']}},
+                     @endif
+                     
+                     @if($exif['ExposureBiasValue'])
+                        экспокоррекция: {{$exif['ExposureBiasValue']}}EV, 
+                     @endif
+                        
+                     @if($exif['Software'])
+                        <br/> ПО: {{$exif['Software']}} 
+                     @endif
+                    </small>
+                    
+                    
                     </center>
                     
                     @if(Auth::user())

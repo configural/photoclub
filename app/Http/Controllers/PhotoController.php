@@ -50,12 +50,39 @@ class PhotoController extends Controller
     $photo->views += 1;
     $photo->save();
     
+    $image = new SimpleImage('photos/' . $photo->user_id . '/'.$photo->url);
     
+        $exif = $image->getExif();
+    
+        if (!isset($exif['Model'])) $exif['Model'] = '';
+        if (!isset($exif['FocalLength'])) $exif['FocalLength'] = '';
+        if (!isset($exif['ExposureTime'])) $exif['ExposureTime'] = '';
+        if (!isset($exif['ExposureBiasValue'])) $exif['ExposureBiasValue'] = '0';
+        if (!isset($exif['FNumber'])) $exif['FNumber'] = '';
+        if (!isset($exif['ISOSpeedRatings'])) $exif['ISOSpeedRatings'] = '';
+        
+        if (!isset($exif['Software'])) $exif['Software'] = '';
+    
+        if ($f = $exif['FocalLength']) {
+            $tmp = explode('/', $f);
+            if ($tmp[1]) $exif['FocalLength'] = $tmp[0]/$tmp[1];
+        }
+        
+        if ($a = $exif['FNumber']) {
+            $tmp = explode('/', $a);
+            if ($tmp[1]) $exif['FNumber'] = $tmp[0]/$tmp[1];
+        }
+        
+        if ($e = $exif['ExposureBiasValue']) {
+            $tmp = explode('/', $e);
+            if ($tmp[1]) $exif['ExposureBiasValue'] = $tmp[0]/$tmp[1];
+        }
+ //   dump($exif);
     //dump($session_user_id);
 //    dump($session_cat_id);
     
     
-    return view('photo', ['photo' => $photo,  'comments' => $comments,  'next' => $next, 'previous' => $previous, 'published_at' => $published_at]);
+    return view('photo', ['photo' => $photo,  'comments' => $comments,  'next' => $next, 'previous' => $previous, 'published_at' => $published_at, 'exif' => $exif]);
 
     }
     
