@@ -19,7 +19,7 @@ class PhotoController extends Controller
 
     public function showPhoto(Request $request) {
     
-    $photo = Photo::select('id','name', 'url', 'views', 'user_id', 'description', 'category_id', 'created_at')
+    $photo = Photo::select()
            ->where('id', Request()->id)->first();
     
     $published_at = $photo->created_at->format('d.m.Y H:i');
@@ -44,7 +44,7 @@ class PhotoController extends Controller
     
     //dd($next->id);
     
-    $comments = Comment::select('id','text', 'user_id','created_at', 'updated_at')
+    $comments = Comment::select()
                 ->where('photo_id', Request()->id)->orderby('id')->get();
     
     $photo->views += 1;
@@ -65,42 +65,15 @@ class PhotoController extends Controller
         '9' => 'Bulb',
     ];
     
-        $exif = $image->getExif();
-    
-        if (!isset($exif['Model'])) $exif['Model'] = '';
-        if (!isset($exif['FocalLength'])) $exif['FocalLength'] = '';
-        if (!isset($exif['ExposureTime'])) $exif['ExposureTime'] = '';
-        if (!isset($exif['ExposureBiasValue'])) $exif['ExposureBiasValue'] = '0';
-        if (!isset($exif['FNumber'])) $exif['FNumber'] = '';
-        if (!isset($exif['ISOSpeedRatings'])) $exif['ISOSpeedRatings'] = '';
-        if (!isset($exif['ExposureProgram'])) $exif['ExposureProgram'] = '';       
-        if (!isset($exif['Software'])) $exif['Software'] = '';
-    
-        if ($f = $exif['FocalLength']) {
-            $tmp = explode('/', $f);
-            if ($tmp[1]) $exif['FocalLength'] = $tmp[0]/$tmp[1];
-        }
+
+   if ($photo->ExposureProgram) $photo->ExposureProgram = $exposureModes[$photo->ExposureProgram];
         
-        if ($a = $exif['FNumber']) {
-            $tmp = explode('/', $a);
-            if ($tmp[1]) $exif['FNumber'] = $tmp[0]/$tmp[1];
-        }
-        
-        if ($e = $exif['ExposureBiasValue']) {
-            $tmp = explode('/', $e);
-            if ($tmp[1]) $exif['ExposureBiasValue'] = round($tmp[0]/$tmp[1], 2);
-        }
-        
-        if ($m = $exif['ExposureProgram']) {
-            $exif['ExposureProgram'] = $exposureModes[$exif['ExposureProgram']];
-        }
-        
-    //dump($exif);
+   // dump($photo->ExposureProgram);
     //dump($session_user_id);
 //    dump($session_cat_id);
     
     
-    return view('photo', ['photo' => $photo,  'comments' => $comments,  'next' => $next, 'previous' => $previous, 'published_at' => $published_at, 'exif' => $exif]);
+    return view('photo', ['photo' => $photo,  'comments' => $comments,  'next' => $next, 'previous' => $previous, 'published_at' => $published_at]);
 
     }
     
@@ -171,12 +144,57 @@ class PhotoController extends Controller
                 $photo->description = $request->description;
                 $photo->user_id = Auth::user()->id;
                 $photo->url = $newfile;
-                $photo->save();
+               // $photo->save();
                 
                 $image = new SimpleImage();
                 $dst = public_path() . '/photos/' . Auth::user()->id . '/' . $newfile;
                 $dst1 = public_path() . '/photos/' . Auth::user()->id . '/_' . $newfile;
                 $image->fromFile($dst);
+                
+                ///
+ $exif = $image->getExif();
+    
+        if (!isset($exif['Make'])) $exif['Make'] = '';
+        if (!isset($exif['Model'])) $exif['Model'] = '';
+        if (!isset($exif['FocalLength'])) $exif['FocalLength'] = '';
+        if (!isset($exif['ExposureTime'])) $exif['ExposureTime'] = '';
+        if (!isset($exif['ExposureBiasValue'])) $exif['ExposureBiasValue'] = '0';
+        if (!isset($exif['FNumber'])) $exif['FNumber'] = '';
+        if (!isset($exif['ISOSpeedRatings'])) $exif['ISOSpeedRatings'] = '';
+        if (!isset($exif['ExposureProgram'])) $exif['ExposureProgram'] = '';       
+        if (!isset($exif['Software'])) $exif['Software'] = '';
+    
+        if ($f = $exif['FocalLength']) {
+            $tmp = explode('/', $f);
+            if ($tmp[1]) $exif['FocalLength'] = $tmp[0]/$tmp[1];
+        }
+        
+        if ($a = $exif['FNumber']) {
+            $tmp = explode('/', $a);
+            if ($tmp[1]) $exif['FNumber'] = $tmp[0]/$tmp[1];
+        }
+        
+        if ($e = $exif['ExposureBiasValue']) {
+            $tmp = explode('/', $e);
+            if ($tmp[1]) $exif['ExposureBiasValue'] = round($tmp[0]/$tmp[1], 2);
+        }
+        
+/*        if ($m = $exif['ExposureProgram']) {
+            $exif['ExposureProgram'] = $exposureModes[$exif['ExposureProgram']];
+        }*/
+        
+        $photo->Make = $exif['Make'];
+        $photo->Model = $exif['Model'];
+        $photo->FocalLength = $exif['FocalLength'];
+        $photo->ExposureTime = $exif['ExposureTime'];
+        $photo->ExposureBiasValue = $exif['ExposureBiasValue'];
+        $photo->FNumber = $exif['FNumber'];
+        $photo->ISOSpeedRatings = $exif['ISOSpeedRatings'];
+        $photo->ExposureProgram = $exif['ExposureProgram'];
+        $photo->Software = $exif['Software'];   
+        
+        $photo->save();
+                ///
                 
                 if ($image->getHeight()>1200 or $image->getWidth()>1200) {
                     $image->bestFit(1200, 1200);
@@ -277,5 +295,67 @@ class PhotoController extends Controller
         
        }
    }
+
+      public function rebuildExif() {
+   
+       $photo = Photo::first()->get();
+      // dump($photo);
+       
+       foreach($photo as $p) {
+        $image = new SimpleImage('photos/' . $p->user_id . '/'.$p->url);
+
+        $exif = $image->getExif();
     
+        if (!isset($exif['Make'])) $exif['Make'] = '';
+        if (!isset($exif['Model'])) $exif['Model'] = '';
+        if (!isset($exif['FocalLength'])) $exif['FocalLength'] = '';
+        if (!isset($exif['ExposureTime'])) $exif['ExposureTime'] = '';
+        if (!isset($exif['ExposureBiasValue'])) $exif['ExposureBiasValue'] = '0';
+        if (!isset($exif['FNumber'])) $exif['FNumber'] = '';
+        if (!isset($exif['ISOSpeedRatings'])) $exif['ISOSpeedRatings'] = '';
+        if (!isset($exif['ExposureProgram'])) $exif['ExposureProgram'] = '';       
+        if (!isset($exif['Software'])) $exif['Software'] = '';
+    
+        if ($f = $exif['FocalLength']) {
+            $tmp = explode('/', $f);
+            if ($tmp[1]) $exif['FocalLength'] = $tmp[0]/$tmp[1];
+        }
+        
+        if ($a = $exif['FNumber']) {
+            $tmp = explode('/', $a);
+            if ($tmp[1]) $exif['FNumber'] = $tmp[0]/$tmp[1];
+        }
+        
+        if ($e = $exif['ExposureBiasValue']) {
+            $tmp = explode('/', $e);
+            if ($tmp[1]) $exif['ExposureBiasValue'] = round($tmp[0]/$tmp[1], 2);
+        }
+        
+/*        if ($m = $exif['ExposureProgram']) {
+            $exif['ExposureProgram'] = $exposureModes[$exif['ExposureProgram']];
+        }*/
+        
+        $p->Make = $exif['Make'];
+        $p->Model = $exif['Model'];
+        $p->FocalLength = $exif['FocalLength'];
+        $p->ExposureTime = $exif['ExposureTime'];
+        $p->ExposureBiasValue = $exif['ExposureBiasValue'];
+        $p->FNumber = $exif['FNumber'];
+        if (!is_array($exif['ISOSpeedRatings'])) {$p->ISOSpeedRatings = $exif['ISOSpeedRatings'];}
+        else {$p->ISOSpeedRatings = $exif['ISOSpeedRatings'][0];}
+        $p->ExposureProgram = $exif['ExposureProgram'];
+        $p->Software = $exif['Software'];
+
+
+        dump($p);
+        $p->save();
+        
+        
+
+        
+       }
+       echo "done!";
+   }
+   
+   
 }

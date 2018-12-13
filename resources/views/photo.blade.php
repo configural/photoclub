@@ -55,36 +55,36 @@
                     
                     
                     <small>
-                     @if($exif['Model'])   
-                        Камера: {{ $exif['Model'] }}<br/> 
+                     @if($photo->Model)   
+                        Камера: {{ $photo->Model }}<br/> 
                      @endif
 
-                     @if($exif['ExposureProgram'])     
-                        Режим {{$exif['ExposureProgram']}}, 
+                     @if($photo->ExposureProgram)     
+                        Режим {{$photo->ExposureProgram}}, 
                      @endif
                      
-                     @if($exif['FocalLength'])     
-                       фокусное расстояние: {{$exif['FocalLength']}} мм, 
+                     @if($photo->FocalLength)     
+                       фокусное расстояние: {{$photo->FocalLength}} мм, 
                      @endif
                      
-                     @if($exif['ExposureTime'])
-                        выдержка: {{$exif['ExposureTime']}} сек, 
+                     @if($photo->ExposureTime)
+                        выдержка: {{$photo->ExposureTime}} сек, 
                      @endif
                      
-                     @if($exif['FNumber'])
-                        диафрагма: {{$exif['FNumber']}}, 
+                     @if($photo->FNumber)
+                        диафрагма: {{$photo->FNumber}}, 
                      @endif
                      
-                     @if($exif['ISOSpeedRatings'])
-                        ISO{{$exif['ISOSpeedRatings']}},
+                     @if($photo->ISOSpeedRatings)
+                        ISO{{$photo->ISOSpeedRatings}},
                      @endif
                      
-                     @if($exif['ExposureBiasValue'])
-                        экспокоррекция: {{$exif['ExposureBiasValue']}}EV, 
+                     @if($photo->ExposureBiasValue)
+                        экспокоррекция: {{$photo->ExposureBiasValue}}EV, 
                      @endif
                         
-                     @if($exif['Software'])
-                        <br/> ПО: {{$exif['Software']}} 
+                     @if($photo->Software)
+                        <br/> ПО: {{$photo->Software}} 
                      @endif
                     </small>
                     
