@@ -105,7 +105,7 @@ theme_advanced_resizing : true,
                     </div>
 
                      @if ($photo->description)
-                    <div class="photo-description" id="description">{{ $photo->description }}</div>
+                    <div class="photo-description" id="description">{!! $photo->description !!}</div>
                     @endif
                     
                     
