@@ -17,7 +17,9 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-sm-4"><a href="{{url('/addphoto')}}" class="btn btn-lg btn-primary">Загрузить фотографию</a></div>
-                        <div class="col-sm-8">Рекомендуемый объем загрузки - 1 фото в день</div>
+                        <div class="col-sm-8">Рекомендуемый объем загрузки - 1 фото в день.<br/>
+                        Приветствуется публикация художественных фотографий, представляющих интерес широкой аудитории.
+                        </div>
                         
                     </div>
                     <hr>
