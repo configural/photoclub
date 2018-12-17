@@ -14,7 +14,7 @@ class ExposureProgramInteger extends Migration
     {
         //
             Schema::table('photos', function(Blueprint $table) {
-            $table->integer('ExposureProgram')->change();
+           // $table->integer('ExposureProgram')->change();
             });
     
     }
@@ -28,7 +28,7 @@ class ExposureProgramInteger extends Migration
     {
         //
         Schema::table('photos', function(Blueprint $table) {
-        $table->text('ExposureProgram')->change();
+      //  $table->text('ExposureProgram')->change();
         });
     }
     
