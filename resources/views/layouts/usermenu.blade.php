@@ -23,6 +23,19 @@
 
                 </div>
             </div>
+
+
+
+
+<div class="panel panel-default">
+          <div class="panel-heading">Информация</div>
+          <div class="panel-body">
+            {!!$user->description!!}
+            <a href="{{url('/')}}/editprofile" class="btn btn-default">Редактировать</a>
+          </div>
+    </div>
+
+
 @else
 <div class="panel panel-default">
                 <div class="panel-heading">О проекте</div>

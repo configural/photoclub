@@ -27,8 +27,15 @@
                         <div class="no_avatar">Нет аватара</div>
                         @endif
                     
+                
+                        
+                
                 </div>
                             </div>
+            
+            
+            
+            
                 
             <div class="panel panel-default">
                 <div class="panel-heading">Категории
@@ -41,6 +48,14 @@
                 </div>
             </div>
 
+@if($user->description)    
+<div class="panel panel-default">
+          <div class="panel-heading">Информация</div>
+          <div class="panel-body">
+            {!!$user->description!!}
+          </div>
+    </div>
+@endif
         </div>
         
         
