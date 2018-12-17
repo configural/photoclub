@@ -114,12 +114,14 @@ class UserController extends Controller
            }
            
 
-           
+           //dd($request);
 
-           $data = $request->all();
+           //$data = $request->all();
            $user = User::find(Auth::user()->id);
-           $user->fill($data);
-           $user->avatar = $avatar;
+           $user->name = $request->name;;
+           $user->email = $request->email;;
+           $user->description = $request->description;
+           if ($avatar) $user->avatar = $avatar;
            $user->save();
 
            return redirect(url('/home'));

@@ -32,6 +32,12 @@
                 <label for="name">Электронная почта (логин)</label><br/>
                 <input type="text" name="email" value="{{ $user->email }}">
                 </p>
+                
+                <p>
+                <label for="description">Коротко о себе</label><br/>
+                <textarea name="description" class="form-control">{{ $user->description }}</textarea>
+                </p>
+                
                 <p><button>Обновить информацию</button></p>
 
                 {{ csrf_field() }}

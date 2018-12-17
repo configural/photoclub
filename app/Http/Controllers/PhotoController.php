@@ -199,11 +199,11 @@ class PhotoController extends Controller
                 if ($image->getHeight()>1200 or $image->getWidth()>1200) {
                     $image->bestFit(1200, 1200);
                 }
-                $image->toFile($dst);
+                $image->toFile($dst,null,80);
                 
                 $image->fromFile($dst);
                 $image->bestFit(300,300);
-                $image->toFile($dst1);
+                $image->toFile($dst1,null,80);
                 
                 return redirect('home');
             }
