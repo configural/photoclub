@@ -41,7 +41,7 @@
                     </tr>
            @foreach($cameras as $camera)
            <tr>
-               <td>{{$camera->Model}}</td>
+               <td><a href="{{url('/')}}/camera/{{$camera->Model}}">{{$camera->Model}}</a></td>
                        <td><span class="bar" style="width: {{$camera->count}}px;">{{$camera->count}}</span></td>
            </tr>
 

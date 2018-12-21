@@ -46,6 +46,8 @@ class HomeController extends Controller
         }
         
         session(['user_id' => null]);
+        session(['camera' => null]);
+
         
         $session_user_id = session('user_id');
         $session_cat_id = session('cat_id');
@@ -66,12 +68,13 @@ class HomeController extends Controller
            $user = User::find(Auth::user()->id);
            
            session(['user_id' => Auth::user()->id]);
+           session(['camera' => null]);
            
            $session_user_id = session('user_id'); 
            
           // dump($session_user_id);
            
-           return view('home', ['photos' => $photos, 'user' => $user]);
+           return view('index', ['photos' => $photos, 'user' => $user]);
            
     }
 

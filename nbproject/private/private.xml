@@ -3,27 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/photoclub/resources/views/home.blade.php</file>
-            <file>file:/C:/xampp/htdocs/photoclub/resources/views/rules.blade.php</file>
-            <file>file:/C:/xampp/htdocs/photoclub/database/migrations/2018_12_13_095052_ExposureProgramInteger.php</file>
-            <file>file:/C:/xampp/htdocs/photoclub/app/User.php</file>
-            <file>file:/C:/xampp/htdocs/photoclub/resources/views/editprofile.blade.php</file>
-            <file>file:/C:/xampp/htdocs/photoclub/public/web.config</file>
-            <file>file:/C:/xampp/htdocs/photoclub/app/Comment.php</file>
-            <file>file:/C:/xampp/htdocs/photoclub/app/Http/Controllers/StatController.php</file>
-            <file>file:/C:/xampp/htdocs/photoclub/database/migrations/2018_12_12_135017_exif_data_2_photos.php</file>
-            <file>file:/C:/xampp/htdocs/photoclub/app/Http/Controllers/UserController.php</file>
-            <file>file:/C:/xampp/htdocs/photoclub/resources/views/layouts/usermenu.blade.php</file>
-            <file>file:/C:/xampp/htdocs/photoclub/public/css/my.css</file>
-            <file>file:/C:/xampp/htdocs/photoclub/database/migrations/2018_12_17_065753_user_description.php</file>
+            <file>file:/C:/xampp/htdocs/photoclub/app/Http/Controllers/PhotoController.php</file>
             <file>file:/C:/xampp/htdocs/photoclub/resources/views/stat.blade.php</file>
-            <file>file:/C:/xampp/htdocs/photoclub/resources/views/photo.blade.php</file>
-            <file>file:/C:/xampp/htdocs/photoclub/resources/views/addphoto.blade.php</file>
-            <file>file:/C:/xampp/htdocs/photoclub/public/tiny_mce/tiny_mce_src.js</file>
-            <file>file:/C:/xampp/htdocs/photoclub/resources/views/auth/register.blade.php</file>
-            <file>file:/C:/xampp/htdocs/photoclub/resources/views/layouts/app.blade.php</file>
-            <file>file:/C:/xampp/htdocs/photoclub/resources/views/user.blade.php</file>
             <file>file:/C:/xampp/htdocs/photoclub/app/Http/routes.php</file>
+            <file>file:/C:/xampp/htdocs/photoclub/resources/views/camera.blade.php</file>
         </group>
     </open-files>
 </project-private>

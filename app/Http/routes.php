@@ -44,5 +44,8 @@ Route::get('/users', 'StatController@ourStat');
 Route::get('user/{id}', 'UserController@userPhotos');
 Route::get('user/{id}/{cat_id}', 'UserController@userPhotos');
 
+
+Route::get('/camera/{model}', 'PhotoController@cameraPhoto');
+
 //Route::get('/rebuild', 'PhotoController@rebuildPreviews');
 //Route::get('/rebuild_exif', 'PhotoController@rebuildExif');

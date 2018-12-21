@@ -13,6 +13,7 @@ use App\Category;
 use claviska\SimpleImage;
 use Carbon\Carbon;
 
+
 class PhotoController extends Controller
 {
     // показать одно фото
@@ -27,6 +28,7 @@ class PhotoController extends Controller
     
     $session_user_id = session('user_id');
     $session_cat_id = session('cat_id');
+    $session_camera = session('camera');
     
     if ($session_user_id) {
     $next = Photo::select('id')->where('id','<', $photo->id)->where('user_id', $session_user_id)->orderby('id', 'desc')->limit(1)->first();
@@ -34,8 +36,10 @@ class PhotoController extends Controller
     } else if ($session_cat_id) {
     $next = Photo::select('id')->where('id','<', $photo->id)->where('category_id', $session_cat_id)->orderby('id', 'desc')->limit(1)->first();
     $previous = Photo::select('id')->where('id','>', $photo->id)->where('category_id', $session_cat_id)->limit(1)->first();
-    } 
-    else {
+    } else if ($session_camera) {
+    $next = Photo::select('id')->where('id','<', $photo->id)->where('Model', $session_camera)->orderby('id', 'desc')->limit(1)->first();
+    $previous = Photo::select('id')->where('id','>', $photo->id)->where('Model', $session_camera)->limit(1)->first();
+    } else {
     $next = Photo::select('id')->where('id','<', $photo->id)->orderby('id', 'desc')->limit(1)->first();
     $previous = Photo::select('id')->where('id','>', $photo->id)->limit(1)->first();    
     };
@@ -68,10 +72,7 @@ class PhotoController extends Controller
 
    if ($photo->ExposureProgram) $photo->ExposureProgram = $exposureModes[$photo->ExposureProgram];
         
-   // dump($photo->ExposureProgram);
-    //dump($session_user_id);
-//    dump($session_cat_id);
-    
+
     
     return view('photo', ['photo' => $photo,  'comments' => $comments,  'next' => $next, 'previous' => $previous, 'published_at' => $published_at]);
 
@@ -83,6 +84,7 @@ class PhotoController extends Controller
         
         session(['user_id' => null]);
         session(['cat_id' => null]);
+        session(['camera' => null]);
         
         return view('comments', ["comments" => $comments]);
         
@@ -357,5 +359,14 @@ class PhotoController extends Controller
        echo "done!";
    }
    
+   
+   public function cameraPhoto(Request $request) {
+       //dump($request->model);
+       
+           $model = $request->model;
+           $photos = Photo::select()->where('Model', $request->model)->orderby('id', 'desc')->paginate(20);
+           session(['camera' => $model]);
+           return view('camera', ['photos' => $photos, 'model' => $model]);
+   }
    
 }

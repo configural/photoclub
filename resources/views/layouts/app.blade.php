@@ -105,9 +105,9 @@ theme_advanced_resizing : true,
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">Моя страница</a></li>
                     <li><a href="{{ url('/comments') }}">Комментарии</a></li>
-                    <li><a href="{{ url('/users') }}">Авторы</a></li>
+                    <li><a href="{{ url('/users') }}">Статистика</a></li>
                     <li><a href="{{ url('/rules') }}">Правила</a></li>
-                    <li><a href="{{ url('/migrate') }}">Как восстановить аккаунт?</a></li>
+                    
                     <li><a href="{{ url('/contacts') }}">Контакты</a></li>
                 </ul>
 
