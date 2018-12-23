@@ -74,7 +74,7 @@ class HomeController extends Controller
            
           // dump($session_user_id);
            
-           return view('index', ['photos' => $photos, 'user' => $user]);
+           return view('home', ['photos' => $photos, 'user' => $user]);
            
     }
 
