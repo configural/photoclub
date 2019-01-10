@@ -108,6 +108,7 @@ theme_advanced_resizing : true,
                     <div class="photo-description" id="description">{!! $photo->description !!}</div>
                     @endif
                     
+
                     
                     <small>
                      @if($photo->Model)   
@@ -143,7 +144,11 @@ theme_advanced_resizing : true,
                      @endif
                     </small>
                     
-                    
+                                   <p>
+                        <script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+                        <script src="//yastatic.net/share2/share.js"></script>
+                        <div class="ya-share2" data-services="collections,vkontakte,facebook,odnoklassniki,moimir,twitter"></div>
+                    </p>     
                     </center>
                     
                     @if(Auth::user())
