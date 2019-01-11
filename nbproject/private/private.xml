@@ -5,6 +5,7 @@
         <group>
             <file>file:/C:/xampp/htdocs/photoclub/app/Http/Controllers/PhotoController.php</file>
             <file>file:/C:/xampp/htdocs/photoclub/resources/views/stat.blade.php</file>
+            <file>file:/C:/xampp/htdocs/photoclub/resources/views/photo.blade.php</file>
             <file>file:/C:/xampp/htdocs/photoclub/app/Http/Controllers/HomeController.php</file>
             <file>file:/C:/xampp/htdocs/photoclub/resources/views/layouts/app.blade.php</file>
             <file>file:/C:/xampp/htdocs/photoclub/app/Http/Controllers/UserController.php</file>
