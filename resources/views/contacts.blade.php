@@ -8,7 +8,7 @@
 <div class="container-fluid">
     <div class="row">
         
-        <div class="col-md-2">
+        <div class="col-md-3">
             
         <div class="panel panel-default">
             <div class="panel-heading">Об авторе проекта
@@ -25,7 +25,7 @@
             
         </div>
         
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-8">
             
             <h1>Контакты</h1>
             <p class="lead">
@@ -33,6 +33,9 @@
                 <li>Email: kashkanov_as@mail.ru</li>
                 
                 <li>Телефон: +79202525268</li>
+                
+                <li><a href="https://vk.com/a.kashkanov" target="_blank">Я Вконтакте</a>                  
+                </li>
                 
             </ol>
         </p>

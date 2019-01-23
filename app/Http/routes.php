@@ -17,6 +17,7 @@ Route::get('/', 'HomeController@index');
 Route::get('/category/{id}', 'HomeController@index');
 Route::get('/comments', 'PhotoController@commentsList');
 Route::get('/rules', function() { return view('rules');});
+Route::get('/books', function() { return view('books');});
 Route::get('/contacts', function() { return view('contacts');});
 Route::get('/migrate', function() { return view('migrate');});
 

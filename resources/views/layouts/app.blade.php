@@ -107,6 +107,7 @@ theme_advanced_resizing : true,
                     <li><a href="{{ url('/comments') }}">Комментарии</a></li>
                     <li><a href="{{ url('/users') }}">Статистика</a></li>
                     <li><a href="{{ url('/rules') }}">Правила</a></li>
+                    <li><a href="{{ url('/books') }}">Книги о фото</a></li>
                     
                     <li><a href="{{ url('/contacts') }}">Контакты</a></li>
                 </ul>
