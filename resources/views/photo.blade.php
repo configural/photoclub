@@ -254,15 +254,9 @@ theme_advanced_resizing : true,
                 
                 
                 
-    <div class="col-md-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Реклама
-                </div>
+                <div class="col-md-2">
 
-                <div class="panel-body">
                 @include("ads.adsense")
-                </div>
-            </div>
                 </div>
                 
                 
