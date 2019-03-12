@@ -1,5 +1,5 @@
+<?php $i = 0; ?>
 @extends('layouts.app')
-
 @section('title')
 Комментарии к фотографиям
 @endsection
@@ -73,7 +73,11 @@
                 </div>
                     
                     <div class="col-md-3">
+                        
+                        @if($i%5 == 0 && $i<15)
                         @include("ads.adsense")
+                        @endif
+                        <?php $i++; ?>
                         
                     </div>
                 </div>
