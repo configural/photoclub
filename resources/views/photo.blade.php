@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-{{$photo->name}}
+{{ $photo->user->name }} – {{$photo->name}}
 @endsection
 
 
@@ -90,7 +90,7 @@ theme_advanced_resizing : true,
                     <a href="{{url('/')}}/photo/{{ $next->id }}" title="Щелкните для перехода к следующему фото">
                    @endif
                         
-                        <img src="{{url('/')}}/photos/{{ $photo->user_id }}/{{$photo->url}}" class="photo" id="photo">
+                        <img src="{{url('/')}}/photos/{{ $photo->user_id }}/{{$photo->url}}" alt="Фотография - {{ $photo->name}}, автор - {{ $photo->user->name }}" class="photo" id="photo">
                     @if($next)
                        </a>
                    @endif
@@ -180,6 +180,7 @@ theme_advanced_resizing : true,
                                 id{{ $comment->user->id }}
                             @endif
                         </a>
+                        <small><span onClick="javascript:reply('{{$comment->user->id}}', '{{ $comment->user->name }}');">[ответить]</span></small>
                     
                         <span class="pull-right">
                         @if ($comment->created_at) 
@@ -228,7 +229,7 @@ theme_advanced_resizing : true,
                             <form name="addcomment" action="{{ url('/addcomment')}}" method="post">
 
                                 
-                                <p><textarea name="text" class="form-control coment-text"></textarea></p>
+                                <p><textarea name="text" class="form-control coment-text" id="txtComment"></textarea></p>
                                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                                 <input type="hidden" name="photo_id" value="{{ $photo->id }}">
 
@@ -268,7 +269,14 @@ theme_advanced_resizing : true,
     </div>
 </div>
 
-
+<script>
+    function reply(id, name) {
+        old_html=tinyMCE.activeEditor.getContent();
+        tinyMCE.activeEditor.setContent( old_html + name + ": ");
+        tinyMCE.activeEditor.focus();
+    }
+    </script>
+    
 
 @endsection
 

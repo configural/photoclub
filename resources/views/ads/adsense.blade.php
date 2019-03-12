@@ -7,6 +7,8 @@
  */
 ?>
 
+<div class="adsense">
+
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- Фотоклуб, адаптивный -->
 <ins class="adsbygoogle"
@@ -18,3 +20,4 @@
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+</div>
