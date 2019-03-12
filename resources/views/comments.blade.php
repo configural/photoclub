@@ -15,7 +15,7 @@
                 @foreach($comments as $comment)
                 <div class="row">
 
-                <div class="col-md-12">    
+                <div class="col-md-9">    
                 <a name="{{ $comment->id }}"></a>
                 <div class="panel panel-default comment">
                     <div class="panel-heading">
@@ -71,6 +71,11 @@
                     </div>
                 </div>
                 </div>
+                    
+                    <div class="col-md-3">
+                        @include("ads.adsense")
+                        
+                    </div>
                 </div>
                 @endforeach
                 
