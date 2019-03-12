@@ -56,6 +56,17 @@
           </div>
     </div>
 @endif
+
+            <div class="panel panel-default">
+                <div class="panel-heading">Реклама
+                </div>
+
+                <div class="panel-body">
+                @include("ads.adsense")
+                </div>
+            </div>
+
+
         </div>
         
         

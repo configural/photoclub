@@ -167,7 +167,7 @@ theme_advanced_resizing : true,
     <!-- Комментарии -->
     
             <div class="row">
-                <div class="col-md-8 col-md-offset-2">
+                <div class="col-md-6 col-md-offset-2">
                 
                 @foreach($comments as $comment)
                 <a name="{{ $comment->id }}"></a>
@@ -251,6 +251,22 @@ theme_advanced_resizing : true,
                 
                 
                 </div>
+                
+                
+                
+    <div class="col-md-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">Реклама
+                </div>
+
+                <div class="panel-body">
+                @include("ads.adsense")
+                </div>
+            </div>
+                </div>
+                
+                
+                
             </div>
             
            

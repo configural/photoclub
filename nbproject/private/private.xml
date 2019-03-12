@@ -3,9 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/xampp/htdocs/photoclub/public/css/my.css</file>
             <file>file:/C:/xampp/htdocs/photoclub/app/Http/Controllers/PhotoController.php</file>
             <file>file:/C:/xampp/htdocs/photoclub/resources/views/stat.blade.php</file>
             <file>file:/C:/xampp/htdocs/photoclub/resources/views/photo.blade.php</file>
+            <file>file:/C:/xampp/htdocs/photoclub/resources/views/software.blade.php</file>
             <file>file:/C:/xampp/htdocs/photoclub/resources/views/books.blade.php</file>
             <file>file:/C:/xampp/htdocs/photoclub/app/Http/Controllers/HomeController.php</file>
             <file>file:/C:/xampp/htdocs/photoclub/resources/views/layouts/app.blade.php</file>
