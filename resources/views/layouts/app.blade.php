@@ -80,6 +80,15 @@ theme_advanced_resizing : true,
 	});
 </script>
 <!-- /TinyMCE -->
+
+
+<!-- Put this script tag to the <head> of your page -->
+<script type="text/javascript" src="https://vk.com/js/api/openapi.js?160"></script>
+
+<script type="text/javascript">
+  VK.init({apiId: 6897661, onlyWidgets: true});
+</script>
+
 </head>
 <body id="app-layout">
     <nav class="navbar navbar-default navbar-static-top navbar-inverse">

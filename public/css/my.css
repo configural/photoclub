@@ -5,6 +5,8 @@
 .no_avatar {height: 300px; width: 100%; display: block; background: #eee; text-align: center; padding-top: 140px;}
 .avatar {max-width: 100%; max-height: 400px;}
 .comment img {max-width: 100%;}
+.comment .reply-button {display: none;}
+.comment:hover .reply-button {display: inline-block; font-size: 12px; cursor: pointer;}
 textarea {min-height: 200px;}
 .panel img {max-width: 100%;}
 .photoStatus {color: #999}
