@@ -12,8 +12,12 @@
                 <div class="panel-heading"><h1>Загрузка фотографии</h1></div>
 
                 <div class="panel-body">
+@if ($limit >=10)
+<div class="alert alert-danger">    За прошедшие 10 дней Вы загрузили {{ $limit }} фотографий из 10 возможных. Ваш лимит временно исчерпан.</div>
                     
-                    
+@else  
+<div class="alert alert-success">За прошедшие 10 дней Вы загрузили {{ $limit }} фотографий из 10 возможных.</div>
+
 @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -50,7 +54,7 @@
 
                 </form>
 
-
+@endif
 
 
                 </div>

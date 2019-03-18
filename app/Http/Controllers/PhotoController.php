@@ -91,9 +91,11 @@ class PhotoController extends Controller
     }
     
     public function addPhoto() {
+        $limit = Photo::select()->where('created_at', '>=', \Carbon\Carbon::now()->addDays(-10))->where('user_id', Auth::user()->id)->count();
+       // dd($limit);
         
         $categories = Category::select('id', 'name')->where('active', 1)->get();
-        return view('addphoto', ['categories' => $categories]);
+        return view('addphoto', ['categories' => $categories, 'limit' => $limit]);
     }
     
     public function editPhoto(Request $request) {
