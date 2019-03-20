@@ -33,6 +33,7 @@
                 <div class="panel-body photobackground">
                 <center>
 
+                    
                    @if($next)
                     <a href="{{url('/')}}/photo/{{ $next->id }}" title="Щелкните для перехода к следующему фото">
                    @endif
@@ -41,6 +42,12 @@
                     @if($next)
                        </a>
                    @endif
+                   
+                   @if ($photo->fullsize)
+<br/><br/><p><a href="{{$photo->fullsize}}" target="_blank" rel="nofollow" class="btn btn-primary">Открыть полноразмерное изображение</a></p>
+@endif
+                   
+                   
                     <div class="photo-nav">
                         @if ($previous) 
                         <a href="{{url('/')}}/photo/{{ $previous->id }}" title="Предыдущее фото" class="btn btn-default"><i class="fa fa-chevron-left"></i> Назад </a> 

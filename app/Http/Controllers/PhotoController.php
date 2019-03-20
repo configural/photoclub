@@ -112,7 +112,8 @@ class PhotoController extends Controller
     public function storePhoto(Request $request) {
           $this->validate($request, [
               "name" => "required:max256",
-              "description" => "max:2048"
+              "description" => "max:2048",
+              "fullsize" => "url"
           ]);
           
           $data = $request->all();
@@ -129,7 +130,8 @@ class PhotoController extends Controller
     public function uploadPhoto(Request $request)     {
            $this->validate($request, [
            'name' => 'required|max:255',
-           'file' => 'required|file|image|max:16384'
+           'file' => 'required|file|image|max:16384',
+           'fullsize' => 'url'
            ]);
         
         if($request->isMethod('post')){
@@ -146,6 +148,7 @@ class PhotoController extends Controller
                 $photo->name = $request->name;
                 $photo->category_id = $request->category_id;
                 $photo->description = $request->description;
+                $photo->fullsize = $request->fullsize;
                 $photo->user_id = Auth::user()->id;
                 $photo->url = $newfile;
                // $photo->save();

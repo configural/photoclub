@@ -36,7 +36,9 @@
                     <p><label>Описание фотографии:</label>
                         <textarea name="description" class="form-control" placeholder="История, связанная с фотографией, условия съемки, настройки, использованная техника - все что угодно.">{{$photo->description}}</textarea>
                     </p>
-                    
+                    <p><label>Ссылка на полноразмерное изображение (на другом сервисе):</label>
+                        <br/>Если вас не устраивает ограничение на размер картинки в 1200 пикселей, вы можете указать ссылку на полноразмерное изображение на Flickr или другом сервисе. Под вашей работой появится ссылка для его просмотра в новом окне.<br/>
+                        <input name="fullsize" class="form-control" type="text" value="{{$photo->fullsize}}" placeholder="http://........./photo123456.jpg"></p>
                 
                     <input name="id" type="hidden" value="{{$photo->id}}">
                 {{ csrf_field() }}
