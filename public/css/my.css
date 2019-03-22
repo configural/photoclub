@@ -1,5 +1,5 @@
 .preview {max-width: 100%; max-height: 200px; border: 5px solid white;box-shadow: 2px 2px 12px #ccc; margin-bottom: 10px;}
-.preview-block {height: 320px; text-align: center;}
+.preview-block {height: 320px; text-align: center; border-bottom: 1px dashed #eee;   margin-bottom: 20px;}
 .photo {max-width: 100%;}
 .photo-description {display: block; box-sizing: border-box; color: black; max-width: 1200px; padding: 20px; text-align: center;}
 .no_avatar {height: 300px; width: 100%; display: block; background: #eee; text-align: center; padding-top: 140px;}
