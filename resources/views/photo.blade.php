@@ -25,7 +25,7 @@
                     
                     {{$photo->category->name}} / {{ $photo->name }}
                     
-                    <p class="pull-right"><i class="fa fa-calendar"></i> {{ $published_at }} &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-eye"></i> {{$photo->views}}&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-comments-o"></i> {{$comments->count()}}</p>
+                                         <p class="pull-right"> <i class="fa fa-calendar"></i> {{ $published_at }} </p>  
 
                 
                 </div>
@@ -43,26 +43,38 @@
                        </a>
                    @endif
                    
-                   @if ($photo->fullsize)
-<br/><br/><p><a href="{{$photo->fullsize}}" target="_blank" rel="nofollow" class="btn btn-primary">Открыть полноразмерное изображение</a></p>
-@endif
+                   
+<div class="container">
+<div class="row">
+    <div class="col-md-3">
+    @include('layouts.kot')
+    <p> Просмотры: {{$photo->views}}&nbsp;&nbsp;&nbsp;&nbsp; Комментарии: {{$comments->count()}}</p>
+    
+    </div>
+    <div class="col-md-6">
+
                    
                    
                     <div class="photo-nav">
                         @if ($previous) 
                         <a href="{{url('/')}}/photo/{{ $previous->id }}" title="Предыдущее фото" class="btn btn-default"><i class="fa fa-chevron-left"></i> Назад </a> 
                         @endif
-                        &nbsp;
+                    @if ($photo->fullsize)
+                         <a href="{{$photo->fullsize}}" target="_blank" rel="nofollow" class="btn btn-primary">Открыть полноразмерное изображение</a>
+                    @endif
                         @if ($next)                        
                         <a href="{{url('/')}}/photo/{{ $next->id }}" title="Следующее фото"  class="btn btn-default"> Вперед <i class="fa fa-chevron-right"></i></a>
                         @endif
                     </div>
 
-                     @if ($photo->description)
-                    <div class="photo-description" id="description">{!! $photo->description !!}</div>
+                    
+                    @if ($photo->description)
+                    <div class="photo-description" id="description">            
+                    {!! $photo->description !!}
+                    </div>
                     @endif
                     
-
+                    
                     
                     <small>
                      @if($photo->Model)   
@@ -96,15 +108,13 @@
                      @if($photo->Software)
                         <br/> ПО: {{$photo->Software}} 
                      @endif
+                     
+
+
+                     
                     </small>
                     
                                    <p>
-<!-- Put this div tag to the place, where the Like block will be -->
-<div id="vk_like"></div>
-<script type="text/javascript">
-VK.Widgets.Like("vk_like", {type: "button"});
-</script>
-                    </p>     
                     </center>
                     
                     @if(Auth::user())
@@ -118,10 +128,13 @@ VK.Widgets.Like("vk_like", {type: "button"});
 
 
                 </div>
+                </div>
              </div>
-        </div>
-    <!-- Комментарии -->
+            </div>
+        
     
+    <!-- Комментарии -->
+    <div class="container-fluid">
             <div class="row">
                 <div class="col-md-6 col-md-offset-2">
                 
@@ -225,7 +238,7 @@ VK.Widgets.Like("vk_like", {type: "button"});
            
         
     </div>
-</div>
+
 
 <script>
     function reply(id, name) {

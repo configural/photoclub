@@ -49,5 +49,7 @@ Route::get('user/{id}/{cat_id}', 'UserController@userPhotos');
 
 Route::get('/camera/{model}', 'PhotoController@cameraPhoto');
 
+Route::get('/ajax/rec', 'Ajax\RecController@rec')->middleware('auth');
+
 //Route::get('/rebuild', 'PhotoController@rebuildPreviews');
 //Route::get('/rebuild_exif', 'PhotoController@rebuildExif');

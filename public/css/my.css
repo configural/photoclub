@@ -1,7 +1,7 @@
 .preview {max-width: 100%; max-height: 200px; border: 5px solid white;box-shadow: 2px 2px 12px #ccc; margin-bottom: 10px;}
 .preview-block {height: 320px; text-align: center; border-bottom: 1px dashed #eee;   margin-bottom: 20px;}
 .photo {max-width: 100%;}
-.photo-description {display: block; box-sizing: border-box; color: black; max-width: 1200px; padding: 20px; text-align: center;}
+.photo-description {display: block; box-sizing: border-box; color: black; max-width: 1200px; padding: 20px; text-align: justify;}
 .no_avatar {height: 300px; width: 100%; display: block; background: #eee; text-align: center; padding-top: 140px;}
 .avatar {max-width: 100%; max-height: 400px;}
 .comment img {max-width: 100%;}
@@ -19,3 +19,9 @@ textarea {min-height: 200px;}
 .bar {background: orange; display: table-cell;}
 .height50 {margin: 50px 0px 50px 0px;}
 .adsense {margin-bottom: 20px;}
+.kot_table {border-spacing: 10px 10px; width: 100%; margin-bottom: 20px;}
+.kot_number {color: #000; padding: 0px; font-size: 20px; text-align: center;}
+.kot_button {padding: 0px 10px 0px 10px; color: black; cursor: pointer; text-align: center;}
+.kot_label {padding: 2px; text-align: center; font-size: 12px;}
+.bukv {color: yellow; font-size: 14px;}
+.kot_border {border-left: 1px solid #fff;}

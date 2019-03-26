@@ -10,6 +10,7 @@ use App\Photo;
 use App\User;
 use App\Comment;
 use App\Category;
+use App\Recomendation;
 use claviska\SimpleImage;
 use Carbon\Carbon;
 
@@ -22,6 +23,9 @@ class PhotoController extends Controller
     
     $photo = Photo::select()
            ->where('id', Request()->id)->first();
+    $recK = Recomendation::select('K')->where('user_id', Auth::user()->id)->where('photo_id', $photo->id)->where('k', 1)->count();
+    $recO = Recomendation::select('O')->where('user_id', Auth::user()->id)->where('photo_id', $photo->id)->where('o', 1)->count();
+    $recT = Recomendation::select('T')->where('user_id', Auth::user()->id)->where('photo_id', $photo->id)->where('t', 1)->count();
     
     $published_at = $photo->created_at->format('d.m.Y H:i');
     
@@ -51,8 +55,9 @@ class PhotoController extends Controller
     $comments = Comment::select()
                 ->where('photo_id', Request()->id)->orderby('id')->get();
     
-    $photo->views += 1;
-    $photo->save();
+    if (Auth::user()->id != $photo->user_id) 
+        {$photo->views += 1;  
+        $photo->save();}
     
     $image = new SimpleImage('photos/' . $photo->user_id . '/'.$photo->url);
     
@@ -74,7 +79,7 @@ class PhotoController extends Controller
         
 
     
-    return view('photo', ['photo' => $photo,  'comments' => $comments,  'next' => $next, 'previous' => $previous, 'published_at' => $published_at]);
+    return view('photo', ['photo' => $photo,  'comments' => $comments,  'next' => $next, 'previous' => $previous, 'published_at' => $published_at, 'recK' => $recK, 'recO' => $recO, 'recT' => $recT,  ]);
 
     }
     
