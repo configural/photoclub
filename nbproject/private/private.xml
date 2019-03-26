@@ -5,12 +5,17 @@
         <group>
             <file>file:/C:/xampp/htdocs/photoclub/app/Photo.php</file>
             <file>file:/C:/xampp/htdocs/photoclub/app/Http/Controllers/Ajax/RecController.php</file>
-            <file>file:/C:/xampp/htdocs/photoclub/app/Recomendation.php</file>
+            <file>file:/C:/xampp/htdocs/photoclub/app/Http/Controllers/PhotoController.php</file>
+            <file>file:/C:/xampp/htdocs/photoclub/resources/views/rules.blade.php</file>
             <file>file:/C:/xampp/htdocs/photoclub/resources/views/layouts/kot.blade.php</file>
             <file>file:/C:/xampp/htdocs/photoclub/database/migrations/2019_03_22_051712_kot.php</file>
-            <file>file:/C:/xampp/htdocs/photoclub/database/migrations/2014_10_12_000000_create_users_table.php</file>
             <file>file:/C:/xampp/htdocs/photoclub/database/factories/ModelFactory.php</file>
-            <file>file:/C:/xampp/htdocs/photoclub/app/Http/routes.php</file>
+            <file>file:/C:/xampp/htdocs/photoclub/app/Http/Controllers/Controller.php</file>
+            <file>file:/C:/xampp/htdocs/photoclub/public/css/my.css</file>
+            <file>file:/C:/xampp/htdocs/photoclub/app/Recomendation.php</file>
+            <file>file:/C:/xampp/htdocs/photoclub/resources/views/photo.blade.php</file>
+            <file>file:/C:/xampp/htdocs/photoclub/database/migrations/2014_10_12_000000_create_users_table.php</file>
+            <file>file:/C:/xampp/htdocs/photoclub/resources/views/welcome.blade.php</file>
         </group>
     </open-files>
 </project-private>

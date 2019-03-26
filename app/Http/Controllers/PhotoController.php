@@ -23,9 +23,9 @@ class PhotoController extends Controller
     
     $photo = Photo::select()
            ->where('id', Request()->id)->first();
-    $recK = Recomendation::select('K')->where('user_id', Auth::user()->id)->where('photo_id', $photo->id)->where('k', 1)->count();
-    $recO = Recomendation::select('O')->where('user_id', Auth::user()->id)->where('photo_id', $photo->id)->where('o', 1)->count();
-    $recT = Recomendation::select('T')->where('user_id', Auth::user()->id)->where('photo_id', $photo->id)->where('t', 1)->count();
+    $recK = Recomendation::select('K')->where('photo_id', $photo->id)->where('k', 1)->count();
+    $recO = Recomendation::select('O')->where('photo_id', $photo->id)->where('o', 1)->count();
+    $recT = Recomendation::select('T')->where('photo_id', $photo->id)->where('t', 1)->count();
     
     $published_at = $photo->created_at->format('d.m.Y H:i');
     

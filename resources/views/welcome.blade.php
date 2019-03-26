@@ -41,7 +41,6 @@
         
         <div class="col-sm-10">
             
-            <div class="alert alert-info">Изменен п.6 <a href="{{ url('/rules') }}">Правил Фотоклуба</a>. Введено ограничение на постинг фотографий - 10 фото за 10 дней.</div>
             <div class="panel panel-default">
                 <div class="panel-heading">Фотографии</div>
 
