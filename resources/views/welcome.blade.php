@@ -31,6 +31,17 @@
                 @endforeach
                 </div>
             </div>
+            
+            <div class="panel panel-default">
+                <div class="panel-heading">Ссылки
+                </div>
+
+                <div class="panel-body">
+                <p><a href="http://www.artem-kashkanov.ru"  target="_blank">Фотосайт Артема Кашканова</a></p>
+                <p><a href="http://www.neformat.info" target="_blank" rel="nofollow">Фотофорум Неформат</a></p>
+
+                </div>
+            </div>
        
                 @include("ads.adsense")
             </div>
