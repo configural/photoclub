@@ -55,7 +55,7 @@ class PhotoController extends Controller
     $comments = Comment::select()
                 ->where('photo_id', Request()->id)->orderby('id')->get();
     
-    if (Auth::user()->id != $photo->user_id) 
+    if (!Auth::user() or Auth::user()->id != $photo->user_id) 
         {$photo->views += 1;  
         $photo->save();}
     

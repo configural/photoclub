@@ -47,7 +47,9 @@
 <div class="container">
 <div class="row">
     <div class="col-md-3">
-    @include('layouts.kot')
+        
+            @include('layouts.kot')
+        
     <p> Просмотры: {{$photo->views}}&nbsp;&nbsp;&nbsp;&nbsp; Комментарии: {{$comments->count()}}</p>
     
     </div>
