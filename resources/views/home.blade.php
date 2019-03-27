@@ -44,6 +44,11 @@
                     
                     @endforeach
 
+                
+                
+                               <center>{{ $photos->links() }}</center>
+
+                
                 </div>
             </div>
 
