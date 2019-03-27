@@ -16,6 +16,8 @@
                         @else
                         id{{ $user->id }}
                         @endif
+                        
+                        <span class="status{{$user->status}}">{{ $user->getStatus->name }}</span>
                     
                         
                 </div>
@@ -26,7 +28,8 @@
                         @else 
                         <div class="no_avatar">Нет аватара</div>
                         @endif
-                    
+
+                        
                 
                         
                 

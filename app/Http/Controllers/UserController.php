@@ -52,7 +52,7 @@ class UserController extends Controller
         
         //dump($session_user_id);
         //dump($session_cat_id);
-        
+       // dump($user->status()->id);
         return view('user', ['user' => $user, 'photo' => $photo, 'cats_list'=>$cats_list]);
 
     }

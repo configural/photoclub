@@ -34,10 +34,9 @@ class User extends Authenticatable
     return $this->hasMany('\App\Photo', 'id', 'user_id');
 }  
 
-public function status() {
-    return $this->hasOne('\App\Status');
-}
+        public function getStatus() {
+            return $this->hasOne('\App\Status', 'id', 'status');
+        }
 
 }
-
 
