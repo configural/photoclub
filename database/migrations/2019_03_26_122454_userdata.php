@@ -13,6 +13,15 @@ class Userdata extends Migration
     public function up()
     {
         //
+                    
+                    Schema::create('statuses', function (Blueprint $table) {
+                    $table->increments('id');
+                    $table->string('name');
+                    });
+        
+                    Schema::table('users', function(Blueprint $table) {
+                    $table->integer('status')->default('1');
+                    });
     }
 
     /**
@@ -23,5 +32,11 @@ class Userdata extends Migration
     public function down()
     {
         //
+        
+            Schema::drop('statuses');
+            Schema::table('users', function(Blueprint $table) {
+            $table->dropColumn('status');
+            
+        });
     }
 }
