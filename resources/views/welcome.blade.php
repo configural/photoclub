@@ -74,6 +74,7 @@
                     </a>
                     <div class="photoStatus"><i class="fa fa-eye"></i> {{ $photo->views }}
                     &nbsp;&nbsp;&nbsp;<i class="fa fa-comments-o"></i> {{ $photo->commentsCount() }}
+                    &nbsp;&nbsp;&nbsp;<i class="fa fa-thumbs-up"></i> {{ $photo->recCount() }}
                     </div>
                     </div>
 

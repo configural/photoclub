@@ -36,6 +36,7 @@
                                 
                                 <p>Просмотров: {{$photo->views}}</p>
                                 <p>Комментариев: {{$photo->commentsCount()}}</p>
+                                <p>Рекомендаций: {{$photo->recCount()}}</p>
                                 
                                 <p><a href="{{url('editphoto')}}/{{$photo->id}}" class="btn btn-default">Редактировать</a></p>
                         </div>

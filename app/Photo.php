@@ -33,4 +33,15 @@ class Photo extends Model
             return $this->hasMany('\App\Comment')->wherePhotoId($this->id)->count();
         }
         
+        public function recCount() {
+            $K = $this->hasMany('\App\Recomendation')->wherePhotoId($this->id)->whereK(1)->count();
+            $O = $this->hasMany('\App\Recomendation')->wherePhotoId($this->id)->whereO(1)->count();
+            $T = $this->hasMany('\App\Recomendation')->wherePhotoId($this->id)->whereT(1)->count();
+            
+            return $K + $O + $T;
+            
+            
+        }
+        
+        
 }

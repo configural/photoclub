@@ -85,6 +85,7 @@
                    <a href="{{ url('/') }}/photo/{{ $p->id }}"><img src="{{ url('/') }}/photos/{{$p->user_id}}/_{{$p->url}}" class="preview"></a>
                    <div class="photoStatus"><i class="fa fa-eye"></i> {{$p->views}}
                        &nbsp;&nbsp;&nbsp;<i class="fa fa-comments-o"></i> {{$p->commentsCount()}}
+                       &nbsp;&nbsp;&nbsp;<i class="fa fa-thumbs-up"></i> {{$p->recCount()}}
                        
                    </div>
                    </div>
