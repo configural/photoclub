@@ -21,6 +21,7 @@ Route::get('/guide', function() { return view('guide');});
 Route::get('/books', function() { return view('books');});
 Route::get('/software', function() { return view('software');});
 Route::get('/contacts', function() { return view('contacts');});
+Route::get('/neformat', 'XMLController@neformat');
 //Route::get('/migrate', function() { return view('migrate');});
 
 

@@ -1,15 +1,18 @@
 @extends('layouts.app')
 
 @section('title')
-только красивые фотографии!
+@if ($cat_name)
+{{ $cat_name }} - 
+@endif
+Фотоклуб Артема Кашканова
 @endsection
 
 @section('content')
 <div class="container-fluid">
     
     <div class="jumbotron">
-        <h3>Добро пожаловать в Фотоклуб!</h3>
-        Цель проекта – конструктивное общение на фототемы, обсуждение присланных фотографий. Нам без разницы, какой у вас фотоаппарат и объектив. Если вам есть, что показать – присоединяйтесь, будем рады вас видеть среди участников Фотоклуба!
+        <h3>{{ $cat_name }}</h3>
+        {{ $cat_description }}
     </div>
     
 </div>
@@ -53,8 +56,8 @@
         <div class="col-sm-10">
             
             <div class="panel panel-default">
-                <div class="panel-heading">Фотографии</div>
-
+                <div class="panel-heading">{{ $cat_name }}</div>
+                    
                 <div class="panel-body">
 
                     @foreach($photos as $photo)
