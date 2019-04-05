@@ -8,7 +8,7 @@
 .comment .reply-button {display: none;}
 .comment:hover .reply-button {display: inline-block; font-size: 12px; cursor: pointer;}
 textarea {min-height: 200px;}
-.panel img {max-width: 100%;}
+.panel img {max-width: 100%; height: auto;}
 .photoStatus {color: #999}
 .photobackground {background: #ccc; color: white; padding: 20px;}
 .photobackground img {border: #eee solid 1px;}
