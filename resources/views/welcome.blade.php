@@ -45,11 +45,23 @@
 
                 </div>
             </div>
-       
+{{--
+           <div class="panel panel-default">
+                <div class="panel-heading">Неформат
+                </div>
+
+                <div class="panel-body">
+ 
+                @include('widgets.neformat')  
+                
+                </div>
+            </div>
+            --}}
+            
                 @include("ads.adsense")
             </div>
             
-        
+
 
 
         

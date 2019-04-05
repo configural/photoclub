@@ -13,13 +13,22 @@ class XMLController extends Controller
         $url = "http://neformat.info/feed.php";
         $raw = file_get_contents($url);
         
-        $raw = strip_tags($raw, "<author>,<link>");
+        $raw = str_replace("<![CDATA[", "", $raw);
+        $raw = str_replace("]]>", "", $raw);
         
-       dump($raw);
+        
+        
+        $raw = strip_tags($raw, "<author>,<link>,<category>,<content>,<title>,<published>,<updated>,<id>,<entry>,<xml>,<feed>");
+        
+      //dump($raw);
                 
-       // $xml = simplexml_load_string($raw);
+        $xml = simplexml_load_string($raw);
+        $json = json_encode($xml);
+        $array = json_decode($json,TRUE);
+
+        dump($array);
               
-        dump($xml);
+        return view("widgets.neformat", ['xml' => $array['entry']]);
     }
     
 }
