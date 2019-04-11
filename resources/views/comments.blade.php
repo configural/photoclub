@@ -7,7 +7,7 @@
 
 @section('content')
 <div class="container-fluid">
-
+                        
     <h1>Комментарии к фотографиям</h1>
     
             

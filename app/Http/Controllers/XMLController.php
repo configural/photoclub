@@ -26,7 +26,7 @@ class XMLController extends Controller
         $json = json_encode($xml);
         $array = json_decode($json,TRUE);
 
-        dump($array);
+       // dump($array);
               
         return view("widgets.neformat", ['xml' => $array['entry']]);
     }

@@ -45,18 +45,16 @@
 
                 </div>
             </div>
-{{--
+
            <div class="panel panel-default">
                 <div class="panel-heading">Неформат
                 </div>
 
                 <div class="panel-body">
  
-                @include('widgets.neformat')  
-                
                 </div>
             </div>
-            --}}
+
             
                 @include("ads.adsense")
             </div>
@@ -100,7 +98,22 @@
                 </div>
 
                <center>{{ $photos->links() }}</center>
+               
+    
+               
             </div>
+            
+                <div class="panel panel-default">
+                    <div class="panel panel-heading">Форум "Неформат" - прямой эфир</div>
+                    <div class="panel panel-body">
+                        @php
+                        echo file_get_contents(url('/').'/neformat');
+                        @endphp
+                    </div>
+                </div>
+            
+            
+    
     </div>
         </div>
     </div>
