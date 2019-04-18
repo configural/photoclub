@@ -45,16 +45,6 @@
 
                 </div>
             </div>
-
-           <div class="panel panel-default">
-                <div class="panel-heading">Неформат
-                </div>
-
-                <div class="panel-body">
- 
-                </div>
-            </div>
-
             
                 @include("ads.adsense")
             </div>
@@ -102,7 +92,10 @@
     
                
             </div>
-            
+                            
+            @include("ads.adsense")
+                            
+                            
                 <div class="panel panel-default">
                     <div class="panel panel-heading">Форум "Неформат" - прямой эфир</div>
                     <div class="panel panel-body">
