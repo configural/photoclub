@@ -10,7 +10,7 @@
 @section('content')
 <div class="container-fluid">
     
-    <div class="jumbotron">
+    <div class="jumbotron traur">
         <h3>{{ $cat_name }}</h3>
         {{ $cat_description }}
     </div>
