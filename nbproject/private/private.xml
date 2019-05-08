@@ -3,23 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/photoclub/app/Photo.php</file>
-            <file>file:/C:/xampp/htdocs/photoclub/config/app.php</file>
-            <file>file:/C:/xampp/htdocs/photoclub/app/Http/Controllers/Ajax/RecController.php</file>
-            <file>file:/C:/xampp/htdocs/photoclub/app/Http/Controllers/PhotoController.php</file>
-            <file>file:/C:/xampp/htdocs/photoclub/resources/views/rules.blade.php</file>
-            <file>file:/C:/xampp/htdocs/photoclub/config/auth.php</file>
-            <file>file:/C:/xampp/htdocs/photoclub/config/view.php</file>
-            <file>file:/C:/xampp/htdocs/photoclub/resources/views/layouts/kot.blade.php</file>
-            <file>file:/C:/xampp/htdocs/photoclub/database/migrations/2019_03_22_051712_kot.php</file>
-            <file>file:/C:/xampp/htdocs/photoclub/database/factories/ModelFactory.php</file>
-            <file>file:/C:/xampp/htdocs/photoclub/app/Http/Controllers/Controller.php</file>
-            <file>file:/C:/xampp/htdocs/photoclub/public/css/my.css</file>
-            <file>file:/C:/xampp/htdocs/photoclub/app/Recomendation.php</file>
-            <file>file:/C:/xampp/htdocs/photoclub/resources/views/photo.blade.php</file>
-            <file>file:/C:/xampp/htdocs/photoclub/.env</file>
-            <file>file:/C:/xampp/htdocs/photoclub/database/migrations/2014_10_12_000000_create_users_table.php</file>
-            <file>file:/C:/xampp/htdocs/photoclub/resources/views/welcome.blade.php</file>
+            <file>file:/C:/OSPanel/domains/photoclub/app/Http/Controllers/Controller.php</file>
+            <file>file:/C:/OSPanel/domains/photoclub/app/Http/Controllers/PhotoController.php</file>
+            <file>file:/C:/OSPanel/domains/photoclub/resources/views/photo.blade.php</file>
+            <file>file:/C:/OSPanel/domains/photoclub/resources/views/comments.blade.php</file>
+            <file>file:/C:/OSPanel/domains/photoclub/app/Photo.php</file>
+            <file>file:/C:/OSPanel/domains/photoclub/resources/views/widgets/neformat.blade.php</file>
+            <file>file:/C:/OSPanel/domains/photoclub/app/Http/Controllers/HomeController.php</file>
+            <file>file:/C:/OSPanel/domains/photoclub/resources/views/welcome.blade.php</file>
+            <file>file:/C:/OSPanel/domains/photoclub/app/Http/Controllers/XMLController.php</file>
         </group>
     </open-files>
 </project-private>
