@@ -208,14 +208,14 @@ class PhotoController extends Controller
         $photo->save();
                 ///
                 
-                if ($image->getHeight()>1200 or $image->getWidth()>1200) {
-                    $image->bestFit(1200, 1200);
+                if ($image->getHeight()>1440 or $image->getWidth()>1440) {
+                    $image->bestFit(1440, 1440);
                 }
                 $image->toFile($dst,null,90);
                 
                 $image->fromFile($dst);
                 $image->bestFit(300,300);
-                $image->toFile($dst1,null,90);
+                $image->toFile($dst1,null,80);
                 
                 return redirect('home');
             }
