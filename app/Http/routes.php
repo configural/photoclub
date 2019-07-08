@@ -48,10 +48,17 @@ Route::get('/users', 'StatController@ourStat');
 Route::get('user/{id}', 'UserController@userPhotos');
 Route::get('user/{id}/{cat_id}', 'UserController@userPhotos');
 
-
 Route::get('/camera/{model}', 'PhotoController@cameraPhoto');
 
+Route::get('/articles/{id}', 'ArticleController@Show');
+Route::get('/addarticle', 'ArticleController@Add')->middleware('auth');
+Route::post('/addarticle', 'ArticleController@Store')->middleware('auth');
+Route::get('/articles/{id}/edit', 'ArticleController@Edit')->middleware('auth');
+Route::post('/articles/{id}/edit', 'ArticleController@Store')->middleware('auth');
+
+
 Route::get('/ajax/rec', 'Ajax\RecController@rec')->middleware('auth');
+
 
 //Route::get('/rebuild', 'PhotoController@rebuildPreviews');
 //Route::get('/rebuild_exif', 'PhotoController@rebuildExif');

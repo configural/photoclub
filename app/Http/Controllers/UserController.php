@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\User;
 use App\Photo;
 use App\Category;
+use App\Article;
 use Auth;
 use DB;
 use claviska\SimpleImage;
@@ -21,7 +22,11 @@ class UserController extends Controller
     public function userPhotos (Request $request) {
 
         $user = User::where('id', $request->id)->first();
-
+        $articles = Article::select('id', 'name', 'description')
+                ->where('user_id', $request->id)
+                ->where('active', 1)
+                ->get();
+        
         $cats_list = DB::table('categories')
                 ->leftjoin('photos', 'photos.category_id', '=', 'categories.id')
                 ->select('categories.name', 'categories.id')
@@ -53,7 +58,7 @@ class UserController extends Controller
         //dump($session_user_id);
         //dump($session_cat_id);
        // dump($user->status()->id);
-        return view('user', ['user' => $user, 'photo' => $photo, 'cats_list'=>$cats_list]);
+        return view('user', ['user' => $user, 'photo' => $photo, 'cats_list'=>$cats_list, 'articles' => $articles]);
 
     }
 

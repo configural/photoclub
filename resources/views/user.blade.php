@@ -68,6 +68,24 @@
         
         
         <div class="col-md-9">
+
+               @if (count($articles))
+            
+                        <div class="panel panel-default">
+                        <div class="panel-heading">Мои статьи</div>
+
+                        <div class="panel-body">
+                            
+                            @foreach($articles as $a) 
+                            <a href="{{url('/')}}/articles/{{$a->id}}">{{ $a->name }}</a> {!! $a->description!!}
+                            @endforeach
+                            
+                            
+                        </div>
+                        </div>
+               @endif
+            
+            
             <div class="panel panel-default">
                 <div class="panel-heading">
                 Фотографии

@@ -6,6 +6,7 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\User;
 use App\Photo;
+use App\Article;
 use DB;
 use Auth;
 
@@ -70,6 +71,7 @@ class HomeController extends Controller
     {
            
            $photos = Photo::select()->where('user_id', Auth::user()->id)->orderby('id', 'desc')->paginate(20);
+           $articles = Article::select('id', 'name', 'description')->where('user_id', Auth::user()->id)->paginate(5);
            $user = User::find(Auth::user()->id);
            
            session(['user_id' => Auth::user()->id]);
@@ -79,7 +81,7 @@ class HomeController extends Controller
            
           // dump($session_user_id);
            
-           return view('home', ['photos' => $photos, 'user' => $user]);
+           return view('home', ['photos' => $photos, 'articles' => $articles,  'user' => $user]);
            
     }
 

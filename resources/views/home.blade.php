@@ -11,6 +11,21 @@
             @include('layouts.usermenu')
             </div>
         <div class="col-md-9">
+                        <div class="panel panel-default">
+                        <div class="panel-heading">Мои статьи</div>
+
+                        <div class="panel-body">
+                            
+                            @foreach($articles as $a) 
+                            <a href="{{url('/')}}/articles/{{$a->id}}">{{ $a->name }}</a> {!! $a->description!!}
+                            @endforeach
+                            
+                            <a href="{{url('/addarticle')}}" class="btn btn-lg btn-primary">Написать статью</a>
+                            
+                        </div>
+                        </div>
+            
+            
             <div class="panel panel-default">
                 <div class="panel-heading">Мои фотографии</div>
 
