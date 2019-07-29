@@ -120,6 +120,7 @@ theme_advanced_resizing : true,
                     <li><a href="{{ url('/software') }}">Программы для фото</a></li>
                     
                     <li><a href="{{ url('/contacts') }}">Контакты</a></li>
+                    <li><a href="{{ url('/donate') }}"><i class="fa fa-money" style="color: yellow"></i> Поддержать проект</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
