@@ -23,6 +23,7 @@ class PhotoController extends Controller
     
     $photo = Photo::select()
            ->where('id', Request()->id)->first();
+    
     $recK = Recomendation::select('K')->where('photo_id', $photo->id)->where('k', 1)->count();
     $recO = Recomendation::select('O')->where('photo_id', $photo->id)->where('o', 1)->count();
     $recT = Recomendation::select('T')->where('photo_id', $photo->id)->where('t', 1)->count();
@@ -77,9 +78,9 @@ class PhotoController extends Controller
 
    if ($photo->ExposureProgram) $photo->ExposureProgram = $exposureModes[$photo->ExposureProgram];
         
-
+   $critic_levels = ["Отрицательное. Пожалуйста, не пишите негативных комментариев!", "Автор готов к конструктивному общению. Если фото не вызвало эмоций - лучше ничего не пишите.", "Автор хочет критики и гарантирует адекватную реакцию на негативные комментарии."];
     
-    return view('photo', ['photo' => $photo,  'comments' => $comments,  'next' => $next, 'previous' => $previous, 'published_at' => $published_at, 'recK' => $recK, 'recO' => $recO, 'recT' => $recT,  ]);
+    return view('photo', ['photo' => $photo,  'comments' => $comments,  'next' => $next, 'previous' => $previous, 'published_at' => $published_at, 'recK' => $recK, 'recO' => $recO, 'recT' => $recT, 'critic_levels' => $critic_levels ]);
 
     }
     
@@ -204,7 +205,8 @@ class PhotoController extends Controller
         $photo->ISOSpeedRatings = $exif['ISOSpeedRatings'];
         $photo->ExposureProgram = $exif['ExposureProgram'];
         $photo->Software = $exif['Software'];   
-        
+        $photo->critic_level = $request->critic_level;
+        //dump($photo);
         $photo->save();
                 ///
                 
@@ -217,7 +219,7 @@ class PhotoController extends Controller
                 $image->bestFit(300,300);
                 $image->toFile($dst1,null,80);
                 
-                return redirect('home');
+               return redirect('home');
             }
         }
         

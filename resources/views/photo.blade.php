@@ -10,7 +10,7 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-12">
+        
             <div class="panel panel-default">
                 <div class="panel-heading">
                 
@@ -47,16 +47,13 @@
 <div class="container">
 <div class="row">
     <div class="col-md-3">
-        
             @include('layouts.kot')
-        
-    <p> Просмотры: {{$photo->views}}&nbsp;&nbsp;&nbsp;&nbsp; Комментарии: {{$comments->count()}}</p>
+        <p> Просмотры: {{$photo->views}}&nbsp;&nbsp;&nbsp;&nbsp; Комментарии: {{$comments->count()}}</p>
     
     </div>
+    
     <div class="col-md-6">
-
-                   
-                   
+    
                     <div class="photo-nav">
                         @if ($previous) 
                         <a href="{{url('/')}}/photo/{{ $previous->id }}" title="Предыдущее фото" class="btn btn-default"><i class="fa fa-chevron-left"></i> Назад </a> 
@@ -68,16 +65,13 @@
                         <a href="{{url('/')}}/photo/{{ $next->id }}" title="Следующее фото"  class="btn btn-default"> Вперед <i class="fa fa-chevron-right"></i></a>
                         @endif
                     </div>
-
                     
-                    @if ($photo->description)
                     <div class="photo-description" id="description">            
+                    @if ($photo->description)
                     {!! $photo->description !!}
-                    </div>
                     @endif
-                    
-                    
-                    
+                    </div>
+
                     <small>
                      @if($photo->Model)   
                         Камера: {{ $photo->Model }}<br/> 
@@ -110,29 +104,26 @@
                      @if($photo->Software)
                         <br/> ПО: {{$photo->Software}} 
                      @endif
-                     
-
-
-                     
                     </small>
-                    
-                                   <p>
-                    </center>
-                    
                     @if(Auth::user())
                     @if (Auth::user()->id == $photo->user_id || Auth::user()->admin)
                     <p><center><a href="{{url('editphoto')}}/{{$photo->id}}" class="btn btn-default"><i class="fa fa-gear"></i> Редактировать описание</a></center></p>
                     @endif
                     @endif
+    </div>                    
+    <div class="col-md-3 photo-description">
+        <p><strong>Отношение автора к критике:</strong></p>
+        <p>{{ $critic_levels[$photo->critic_level] }}</p>
+    </div>               
+                        
+    </div>
+
+
+
+</div></div></div>
                     
-                   </div>
 
 
-
-                </div>
-                </div>
-             </div>
-            </div>
         
     
     <!-- Комментарии -->
