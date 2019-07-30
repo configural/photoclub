@@ -11,7 +11,9 @@
             @include('layouts.usermenu')
             </div>
         <div class="col-md-9">
-                        <div class="panel panel-default">
+                       
+            @if (Auth::user()->status == 4)            
+            <div class="panel panel-default">
                         <div class="panel-heading">Мои статьи</div>
 
                         <div class="panel-body">
@@ -24,6 +26,7 @@
                             
                         </div>
                         </div>
+            @endif
             
             
             <div class="panel panel-default">
