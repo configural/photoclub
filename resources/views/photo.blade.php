@@ -196,8 +196,6 @@
                          </p>
 
                             <form name="addcomment" action="{{ url('/addcomment')}}" method="post">
-
-                                
                                 <p><textarea name="text" class="form-control coment-text" id="txtComment"></textarea></p>
                                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                                 <input type="hidden" name="photo_id" value="{{ $photo->id }}">
@@ -241,7 +239,9 @@
 <script>
     function reply(id, name) {
         
-        old_html=tinyMCE.activeEditor.getContent();
+        old_html=tinyMCE.activeEditor.getContent({format: ''});
+        
+        
         tinyMCE.activeEditor.setContent( old_html + name + ":&nbsp; ");
         
         tinyMCE.activeEditor.focus();
