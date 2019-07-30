@@ -9,9 +9,9 @@
 <lastBuildDate>Tue, 30 Jul 2019 10:39:17 +0300</lastBuildDate>
 @foreach($photo as $p)
 <item>
-<title><![CDATA[{{ $p->user->name}}:  {{ $p->name}}]]></title>
+<title>{{ $p->user->name}}: {{ $p->name}}</title>
 <link>http://club.artem-kashkanov.ru/photo/{{$p->id}}</link>
-<description><![CDATA[Описание фотографии]]</description>
+<description>Описание фотографии</description>
 <pubDate>{{$p->created_at->format(DateTime::RSS)}}</pubDate>
 </item>
 @endforeach
