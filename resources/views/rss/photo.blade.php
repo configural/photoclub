@@ -11,7 +11,7 @@
 <item>
 <title><![CDATA[{{ $p->user->name}}:  {{ $p->name}}]]></title>
 <link>http://club.artem-kashkanov.ru/photo/{{$p->id}}</link>
-<description><![CDATA[img src=http://club.artem-kashkanov.ru/photos/{{$p->user_id}}/{{$p->url}}]]</description>
+<description><![CDATA[Описание фотографии]]</description>
 <pubDate>{{$p->created_at->format(DateTime::RSS)}}</pubDate>
 </item>
 @endforeach
