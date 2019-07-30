@@ -41,7 +41,7 @@ class XMLController extends Controller
                 where('deleted_at', NULL)->
                 where('created_at', '>=', Carbon::now()->subMonth())->
                 orderby('id', 'desc')->get();
-               dd($photo);
+               
         
         return view("rss.photo", ['photo' => $photo]);
         
