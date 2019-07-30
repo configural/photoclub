@@ -11,7 +11,7 @@
 <item>
 <title>{{ $p->user->name}}: {{ $p->name}}</title>
 <link>http://club.artem-kashkanov.ru/photo/{{$p->id}}</link>
-<description>&lt;img src='http://club.artem-kashkanov.ru/photos/{{$p->user_id}}/{{$p->id}}'&gt;</description>
+<description>&lt;img src='http://club.artem-kashkanov.ru/photos/{{$p->user_id}}/{{$p->url}}'&gt;</description>
 <pubDate>{{$p->created_at->format(DateTime::RSS)}}</pubDate>
 </item>
 @endforeach
