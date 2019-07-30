@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Photo;
 
 class XMLController extends Controller
 {
@@ -30,5 +31,15 @@ class XMLController extends Controller
               
         return view("widgets.neformat", ['xml' => $array['entry']]);
     }
+    
+    
+    
+    public function rssPhoto() {
+        $photo = Photo::select()->where('deleted_at', NULL)->orderby('id', 'desc')->limit(10)->get();
+        return view("rss.photo", ['photo' => $photo]);
+        
+        
+    }
+    
     
 }

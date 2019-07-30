@@ -23,6 +23,9 @@ Route::get('/software', function() { return view('software');});
 Route::get('/contacts', function() { return view('contacts');});
 Route::get('/donate', function() { return view('donate');});
 Route::get('/neformat', 'XMLController@neformat');
+
+
+Route::get('/rss', 'XMLController@rssPhoto');
 //Route::get('/migrate', function() { return view('migrate');});
 
 
