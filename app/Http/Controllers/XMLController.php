@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Photo;
+use App\Recomendation;
+use Carbon\Carbon;
 
 class XMLController extends Controller
 {
@@ -35,7 +37,12 @@ class XMLController extends Controller
     
     
     public function rssPhoto() {
-        $photo = Photo::select()->where('deleted_at', NULL)->orderby('id', 'desc')->limit(10)->get();
+        $photo = Photo::select()->
+                where('deleted_at', NULL)->
+                where('created_at', '>=', Carbon::now()->subMonth())->
+                orderby('id', 'desc')->get();
+               dd($photo);
+        
         return view("rss.photo", ['photo' => $photo]);
         
         
