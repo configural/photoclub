@@ -12,10 +12,7 @@
       <title><![CDATA["{{ $p->name}}"]]></title>
       <link>http://club.artem-kashkanov.ru/photo/{{$p->id}}</link>
       <description><![CDATA["{{$p->description}}"]]></description>
-      <content:encoded><![CDATA[""]]></content:encoded>
-      <image>
-        <url>http://club.artem-kashkanov.ru/photos/{{$p->user_id}}/_{{$p->url}}</url>
-      </image>
+      <content:encoded><![CDATA[<img src="http://club.artem-kashkanov.ru/photos/{{$p->user_id}}/{{$p->url}}">]]</content:encoded>
       <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">{{$p->user->name}}</dc:creator>
       <pubDate>{{$p->created_at->format(DateTime::RSS)}}</pubDate>
     </item>
