@@ -61,9 +61,10 @@
                                         <p>
                         <fieldset class="height50">
                             <legend>Отношение к критике</legend>
-                                <p><input name="critic_level" type="radio" value="2" required> <strong>Очень хочу критики!</strong> Разрешаю критиковать работу и придираться ко всем мелочам. Гарантирую адекватную реакцию на негативные комментарии.</p>
-                                <p><input name="critic_level" type="radio" value="1"> <strong>Нейтральное отношение к критике</strong>. Просто интересно мнение со стороны, готов(а) к конструктивному общению. Если нечего сказать по существу, лучше пройдите мимо.</p>
-                                <p><input name="critic_level" type="radio" value="0"> &laquo;<strong>Я так вижу</strong>&raquo; Не надо негатива!</p>
+                            <p> <input id="critic2" name="critic_level" type="radio" value="2" required> <label for="critic2">Хочу критики! Под фотографией появится соответствующая пометка.</label> </p>
+                                <p><input id="critic1" name="critic_level" type="radio" value="1" checked> <label for="critic1">Нейтральное</strong>. Никаких надписей не появится (как обычно).</label></p>
+                                <p><input id="critic0" name="critic_level" type="radio" value="0"> <label for="critic0"> &laquo;Я так вижу</strong>&raquo;. Появится значок &laquo;Я не хочу критики&raquo;.</label></p>
+                                <p>Важно! После публикации фотографии настройку уровня критики изменить нельзя.</p>
                         </fieldset>
                     </p>
                                         

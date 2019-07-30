@@ -112,8 +112,13 @@
                     @endif
     </div>                    
     <div class="col-md-3 photo-description">
-        <p><strong>Отношение автора к критике:</strong></p>
+        
+        @if ($photo->critic_level <> 1)
+        <div class="critic-{{$photo->critic_level}}">
         <p>{{ $critic_levels[$photo->critic_level] }}</p>
+        </div>
+        @endif
+        
     </div>               
                         
     </div>

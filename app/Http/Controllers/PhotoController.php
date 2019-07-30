@@ -78,7 +78,7 @@ class PhotoController extends Controller
 
    if ($photo->ExposureProgram) $photo->ExposureProgram = $exposureModes[$photo->ExposureProgram];
         
-   $critic_levels = ["Отрицательное. Пожалуйста, не пишите негативных комментариев!", "Автор готов к конструктивному общению. Если фото не вызвало эмоций - лучше ничего не пишите.", "Автор хочет критики и гарантирует адекватную реакцию на негативные комментарии."];
+   $critic_levels = ["Автор не хочет критики", "", "Автор хочет критики"];
     
     return view('photo', ['photo' => $photo,  'comments' => $comments,  'next' => $next, 'previous' => $previous, 'published_at' => $published_at, 'recK' => $recK, 'recO' => $recO, 'recT' => $recT, 'critic_levels' => $critic_levels ]);
 
