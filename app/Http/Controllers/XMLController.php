@@ -41,7 +41,7 @@ class XMLController extends Controller
                 where('deleted_at', NULL)->
                 where('created_at', '>=', Carbon::now()->subMonth())->
                 orderby('id', 'desc')->get();
-               
+//SELECT sum(`k`+`o`+`t`)/( SELECT count(distinct photo_id) from recomendations) FROM `recomendations` WHERE 1               
         
         return view("rss.photo", ['photo' => $photo]);
         

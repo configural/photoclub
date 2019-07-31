@@ -29,7 +29,7 @@ class Comment extends Model
         $text = preg_replace('/\[url\s?=\s?([\'"]?)(?:http:\/\/)?([a-z0-9-.]+\.\w{2,4})\1\](.*?)\[\/url\]/', "<a href=\"http://$2\">$3</a>", $text);
         $text = preg_replace('/\[img\s*\]([^\]\[]+)\[\/img\]/', "<p><img src='$1'/></p>", $text);
         $text = preg_replace('/\[img\s*=\s*([\'"]?)([^\'"\]]+)\1\]/', "<p><img src='$2'/></p>", $text);
-    
+        $text = str_replace("<p>&nbsp;</p>", "", $text);
         return $text;
     
     }
