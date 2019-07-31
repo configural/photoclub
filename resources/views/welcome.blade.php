@@ -56,9 +56,14 @@
         <div class="col-sm-10">
             
             <div class="panel panel-default">
-                <div class="panel-heading">{{ $cat_name }}</div>
+                <div class="panel-heading">{{ $cat_name }}
+                    <div class="pull-right"><i class="fa fa-envelope" style="color: orange;"></i> <a href="https://feedburner.google.com/fb/a/mailverify?uri=artem-kashkanov/photoclub&amp;loc=ru_RU">Лучшие работы Фотоклуба</a></div>
+                </div>
                     
                 <div class="panel-body">
+                    
+                    
+                    
 
                     @foreach($photos as $photo)
 
