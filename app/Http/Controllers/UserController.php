@@ -42,12 +42,12 @@ class UserController extends Controller
 
         
         if ($request->cat_id) {
-            $photo = Photo::where('user_id', $request->id)->where('category_id', $request->cat_id)->orderBy('id', 'desc')->paginate(12);
+            $photo = Photo::where('user_id', $request->id)->where('category_id', $request->cat_id)->orderBy('id', 'desc')->paginate(20);
             session(['cat_id' => $request->cat_id]);
         }
             
         else {
-            $photo = Photo::where('user_id', $request->id)->orderBy('id', 'desc')->paginate(12);
+            $photo = Photo::where('user_id', $request->id)->orderBy('id', 'desc')->paginate(20);
             session(['cat_id' => null]);
         
         }

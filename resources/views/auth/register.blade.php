@@ -11,7 +11,7 @@
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Имя пользователя</label>
+                            <label for="name" class="col-md-4 control-label">Авторский псевдоним</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}">
@@ -25,7 +25,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail</label>
+                            <label for="email" class="col-md-4 control-label">E-Mail для получения пароля</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
@@ -64,7 +64,14 @@
                                     </span>
                                 @endif
                             </div>
+                            
+                                
                         </div>
+                        
+                        <p><input id="privacy" type="checkbox" class="col-md-1" name="privacy" required> 
+                                    <label for="privacy" >Я ознакомился с <a href="{{ url('/rules')}}">Правилами фотоклуба</a> и <a href="{{ url('/privacy')}}">Политикой конфиденциальности</a></label></p>
+                            
+                        
                         <hr>
                         <center>Делу время, потехе – <input type="text" id="cap"></center>
                         <hr>

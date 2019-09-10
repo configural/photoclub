@@ -17,6 +17,7 @@ Route::get('/', 'HomeController@index');
 Route::get('/category/{id}', 'HomeController@index');
 Route::get('/comments', 'PhotoController@commentsList');
 Route::get('/rules', function() { return view('rules');});
+Route::get('/privacy', function() { return view('privacy');});
 Route::get('/guide', function() { return view('guide');});
 Route::get('/books', function() { return view('books');});
 Route::get('/software', function() { return view('software');});
