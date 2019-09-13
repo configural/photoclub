@@ -16,11 +16,11 @@
         </div>
     </div>
     <div class="row height50" >
-        <div class="col-md-1 col-md-offset-2">
+        <div class="col-md-2 col-md-offset-2">
              <img src="{{ url('/')}}/photos/3/avatar.jpg" class="avatar">
         </div>
             
-            <div class="col-md-4">
+            <div class="col-md-6">
             
             <p>
                 Дорогие друзья! Фотоклуб существует за счет моих личных финансов. 
@@ -28,16 +28,16 @@
             </p>
             <p>Если у вас вдруг возникнет желание оказать посильную финансовую помощь проекту, я буду очень благодарен! </p>
             <p>
-                Пожертвование - вещь сугубо добровольная. Сумма может быть любая, главное - чтобы лично для вас она не была обременительной.
+                Пожертвование - вещь анонимная и сугубо добровольная. Сумма может быть любая, главное - чтобы лично для вас она не была обременительной.
             </p>
-    </div>
-        <div class="col-md-3">
+
             
-            
+            <br/>
             <p><strong>Яндекс.деньги, любая банковская карта</strong><br>
-                <iframe src="https://money.yandex.ru/quickpay/button-widget?targets=%D0%9F%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%B0%20%D0%A4%D0%BE%D1%82%D0%BE%D0%BA%D0%BB%D1%83%D0%B1%D0%B0&default-sum=100&button-text=14&any-card-payment-type=on&button-size=m&button-color=orange&successURL=&quickpay=small&account=4100153405575&" width="284" height="36" frameborder="0" allowtransparency="true" scrolling="no"></iframe>
+                <a href="https://yasobe.ru/na/na_razvitie_fotokluba" target="_blank" class="btn btn-warning">Страница сбора денег</a>
+            <br/>
             <p><strong>PayPal</strong><br>
-                <a href="https://paypal.me/kashkanov" target="_blank"><img src="{{ url('/')}}/images/paypal.png"></a>
+                <a href="https://paypal.me/kashkanov" target="_blank"  class="btn btn-primary">Страница сбора денег</a>
             </p>
         
     </div>
