@@ -2,9 +2,10 @@
 
 @section('title')
 @if ($cat_name)
-{{ $cat_name }} - 
-@endif
+{{ $cat_name }}
+@else
 Фотоклуб Артема Кашканова
+@endif
 @endsection
 
 @section('content')
@@ -36,15 +37,19 @@
             </div>
             
             <div class="panel panel-default">
-                <div class="panel-heading">Ссылки
+                <div class="panel-heading">F.A.Q.
                 </div>
 
                 <div class="panel-body">
-                <p><a href="http://www.artem-kashkanov.ru"  target="_blank">Фотосайт Артема Кашканова</a></p>
-                <p><a href="http://www.neformat.info" target="_blank" rel="nofollow">Фотофорум Неформат</a></p>
+                    <a href="http://club.artem-kashkanov.ru/articles/3">Как вставить картинки в комментарии</a>
+
 
                 </div>
             </div>
+
+
+            
+
             
                 @include("ads.adsense")
             </div>

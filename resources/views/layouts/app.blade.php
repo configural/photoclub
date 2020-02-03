@@ -121,7 +121,8 @@ theme_advanced_resizing : true,
                     
                     <li><a href="{{ url('/contacts') }}">Контакты</a></li>
                     <li><a href="{{ url('/donate') }}"><i class="fa fa-money" style="color: orange"></i> Поддержать проект</a></li>
-                </ul>
+                    
+        </ul>
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">

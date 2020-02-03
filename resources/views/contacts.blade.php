@@ -30,16 +30,19 @@
             <h1>Контакты</h1>
             <p class="lead">
             <ol>
+                <li><a href="http://www.artem-kashkanov.ru">Фотосайт Артема Кашканова</a></li>
+                
                 <li>Email: kashkanov_as@mail.ru</li>
                 
-                <li>Телефон: +79202525268</li>
+                <li>Телефон: +792O2525268</li>
                 
                 <li><a href="https://vk.com/a.kashkanov" target="_blank">Я Вконтакте</a>                  
-                </li>
-                
+                <li><a href="https://www.instagram.com/artemkashkanov/" target="_blank">Мой Instagram</a></li>
+                    
             </ol>
+            
         </p>
-
+        <p><a href="{{url('/')}}/donate">Поддержать проект</a>
         </div>
     </div>
 </div>
