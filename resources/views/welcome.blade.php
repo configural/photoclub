@@ -55,14 +55,14 @@
             
 
             
-                @include("ads.adsense")
+                
             </div>
             
 
 
 
         
-        <div class="col-sm-10">
+        <div class="col-sm-8">
             
             <div class="panel panel-default">
                 <div class="panel-heading">{{ $cat_name }}
@@ -122,6 +122,9 @@
             
     
     </div>
+        <div class="col-sm-2">
+            @include("ads.adsense")
+        </div>
         </div>
     </div>
 </div>
