@@ -42,6 +42,9 @@
 
                 <div class="panel-body">
                     <a href="http://club.artem-kashkanov.ru/articles/3">Как вставить картинки в комментарии</a>
+                    <a href="http://lori.ru/?ref=54711">Как заработать на новый объектив? ;)</a>
+                    
+                    
 
 
                 </div>
