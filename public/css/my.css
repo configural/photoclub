@@ -32,3 +32,10 @@ textarea {min-height: 200px;}
 .traur {background: black !important; color: white !important;}
 .critic-0 {display: block; box-sizing: border-box; border: 1px solid white; background: #00cc00; color: white; padding-top: 10px; text-align: center;}
 .critic-2 {display: block; border: 1px solid white; background: #cc0000; color: white; font-size: 1em; padding-top: 10px; text-align: center;}
+.orange {color: orange}
+.lightblue {color: #618590;}
+.navbar-blue {background: #003453; border: none !important;}
+.navbar-blue a {color: white;}
+.nav>li>a:focus, .nav>li>a:hover {
+    background-color: rgba(255,255,255,0.1) !important; 
+}

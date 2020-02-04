@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-Правила фотоклуба
+Программы для обработки фотографий
 @endsection
 
 @section('content')

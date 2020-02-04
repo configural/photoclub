@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-Правила фотоклуба
+Книги «О фотографии простым языком» - Артем Кашканов. Скачать, купить.
 @endsection
 
 @section('content')

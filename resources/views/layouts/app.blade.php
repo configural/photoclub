@@ -91,7 +91,7 @@ theme_advanced_resizing : true,
 
 </head>
 <body id="app-layout">
-    <nav class="navbar navbar-default navbar-static-top navbar-inverse">
+    <nav class="navbar navbar-static-top navbar-blue">
         <div class="container-fluid">
             <div class="navbar-header">
 
@@ -105,22 +105,22 @@ theme_advanced_resizing : true,
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Фотоклуб Артема Кашканова
+                        <i class="fa fa-camera orange"></i> Фотоклуб
                 </a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Моя страница</a></li>
-                    <li><a href="{{ url('/comments') }}">Комментарии</a></li>
-                    <li><a href="{{ url('/users') }}">Статистика</a></li>
-                    <li><a href="{{ url('/rules') }}">Правила</a></li>
-                    <li><a href="{{ url('/books') }}">Книги о фото</a></li>
-                    <li><a href="{{ url('/software') }}">Программы для фото</a></li>
+                    <li><a href="{{ url('/home') }}"><i class='fa fa-home lightblue'></i> Моя страница</a></li>
+                    <li><a href="{{ url('/comments') }}"><i class='fa fa-comments lightblue'></i> Комментарии</a></li>
+                    {{--<li><a href="{{ url('/users') }}"><i class='fa fa-home lightblue'></i> Статистика</a></li>--}}
+                    <li><a href="{{ url('/rules') }}"><i class="fa fa-list lightblue"></i> Правила</a></li>
+                    <li><a href="{{ url('/books') }}"><i class="fa fa-book lightblue"></i> Книги</a></li>
+                    <li><a href="{{ url('/software') }}"><i class="fa fa-laptop lightblue"></i> Программы</a></li>
                     
-                    <li><a href="{{ url('/contacts') }}">Контакты</a></li>
-                    <li><a href="{{ url('/donate') }}"><i class="fa fa-money" style="color: orange"></i> Поддержать проект</a></li>
+                    <li><a href="{{ url('/contacts') }}"><i class="fa fa-phone lightblue"></i> Контакты</a></li>
+                    <li><a href="{{ url('/donate') }}"><i class="fa fa-money" style="color: orange"></i> Donate</a></li>
                     
         </ul>
 
