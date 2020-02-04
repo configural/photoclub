@@ -33,6 +33,7 @@ textarea {min-height: 200px;}
 .critic-0 {display: block; box-sizing: border-box; border: 1px solid white; background: #00cc00; color: white; padding-top: 10px; text-align: center;}
 .critic-2 {display: block; border: 1px solid white; background: #cc0000; color: white; font-size: 1em; padding-top: 10px; text-align: center;}
 .orange {color: orange}
+.white {color: white}
 .lightblue {color: #618590;}
 .navbar-blue {background: #003453; border: none !important;}
 .navbar-blue a {color: white;}
