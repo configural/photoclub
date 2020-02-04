@@ -40,14 +40,17 @@ class HomeController extends Controller
         
         if ($cat_id) {
             $photos = Photo::select()->where('category_id', $cat_id)->orderby('id', 'desc')->paginate(20);
-            $cat_name = \App\Category::find($cat_id)->name;
-            $cat_description = \App\Category::find($cat_id)->description;
+            $cat = \App\Category::find($cat_id);
+            $cat_description = $cat->description;
+            $cat_name = $cat->name;
+            $seotitle = $cat->seotitle;
             
             session(['cat_id' => $cat_id]);
         } else {
             $photos = Photo::select()->orderby('id', 'desc')->paginate(20);
             $cat_name = "Фотоклуб Артема Кашканова";
             $cat_description = "Цель проекта – конструктивное общение на фототемы, обсуждение присланных фотографий. Нам без разницы, какой у вас фотоаппарат и объектив. Если вам есть, что показать – присоединяйтесь, будем рады вас видеть среди участников Фотоклуба!";
+            $seotitle = '';
             session(['cat_id' => null]);
         }
         
@@ -63,7 +66,7 @@ class HomeController extends Controller
 
 
         
-        return view('welcome', ['photos' => $photos, 'cats_list' => $cats_list, 'cat_name' => $cat_name, 'cat_description' => $cat_description ]);
+        return view('welcome', ['photos' => $photos, 'cats_list' => $cats_list, 'cat_name' => $cat_name, 'cat_description' => $cat_description, 'seotitle' => $seotitle ]);
     }
 
 

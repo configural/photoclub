@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('title')
-@if ($cat_name)
+@if ($seotitle)
+{{ $seotitle }}
+@elseif ($cat_name)
 {{ $cat_name }}
 @else
 Фотоклуб Артема Кашканова
