@@ -248,8 +248,10 @@ class PhotoController extends Controller
            ]);
            
            $data = $request->all();
+           
            $comment = new Comment;
            $comment->fill($data);
+           $comment->user_id = Auth::user()->id;
            $comment->save();
            
            return redirect()->back();    
@@ -265,7 +267,7 @@ class PhotoController extends Controller
     public function updateComment(Request $request) {
         
            $this->validate($request, [
-           'text' => 'required|max:2048',
+           'text' => 'required',
            ]);
         
         $data = $request->all();
