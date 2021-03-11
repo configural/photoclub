@@ -60,7 +60,7 @@ class PhotoController extends Controller
         {$photo->views += 1;  
         $photo->save();}
     
-    $image = new SimpleImage('photos/' . $photo->user_id . '/'.$photo->url);
+   // $image = new SimpleImage('photos/' . $photo->user_id . '/'.$photo->url);
     
     $exposureModes = [
         '0' => 'n/a',

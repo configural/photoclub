@@ -38,7 +38,9 @@
                     <a href="{{url('/')}}/photo/{{ $next->id }}" title="Щелкните для перехода к следующему фото">
                    @endif
                         
-                        <img src="{{url('/')}}/photos/{{ $photo->user_id }}/{{$photo->url}}" alt="Фотография - {{ $photo->name}}, автор - {{ $photo->user->name }}" class="photo" id="photo">
+                        <img src="{{url('/')}}/photos/{{ $photo->user_id }}/{{$photo->url}}" 
+                             alt="Фотография - {{ $photo->name}}, автор - {{ $photo->user->name }}" 
+                             class="photo" id="photo">
                     @if($next)
                        </a>
                    @endif
@@ -249,7 +251,12 @@
 
 </script>
 
+@if ($photo->optimize_size)
+<script>
+$("#photo").css({"maxHeight": $(window).height()*0.85});    
+</script>
 
+@endif
 
     
 
