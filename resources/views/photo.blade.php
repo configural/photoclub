@@ -33,25 +33,23 @@
                 <div class="panel-body photobackground">
                 <center>
 
+
                     
-                   @if($next)
-                    <a href="{{url('/')}}/photo/{{ $next->id }}" title="Щелкните для перехода к следующему фото">
-                   @endif
                         
                         <img src="{{url('/')}}/photos/{{ $photo->user_id }}/{{$photo->url}}" 
                              alt="Фотография - {{ $photo->name}}, автор - {{ $photo->user->name }}" 
-                             class="photo" id="photo">
-                    @if($next)
-                       </a>
-                   @endif
-                   
-                   
+                             class="photo" id="photo" title="кликните чтобы увеличить/уменьшить">
+
+                    
+                
+
 <div class="container">
 <div class="row">
     <div class="col-md-3">
             @include('layouts.kot')
+            <center>
         <p> Просмотры: {{$photo->views}}&nbsp;&nbsp;&nbsp;&nbsp; Комментарии: {{$comments->count()}}</p>
-    
+            </center>
     </div>
     
     <div class="col-md-6">
@@ -261,7 +259,21 @@ optimize()
 
 @endif
 
+<script>
+var small = 1;
+$("#photo").click(function(){
+    if (small == 1) {
+        $("#photo").css({"maxHeight": 1200});
+        small = 0;
+    }
+    else
+    {optimize();
+    small = 1;
+        }
     
+    
+});
+</script>
 
 @endsection
 

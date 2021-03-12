@@ -40,3 +40,5 @@ textarea {min-height: 200px;}
 .nav>li>a:focus, .nav>li>a:hover {
     background-color: rgba(255,255,255,0.1) !important; 
 }
+
+#photo {cursor: pointer;}
