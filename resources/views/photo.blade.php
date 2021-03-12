@@ -25,7 +25,7 @@
                     
                     {{$photo->category->name}} / {{ $photo->name }}
                     
-                                         <p class="pull-right"> <i class="fa fa-calendar"></i> {{ $published_at }} </p>  
+                                         <p class="pull-right"> <i class="fa fa-calendar"></i> {{ @str_limit($published_at, 10, '') }} </p>  
 
                 
                 </div>
@@ -154,12 +154,8 @@
                      <div class="reply-button"><span onClick="javascript:reply('{{$comment->user->id}}', '{{ $comment->user->name }}');" class = "reply-button">[ответить]</span></div>
                      
                         <span class="pull-right">
-                        @if ($comment->created_at) 
-                            
-                        @endif
-                        
                         @if ($comment->updated_at) 
-                        <i class="fa fa-calendar"></i> {{ $comment->updated_at }}
+                        <i class="fa fa-calendar"></i> {{ date("d.m.Y", strtotime($comment->updated_at)) }}
                         @endif
                         </span>
                     
@@ -251,9 +247,16 @@
 
 </script>
 
+<script>
+function optimize() {
+    $("#photo").css({"maxHeight": $(window).height()*0.85});    
+
+}
+</script>
+
 @if ($photo->optimize_size)
 <script>
-$("#photo").css({"maxHeight": $(window).height()*0.85});    
+optimize()
 </script>
 
 @endif

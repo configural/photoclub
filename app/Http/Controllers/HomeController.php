@@ -84,7 +84,7 @@ class HomeController extends Controller
            
           // dump($session_user_id);
            
-           return view('home', ['photos' => $photos, 'articles' => $articles,  'user' => $user]);
+           return redirect(url('/')."/user/".Auth::user()->id);
            
     }
 

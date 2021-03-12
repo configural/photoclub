@@ -13,11 +13,11 @@
 @section('content')
 <div class="container-fluid">
     
-    <div class="jumbotron">
+  {{--  <div class="jumbotron">
         <h3>{{ $cat_name }}</h3>
         {{ $cat_description }}
     </div>
-    
+    --}}
 </div>
 
 <div class="container-fluid">
@@ -68,7 +68,7 @@
             
             <div class="panel panel-default">
                 <div class="panel-heading">{{ $cat_name }}
-                    <div class="pull-right"><i class="fa fa-envelope" style="color: orange;"></i> <a href="https://feedburner.google.com/fb/a/mailverify?uri=artem-kashkanov/photoclub&amp;loc=ru_RU">Лучшие работы Фотоклуба</a></div>
+                    <div class="pull-right"><i class="fa fa-envelope" style="color: orange;"></i> <a href="https://feedburner.google.com/fb/a/mailverify?uri=artem-kashkanov/photoclub&amp;loc=ru_RU" title="Самые интересные фото будут приходить на email">Подписаться</a></div>
                 </div>
                     
                 <div class="panel-body">
