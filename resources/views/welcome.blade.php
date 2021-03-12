@@ -17,7 +17,7 @@
         <h3>{{ $cat_name }}</h3>
         {{ $cat_description }}
     </div>
-    --}}
+    --}} 
 </div>
 
 <div class="container-fluid">
