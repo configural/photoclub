@@ -1,12 +1,13 @@
 <div>
+    Лучшие фотографии, опубликованные в это же время в прошлом году.
 @foreach(\App\Photo::selectRaw('photos.*, (sum(recomendations.k) + sum(recomendations.o) + sum(recomendations.t)) as summa')
 ->join('recomendations', 'recomendations.photo_id', '=', 'photos.id')
 ->groupby('photos.id')
 ->whereBetween('photos.created_at', [date('Y-m-d', strtotime('now - 1 year - 1 month')), date('Y-m-d', strtotime('now - 1 year + 1 month'))])
-->having('summa', '>', 10)
+->having('summa', '>', 6)
 ->inRandomOrder()
 ->orderby('summa', 'desc')
-->limit(5)
+->limit(10)
 ->get()
 as $photo)
 <p>
