@@ -35,7 +35,7 @@ Route::get('/home', 'HomeController@home')->middleware('auth');
 Route::get('/editprofile', 'UserController@editProfile')->middleware('auth');
 Route::post('/editprofile', 'UserController@storeProfile')->middleware('auth');
 
-Route::get('/addphoto', 'PhotoController@addPhoto')->middleware('auth');
+Route::get('/addphoto', 'PhotoController@addPhoto')->name('addphoto')->middleware('auth');
 Route::post('/addphoto', 'PhotoController@uploadPhoto')->name('Photo.upload')->middleware('auth');
 Route::post('/deletephoto', 'PhotoController@deletePhoto')->name('Photo.delete')->middleware('auth');
 Route::get('/editphoto/{id}', 'PhotoController@editPhoto')->middleware('auth');

@@ -67,19 +67,26 @@
         <div class="col-sm-8">
             
             <div class="panel panel-default">
-                <div class="panel-heading">{{ $cat_name }}
-                    <div class="pull-right"><i class="fa fa-envelope" style="color: orange;"></i> <a href="https://feedburner.google.com/fb/a/mailverify?uri=artem-kashkanov/photoclub&amp;loc=ru_RU" title="Самые интересные фото будут приходить на email">Подписаться</a></div>
+                <div class="panel-heading">
+                    
+                       <a href="{{route('addphoto')}}"><i class="fa fa-upload"></i> 
+                        Загрузить фото</a>
+                    
+                    
+                    
                 </div>
                     
                 <div class="panel-body">
-                    
-                    
-                    
-
+                    <p>
+                    <center>
+                    <h3>{{ $cat_name }}</h3>
+                    </center>
+                    <hr>
+                </p>
                     @foreach($photos as $photo)
 
 
-                    <div class="col-sm-3 preview-block">
+                    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 preview-block">
                         <a href="{{ url('/') }}/photo/{{ $photo->id }}"><img src="{{ url('/') }}/photos/{{ $photo->user_id}}/_{{ $photo->url }}" class="preview"></a>
                     <br/>
                     <a href="{{ url('/') }}/photo/{{ $photo->id }}">
