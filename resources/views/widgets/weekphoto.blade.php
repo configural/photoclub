@@ -3,13 +3,14 @@
 ->join('recomendations', 'recomendations.photo_id', '=', 'photos.id')
 ->groupby('photos.id')
 ->whereBetween('photos.created_at', [date('Y-m-d', strtotime('now - 1 year - 1 month')), date('Y-m-d', strtotime('now - 1 year + 1 month'))])
-->having('summa', '>', 5)
+->having('summa', '>', 10)
 ->inRandomOrder()
 ->orderby('summa', 'desc')
 ->limit(5)
 ->get()
 as $photo)
-<div class='preview-block'>
+<p>
+<center>
 <a href="{{ url('/') }}/photo/{{ $photo->id }}"><img src="{{ url('/') }}/photos/{{ $photo->user_id}}/_{{ $photo->url }}" class="preview"></a>
                     <br/>
                     <a href="{{ url('/') }}/photo/{{ $photo->id }}">
@@ -21,7 +22,8 @@ as $photo)
                         
                         @endif
                     </a>
-</div>
+</center>
+</p>
 @endforeach
 
 
