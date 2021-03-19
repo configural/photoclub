@@ -44,3 +44,5 @@ textarea {min-height: 200px;}
 #photo {cursor: pointer;}
 
 .red {color: #d9534f;}
+.dark {background: #286090; color: white;}
+.dark a {color: white;}

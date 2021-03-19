@@ -134,10 +134,9 @@
         <div class="col-sm-2">
             
                         <div class="panel panel-default">
-                <div class="panel-heading">Год назад
-                </div>
 
-                <div class="panel-body">
+
+                <div class="panel-body dark">
 @include('widgets.weekphoto')
                     
                     
