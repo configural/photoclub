@@ -146,8 +146,7 @@
 
                 </div>
             </div>
-            
-            @include("ads.adsense")
+
         </div>
         </div>
     </div>
