@@ -132,6 +132,21 @@
     
     </div>
         <div class="col-sm-2">
+            
+                        <div class="panel panel-default">
+                <div class="panel-heading">Год назад
+                </div>
+
+                <div class="panel-body">
+@include('widgets.weekphoto')
+                    
+                    
+                    
+
+
+                </div>
+            </div>
+            
             @include("ads.adsense")
         </div>
         </div>
