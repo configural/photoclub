@@ -97,9 +97,10 @@
                 @foreach($photo as $p)
 
 
-                   <div class="col-md-3 preview-block">
-                   {{$p->name}}<br/>
-                   <a href="{{ url('/') }}/photo/{{ $p->id }}"><img src="{{ url('/') }}/photos/{{$p->user_id}}/_{{$p->url}}" class="preview"></a>
+                   <div class="col-xs-12 col-md-4 col-lg-3 preview-block">
+                   
+                   <a href="{{ url('/') }}/photo/{{ $p->id }}"><img src="{{ url('/') }}/photos/{{$p->user_id}}/_{{$p->url}}" class="preview">
+                       <br/><strong>{{$p->name}}</strong></a>
                    <div class="photoStatus"><i class="fa fa-eye"></i> {{$p->views}}
                        &nbsp;&nbsp;&nbsp;<i class="fa fa-comments-o"></i> {{$p->commentsCount()}}
                        &nbsp;&nbsp;&nbsp;<i class="fa fa-thumbs-up"></i> {{$p->recCount()}}

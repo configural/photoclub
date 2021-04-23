@@ -1,13 +1,15 @@
 <div>
-    Лучшие фотографии, опубликованные в это же время в прошлом году.
+    Случайные фотографии, опубликованные в этом же месяце в прошлые годы (за все время существования Клуба).
 @foreach(\App\Photo::selectRaw('photos.*, (sum(recomendations.k) + sum(recomendations.o) + sum(recomendations.t)) as summa')
-->join('recomendations', 'recomendations.photo_id', '=', 'photos.id')
+->leftjoin('recomendations', 'recomendations.photo_id', '=', 'photos.id')
 ->groupby('photos.id')
-->whereBetween('photos.created_at', [date('Y-m-d', strtotime('now - 1 year - 1 month')), date('Y-m-d', strtotime('now - 1 year + 1 month'))])
-->having('summa', '>', 6)
+//->whereBetween('photos.created_at', [date('Y-m-d', strtotime('now - 1 year - 1 week')), date('Y-m-d', strtotime('now - 1 year + 1 week'))])
+->whereMonth('photos.created_at', '=', date('m'))
+->whereYear('photos.created_at', '<', date('Y'))
+//->having('summa', '>', 5)
 ->inRandomOrder()
 ->orderby('summa', 'desc')
-->limit(10)
+->limit(8)
 ->get()
 as $photo)
 <p>
@@ -22,6 +24,7 @@ as $photo)
                         @else
                         
                         @endif
+ ({{ @substr($photo->created_at, 0, 4) }})
                     </a>
 </center>
 </p>

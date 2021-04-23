@@ -86,7 +86,7 @@
                     @foreach($photos as $photo)
 
 
-                    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 preview-block">
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 preview-block">
                         <a href="{{ url('/') }}/photo/{{ $photo->id }}"><img src="{{ url('/') }}/photos/{{ $photo->user_id}}/_{{ $photo->url }}" class="preview"></a>
                     <br/>
                     <a href="{{ url('/') }}/photo/{{ $photo->id }}">
