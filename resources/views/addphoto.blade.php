@@ -68,7 +68,10 @@
                         </fieldset>
                     </p>
                                         
-                                        
+                    <p>
+                        <input type="checkbox" name="is_private" value="1"> Скрыть фото из ленты и отображать только на моей странице
+                    </p>
+                    
                 <p><button class="btn btn-success">Загрузить фотографию</button></p>
                                 
                 {{ csrf_field() }}

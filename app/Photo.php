@@ -12,7 +12,10 @@ class Photo extends Model
 
       
         protected $fillable = [
-        'user_id', 'category_id', 'name', 'description', 'Make', 'Model', 'FocalLength','ExposureTime','ExposureBiasValue','FNumber','ISOSpeedRatings','ExposureProgram','Software', 'fullsize', 'critic_level'
+        'user_id', 'category_id', 'name', 'description', 'Make', 'Model', 
+            'FocalLength','ExposureTime','ExposureBiasValue','FNumber','ISOSpeedRatings',
+            'ExposureProgram','Software', 'fullsize', 'critic_level',
+            'is_private'
     ];
         
         protected $dates = ['deleted_at'];

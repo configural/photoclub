@@ -39,7 +39,7 @@ class HomeController extends Controller
 
         
         if ($cat_id) {
-            $photos = Photo::select()->where('category_id', $cat_id)->orderby('id', 'desc')->paginate(20);
+            $photos = Photo::select()->where('category_id', $cat_id)->where('is_private', 0)->orderby('id', 'desc')->paginate(20);
             $cat = \App\Category::find($cat_id);
             $cat_description = $cat->description;
             $cat_name = $cat->name;
@@ -47,7 +47,7 @@ class HomeController extends Controller
             
             session(['cat_id' => $cat_id]);
         } else {
-            $photos = Photo::select()->orderby('id', 'desc')->paginate(20);
+            $photos = Photo::select()->orderby('id', 'desc')->where('is_private', 0)->paginate(20);
             $cat_name = "Фотоклуб Артема Кашканова";
             $cat_description = "Цель проекта – конструктивное общение на фототемы, обсуждение присланных фотографий. Нам без разницы, какой у вас фотоаппарат и объектив. Если вам есть, что показать – присоединяйтесь, будем рады вас видеть среди участников Фотоклуба!";
             $seotitle = '';

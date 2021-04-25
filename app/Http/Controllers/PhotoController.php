@@ -125,9 +125,14 @@ class PhotoController extends Controller
           $data = $request->all();
           $photo = Photo::find($request->id);
           $photo->fill($data);
+          if ($request->is_private) {
+              $photo->is_private = 1;
+          } else {
+              $photo->is_private = 0;
+          }
           $photo->save();
-          
-          return redirect('home');
+         // dump($photo);
+         return redirect('home');
           
           
     }
@@ -155,6 +160,7 @@ class PhotoController extends Controller
                 $photo->category_id = $request->category_id;
                 $photo->description = $request->description;
                 $photo->fullsize = $request->fullsize;
+                $photo->is_private = $request->is_private;
                 $photo->user_id = Auth::user()->id;
                 $photo->url = $newfile;
                // $photo->save();

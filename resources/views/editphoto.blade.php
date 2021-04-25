@@ -40,6 +40,14 @@
                         <br/>Если вас не устраивает ограничение на размер картинки в 1200 пикселей, вы можете указать ссылку на полноразмерное изображение на Flickr или другом сервисе. Под вашей работой появится ссылка для его просмотра в новом окне.<br/>
                         <input name="fullsize" class="form-control" type="text" value="{{$photo->fullsize}}" placeholder="http://........./photo123456.jpg"></p>
                 
+                    <p>
+                    @if ($photo->is_private == 1)
+                        <input type="checkbox" name="is_private" value="1" checked="{{ $photo->is_private}}"> 
+                    @else
+                        <input type="checkbox" name="is_private" value="1" >
+                    @endif
+                    Скрыть фото из общей ленты и отображать только на моей странице
+                    </p>
                     <input name="id" type="hidden" value="{{$photo->id}}">
                 {{ csrf_field() }}
 

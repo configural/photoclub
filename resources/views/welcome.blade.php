@@ -119,14 +119,7 @@
             @include("ads.adsense")
                             
                             
-      {{--          <div class="panel panel-default">
-                    <div class="panel panel-heading">Форум "Неформат" - прямой эфир</div>
-                    <div class="panel panel-body">
-                        @php
-                        echo file_get_contents(url('/').'/neformat');
-                        @endphp
-                    </div>
-                </div>--}}
+
             
             
     
