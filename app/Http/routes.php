@@ -64,6 +64,7 @@ Route::post('/articles/{id}/edit', 'ArticleController@Store')->middleware('auth'
 
 Route::get('/ajax/rec', 'Ajax\RecController@rec')->middleware('auth');
 
+Route::get('/project/{slug}', 'ProjectController@index');
 
 //Route::get('/rebuild', 'PhotoController@rebuildPreviews');
 //Route::get('/rebuild_exif', 'PhotoController@rebuildExif');

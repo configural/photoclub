@@ -72,6 +72,24 @@
                         <input type="checkbox" name="is_private" value="1"> Скрыть фото из ленты и отображать только на моей странице
                     </p>
                     
+                    
+<p>
+                     @if (Auth::user()->status == 4)
+                    <h3>Участие в проектах</h3>
+                    @foreach(\App\Project::where('active', 1)->get() as $p)
+                    <p>
+
+                        <input type="checkbox" name='projects[{{$p->id}}]' value='1'>
+
+                        
+                        {{ $p->name}} 
+                    </p>
+                    
+                    @endforeach
+                    @endif
+                   
+                    </p>
+                    
                 <p><button class="btn btn-success">Загрузить фотографию</button></p>
                                 
                 {{ csrf_field() }}

@@ -48,6 +48,24 @@
                     @endif
                     Скрыть фото из общей ленты и отображать только на моей странице
                     </p>
+                    <p>
+                     @if (Auth::user()->status == 4)
+                    <h3>Участие в проектах</h3>
+                    @foreach(\App\Project::where('active', 1)->get() as $p)
+                    <p>
+                        @if(\App\Photo::in_project($photo->id, $p->id))
+                        <input type="checkbox" name='projects[{{$p->id}}]' value='1' checked> 
+                        @else
+                        <input type="checkbox" name='projects[{{$p->id}}]' value='1'>
+                        @endif
+                        
+                        {{ $p->name}} 
+                    </p>
+                    
+                    @endforeach
+                    @endif
+                   
+                    </p>
                     <input name="id" type="hidden" value="{{$photo->id}}">
                 {{ csrf_field() }}
 

@@ -50,6 +50,18 @@
                 @endforeach
                 </div>
             </div>
+            @if ($user->status == 4)
+            <div class="panel panel-default">
+                <div class="panel-heading">Фотопроекты</div>
+            <div class="panel-body">
+                
+                @foreach(\App\Project::where('user_id', Auth::user()->id)->get() as $p)
+                <p><a href="{{ url('project/')}}/{{$p->slug}}">{{ $p->name }}</a></p>
+                @endforeach
+                
+            </div>
+            </div>
+            @endif
 
 @if($user->description)    
 <div class="panel panel-default">

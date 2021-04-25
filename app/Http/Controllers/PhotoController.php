@@ -13,6 +13,7 @@ use App\Category;
 use App\Recomendation;
 use claviska\SimpleImage;
 use Carbon\Carbon;
+use DB;
 
 
 class PhotoController extends Controller
@@ -130,8 +131,17 @@ class PhotoController extends Controller
           } else {
               $photo->is_private = 0;
           }
+          // участие в проектах
+          DB::table('photos2project')->where('photo_id', $photo->id)->delete();
+          if (!empty($request->projects))
+          foreach($request->projects as $key => $value) {
+            if ($value) {
+              DB::table('photos2project')->insert(['project_id' => $key, 'photo_id' => $photo->id]);
+            
+          }
+          }
           $photo->save();
-         // dump($photo);
+         // dump($request);
          return redirect('home');
           
           
@@ -214,6 +224,18 @@ class PhotoController extends Controller
         $photo->critic_level = $request->critic_level;
         //dump($photo);
         $photo->save();
+        
+          // участие в проектах
+          DB::table('photos2project')->where('photo_id', $photo->id)->delete();
+          if (!empty($request->projects))
+          foreach($request->projects as $key => $value) {
+            if ($value) {
+              DB::table('photos2project')->insert(['project_id' => $key, 'photo_id' => $photo->id]);
+            
+          }
+          }
+        
+        
                 ///
                 
                 if ($image->getHeight()>1440 or $image->getWidth()>1440) {

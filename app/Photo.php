@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use DB;
 
 class Photo extends Model
 {
@@ -44,5 +45,16 @@ class Photo extends Model
             
         }
         
+        public function projects() {
+            return $this->belongsToMany('\App\Project', 'photos2project', 'photo_id', 'project_id');
+        }
+        
+        public static function in_project($photo_id, $project_id) {
+            $tmp = DB::table('photos2project')->where('photo_id', $photo_id)
+                    ->where('project_id', $project_id)
+                    ->count();
+            return $tmp;
+            
+        }
         
 }
