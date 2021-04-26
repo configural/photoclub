@@ -24,7 +24,10 @@
             <p>{!! $photo->description !!}</p>
             <hr/>
             @endforeach
-            
+            <p>
+                {{ $photo->links() }}
+            </p>
+              
 
 
 
