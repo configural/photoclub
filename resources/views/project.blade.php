@@ -25,7 +25,7 @@
             <hr/>
             @endforeach
             <p>
-                {{ $photo->links() }}
+                {{ $photos->links() }}
             </p>
               
 
