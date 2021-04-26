@@ -18,9 +18,12 @@
             
             @foreach($photos as $photo)
             <h4><a href="{{url('/user')}}/{{$photo->user_id}}">{{ $photo->user->name }}</a>: {{ $photo->name}}</h4>
+            <div class="project_photo">
+            
             <img src="{{url('/')}}/photos/{{ $photo->user_id }}/{{$photo->url}}" 
                              alt="Фотография - {{ $photo->name}}, автор - {{ $photo->user->name }}" 
                              class="photo" id="" title="">
+            </div>
             <p>{!! $photo->description !!}</p>
             <hr/>
             @endforeach

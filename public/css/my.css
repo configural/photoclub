@@ -46,3 +46,6 @@ textarea {min-height: 200px;}
 .red {color: #d9534f;}
 .dark {background: #506a81; color: white;}
 .dark a {color: white;}
+
+.project_photo { display: block; text-align: center; }
+.project_photo img {border: 3px solid white;}
