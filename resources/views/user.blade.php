@@ -7,7 +7,7 @@
 @section('content')
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-lg-2 col-md-3 col-sm-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     
@@ -50,18 +50,7 @@
                 @endforeach
                 </div>
             </div>
-            @if ($user->status == 4)
-            <div class="panel panel-default">
-                <div class="panel-heading">Фотопроекты</div>
-            <div class="panel-body">
-                
-                @foreach(\App\Project::where('user_id', Auth::user()->id)->get() as $p)
-                <p><a href="{{ url('project/')}}/{{$p->slug}}">{{ $p->name }}</a></p>
-                @endforeach
-                
-            </div>
-            </div>
-            @endif
+
 
 @if($user->description)    
 <div class="panel panel-default">
@@ -89,13 +78,13 @@
                    @endif
 
 
-                @include("ads.adsense")
+                
 
 
         </div>
         
         
-        <div class="col-md-9">
+        <div class="col-lg-8 col-md-6 col-sm-12">
 
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -134,6 +123,27 @@
 
     
             
+        </div>
+        
+       
+        <div class="col-lg-2 col-md-3 col-sm-12">
+          @if ($user->has_projects())   
+            <div class="panel panel-default">
+                <div class="panel-heading">Фотопроекты</div>
+            <div class="panel-body">
+                
+                @foreach(\App\Project::where('user_id', $user->id)->get() as $p)
+                <p><center><a href="{{ url('project/')}}/{{$p->slug}}">
+                        <img src="{{ url('photos')}}/{{ $p->photos->first()->user_id }}/_{{ $p->photos->first()->url }}">
+                        <br>
+                        {{ $p->name }}</a></center></p>
+                @endforeach
+                
+            </div>
+            </div>
+        @endif 
+        
+        @include("ads.adsense")
         </div>
         
         

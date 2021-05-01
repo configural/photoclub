@@ -37,6 +37,10 @@ class User extends Authenticatable
         public function getStatus() {
             return $this->hasOne('\App\Status', 'id', 'status');
         }
-
+ function has_projects() {
+    return \App\Project::where('user_id', $this->id)->count();
 }
+        
+        
+        }
 
