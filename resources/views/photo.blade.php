@@ -70,6 +70,15 @@
                     @if ($photo->description)
                     {!! $photo->description !!}
                     @endif
+                    
+                    @if ($photo->projects->count())
+                    Фото участвует в проектах: 
+                    
+                     @foreach($photo->projects as $p)
+                     <p> <i class="fa fa-camera red"></i> <a href="{{ url('/project')}}/{{$p->id}}">{{$p->name}}</a></p>
+                    @endforeach
+                    
+                    @endif
                     </div>
 
                     <small>
