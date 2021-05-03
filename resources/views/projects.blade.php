@@ -26,11 +26,9 @@
             <div class='col-lg-4 col-md-6 col-sm-12'>
                 <div class="project_preview">
                     <center>
-                        @if ($project->slug)
-                        <a href="{{ url('project')}}/{{$project->slug}}">
-                            @else
+
                             <a href="{{ url('project')}}/{{$project->id}}">
-                            @endif
+
                     <img src="{{ url('photos')}}/{{ $project->photos->first()->user_id }}/_{{ $project->photos->first()->url }}"><br>
                     <h4>{{$project->name}}</h4>
                        

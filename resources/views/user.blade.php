@@ -141,7 +141,7 @@
             <div class="panel-body">
                 
                 @foreach(\App\Project::where('user_id', $user->id)->get() as $p)
-                <p><center><a href="{{ url('project/')}}/{{$p->slug}}">
+                <p><center><a href="{{ url('project/')}}/{{$p->id}}">
                         @if ($p->photos->count())
                         <img src="{{ url('photos')}}/{{ $p->photos->first()->user_id }}/_{{ $p->photos->first()->url }}">
                         @else
