@@ -17,8 +17,10 @@
             </p>
             
             <p>
+            @if (Auth::user())
             @if (Auth::user()->photos()->count() >= 20)
             <a href="{{ route('add_project')}}">Создать свой фотопроект</a>
+            @endif
             @endif
             </p>
             @foreach(\App\Project::where('active', 1)->get() as $project)
