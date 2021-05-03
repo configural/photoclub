@@ -19,7 +19,7 @@
             <p>
             @if (Auth::user())
             @if (Auth::user()->photos()->count() >= 20)
-            <a href="{{ route('add_project')}}">Создать свой фотопроект</a>
+            <a href="{{ route('add_project')}}" class="btn btn-success">Создать свой фотопроект</a>
             @endif
             @endif
             </p>
