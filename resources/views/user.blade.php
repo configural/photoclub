@@ -88,7 +88,15 @@
 
             <div class="panel panel-default">
                 <div class="panel-heading">
+                @if ($user->id == Auth::user()->id)
+                <a href="{{route('addphoto')}}"><i class="fa fa-upload"></i> 
+                        Загрузить фото</a>
+                @else
                 Фотографии
+                @endif
+                    
+                    
+                    
                 </div>
 
                 <div class="panel-body">
@@ -134,7 +142,11 @@
                 
                 @foreach(\App\Project::where('user_id', $user->id)->get() as $p)
                 <p><center><a href="{{ url('project/')}}/{{$p->slug}}">
+                        @if ($p->photos->count())
                         <img src="{{ url('photos')}}/{{ $p->photos->first()->user_id }}/_{{ $p->photos->first()->url }}">
+                        @else
+                        Пустой проект:
+                        @endif
                         <br>
                         {{ $p->name }}</a></center></p>
                 @endforeach

@@ -12,8 +12,13 @@
             
             <h1>{{ $project->name }}</h1>
             <p>
-                {{ $project->description}}
+                {!! $project->description!!}
             </p>
+            
+            @if (Auth::user()->id == $project->user_id)
+            <a href="{{ url('/project/edit') }}/{{$project->id}}" class="btn btn-success">Редактировать</a>
+            @endif
+            
             <p>
                 <script src="https://yastatic.net/share2/share.js"></script>
 <div class="ya-share2" data-curtain data-size="l" data-shape="round" data-services="messenger,vkontakte,facebook,odnoklassniki,telegram"></div>

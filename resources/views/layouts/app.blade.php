@@ -113,7 +113,7 @@ theme_advanced_resizing : true,
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}"><i class='fa fa-home lightblue'></i> Моя страница</a></li>
                     <li><a href="{{ url('/comments') }}"><i class='fa fa-comments lightblue'></i> Комментарии</a></li>
-                    {{--<li><a href="{{ url('/users') }}"><i class='fa fa-home lightblue'></i> Статистика</a></li>--}}
+                   <li><a href="{{ url('/projects') }}"><i class='fa fa-camera lightblue'></i> Фотопроекты</a></li>
                     <li><a href="{{ url('/rules') }}"><i class="fa fa-list lightblue"></i> Правила</a></li>
                     <li><a href="{{ url('/books') }}"><i class="fa fa-book lightblue"></i> Книги</a></li>
                     <li><a href="{{ url('/software') }}"><i class="fa fa-laptop lightblue"></i> Программы</a></li>

@@ -66,6 +66,8 @@ Route::get('/ajax/rec', 'Ajax\RecController@rec')->middleware('auth');
 
 Route::get('/projects', function(){return view('projects');})->name('projects');
 Route::get('/project/{slug}', 'ProjectController@index');
-
+Route::get('/add_project', function(){return view('project_add');})->name('add_project')->middleware('auth');
+Route::post('/project_save', 'ProjectController@save')->middleware('auth');
+Route::get('/project/edit/{id}', function($id){return view('project_edit', ['project' => \App\Project::find($id)]);})->middleware('auth');
 //Route::get('/rebuild', 'PhotoController@rebuildPreviews');
 //Route::get('/rebuild_exif', 'PhotoController@rebuildExif');

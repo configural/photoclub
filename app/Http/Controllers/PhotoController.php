@@ -223,6 +223,11 @@ class PhotoController extends Controller
         $photo->Software = $exif['Software'];   
         $photo->critic_level = $request->critic_level;
         //dump($photo);
+        if ($request->is_private) {
+              $photo->is_private = 1;
+          } else {
+              $photo->is_private = 0;
+          }
         $photo->save();
         
           // участие в проектах

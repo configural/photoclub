@@ -74,9 +74,12 @@
                     
                     
 <p>
-                     @if (Auth::user()->status == 4)
+                    
                     <h3>Участие в проектах</h3>
-                    @foreach(\App\Project::where('active', 1)->get() as $p)
+                    @foreach(\App\Project::where('active', 1)
+                    ->where(function($query){return $query->where('user_id', Auth::user()->id)
+                    ->orwhere('is_private', 0);})
+                    ->get() as $p)
                     <p>
 
                         <input type="checkbox" name='projects[{{$p->id}}]' value='1'>
@@ -86,7 +89,7 @@
                     </p>
                     
                     @endforeach
-                    @endif
+                    
                    
                     </p>
                     
