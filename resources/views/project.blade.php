@@ -15,7 +15,7 @@
                 {!! $project->description!!}
             </p>
             
-            @if (Auth::user()->id == $project->user_id)
+            @if (Auth::user() and Auth::user()->id == $project->user_id)
             <a href="{{ url('/project/edit') }}/{{$project->id}}" class="btn btn-success">Редактировать</a>
             @endif
             
