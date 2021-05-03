@@ -126,6 +126,16 @@
     </div>
         <div class="col-sm-2">
             
+            <div class="panel panel-default">
+                <div class="panel-heading">Фотопроекты</div>
+                    <div class="panel-body">
+                        @foreach(\App\Project::where('active', 1)->orderby('name')->get() as $p)
+                        
+                        <p><i class="fa fa-camera red"></i> <a href="{{ url('/project')}}/{{$p->id}}">{{ $p->name }}</a></p>
+                        @endforeach
+                </div>
+            </div>
+            
                         <div class="panel panel-default">
 
 
