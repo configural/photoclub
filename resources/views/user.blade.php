@@ -88,7 +88,7 @@
 
             <div class="panel panel-default">
                 <div class="panel-heading">
-                @if ($user->id == Auth::user()->id)
+                @if (Auth::user() and $user->id == Auth::user()->id)
                 <a href="{{route('addphoto')}}"><i class="fa fa-upload"></i> 
                         Загрузить фото</a>
                 @else
