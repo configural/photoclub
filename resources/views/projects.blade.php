@@ -32,7 +32,8 @@
                             <a href="{{ url('project')}}/{{$project->id}}">
 
                     <img src="{{ url('photos')}}/{{ $project->photos->first()->user_id }}/_{{ $project->photos->first()->url }}"><br>
-                    <h4>{{$project->name}}</h4>
+                    <h4>{{$project->name}}</h4></a>
+                    {{ $project->photos->count() }} фото
                        
                     </center>
                 </div>
