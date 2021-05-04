@@ -127,11 +127,21 @@
         <div class="col-sm-2">
             
             <div class="panel panel-default">
-                <div class="panel-heading">Фотопроекты</div>
+                <div class="panel-heading">Фотопроекты
+                    
+                
+                    
+            @if (Auth::user())
+            @if (Auth::user()->photos()->count() >= 20)
+            <a href="{{ route('add_project')}}" class="btn btn-xs btn-default">Создать</a>
+            @endif
+            @endif
+                </div>
                     <div class="panel-body">
                         @foreach(\App\Project::where('active', 1)->orderby('name')->get() as $p)
-                        
+                        @if ($p->photos->count())
                         <p><i class="fa fa-camera red"></i> <a href="{{ url('/project')}}/{{$p->id}}">{{ $p->name }}</a></p>
+                        @endif
                         @endforeach
                 </div>
             </div>

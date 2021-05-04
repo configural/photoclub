@@ -16,7 +16,7 @@
                 <p><label>Название проекта</label><br/>
                     
                     <input type="hidden" name="id" value="{{ $project->id }}">
-                    <input type="text" class="form-control" name="name" value="{{ $project->name }}"></p>
+                    <input type="text" class="form-control" name="name" value="{{ $project->name }}" required></p>
                 
                <p><label>Описание проекта</label><br/>
                     <textarea class="form-control" name="description">{{ $project->description }}</textarea> 

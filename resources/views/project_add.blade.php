@@ -14,7 +14,7 @@
             <p>
             <form method="post" action="{{ url('/project_save')}}"> 
                 <p><label>Название проекта</label><br/>
-                    <input type="text" class="form-control" name="name"></p>
+                    <input type="text" class="form-control" name="name" required></p>
                 
                <p><label>Описание проекта</label><br/>
                     <textarea class="form-control" name="description"></textarea> 
