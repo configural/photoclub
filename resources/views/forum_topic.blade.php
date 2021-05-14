@@ -16,7 +16,7 @@
 
             <div class="panel panel-info">
                 <div class="panel-heading comment">
-                    <a href="{{ url('/user/')}}/{{$topic->user_id}}">{{ $topic->user->name }}</a>
+                    <a href="{{ url('/user/')}}/{{$topic->user_id}}">{{ @$topic->user->name }}</a>
                     <div class="reply-button">
                     <span onClick="javascript:reply('{{$topic->user->id}}', '{{ $topic->user->name }}');" class = "reply-button">[ответить]</span></div>
                 

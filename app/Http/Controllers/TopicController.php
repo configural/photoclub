@@ -23,6 +23,11 @@ class TopicController extends Controller
         $post->fill($request->all());
         $post->user_id = Auth::user()->id;
         $post->save();
+        
+        $topic = \App\Topic::find($request->topic_id);
+        $topic->updated_at = NULL;
+        $topic->save();
+        
         $posts = \App\Post::where('topic_id', $post->topic_id)->count();
         $page = ceil($posts / 10);
         return redirect(url('forum/topic/'.$request->topic_id).'?page='. $page . "#" . $post->id);
@@ -40,7 +45,13 @@ class TopicController extends Controller
     }
     
     function save_topic(Request $request) {
-        $topic = \App\Topic::where('id', $request->id)->where('user_id', Auth::user()->id)->first();
+        if ($request->id) {
+            $topic = \App\Topic::where('id', $request->id)->where('user_id', Auth::user()->id)->first();
+        } else {
+            $topic = new \App\Topic();
+            $topic->user_id = Auth::user()->id;
+        }
+        
         if ($topic) {
         $topic->fill($request->all());
         $topic->save();

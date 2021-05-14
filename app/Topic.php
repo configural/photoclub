@@ -21,8 +21,16 @@ class Topic extends Model
         $posts_count = \App\Post::where('topic_id', $id)->count();
         $page = ceil($posts_count/10);
         
-        $last_post = \App\Post::orderBy('id', 'desc')->first();
-        echo "<a href='topic/" . $id . "?page=" . $page . "#" . $last_post->id ."'>" . $last_post->user->name . "<br>" . \Club::normal_date($last_post->updated_at). "</a>";
-            }
+        $last_post = \App\Post::where('topic_id', $id)->orderBy('id', 'desc')->first();
+        if ($last_post->id) {
+        echo "<a href='topic/" . $id . "?page=" 
+                . $page . "#" . $last_post->id ."'>" 
+                . $last_post->user->name . "<br>" 
+                . \Club::normal_date($last_post->updated_at)
+                . "</a>";
+    } else {
+        echo "пока нет ответов";
+    }
+        }
     
 }
