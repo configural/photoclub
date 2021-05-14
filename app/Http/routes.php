@@ -72,9 +72,9 @@ Route::get('/project/edit/{id}', function($id){return view('project_edit', ['pro
 //Route::get('/rebuild', 'PhotoController@rebuildPreviews');
 //Route::get('/rebuild_exif', 'PhotoController@rebuildExif');
 
-Route::get('/forum', function(){ return view('forum');})->name('forum');
-Route::get('/forum/{id}', function($id) { return view('forum_branch', ["id" => $id]);});
-Route::get('/forum/topic/{id}', 'TopicController@view');
+Route::get('/forum', function(){ return view('forum');})->name('forum')->middleware('auth');
+Route::get('/forum/{id}', function($id) { return view('forum_branch', ["id" => $id]);})->middleware('auth');
+Route::get('/forum/topic/{id}', 'TopicController@view')->middleware('auth');
 Route::post('/add_post', 'TopicController@add_post')->name('add_post')->middleware('auth');
 Route::get('/add_topic', function() {return view('forum_topic_add');})->name('forum_topic_add')->middleware('auth');
 Route::get('/edit_post/{id}', function($id){return view('forum_post_edit', ['id' => $id]);})->middleware('auth');
