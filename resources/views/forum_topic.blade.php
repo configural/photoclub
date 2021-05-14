@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-$topic->name
+{{$topic->name}}
 @endsection
 
 @section('content')
