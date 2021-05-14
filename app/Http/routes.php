@@ -71,3 +71,13 @@ Route::post('/project_save', 'ProjectController@save')->middleware('auth');
 Route::get('/project/edit/{id}', function($id){return view('project_edit', ['project' => \App\Project::find($id)]);})->middleware('auth');
 //Route::get('/rebuild', 'PhotoController@rebuildPreviews');
 //Route::get('/rebuild_exif', 'PhotoController@rebuildExif');
+
+Route::get('/forum', function(){ return view('forum');})->name('forum');
+Route::get('/forum/{id}', function($id) { return view('forum_branch', ["id" => $id]);});
+Route::get('/forum/topic/{id}', 'TopicController@view');
+Route::post('/add_post', 'TopicController@add_post')->name('add_post')->middleware('auth');
+Route::get('/add_topic', function() {return view('forum_topic_add');})->name('forum_topic_add')->middleware('auth');
+Route::get('/edit_post/{id}', function($id){return view('forum_post_edit', ['id' => $id]);})->middleware('auth');
+Route::post('/save_post', 'TopicController@save_post')->name('save_post')->middleware('auth');
+Route::get('/edit_topic/{id}', function($id){return view('forum_topic_edit', ['id' => $id]);})->middleware('auth');
+Route::post('/save_topic', 'TopicController@save_topic')->name('save_topic')->middleware('auth');

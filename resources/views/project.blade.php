@@ -11,7 +11,12 @@
         <div class="col-md-8 col-md-offset-2">
             
             <h1>{{ $project->name }}</h1>
-            <i><p>Администратор проекта: <a href="{{url('/user')}}/{{ $project->user->id}}">{{ $project->user->name}}</a>.
+            <i><p>Администратор проекта: 
+                    @if ($project->user)
+                    <a href="{{url('/user')}}/{{ $project->user->id}}">{{ $project->user->name}}</a>.
+                    @else 
+                    Пользователь удален.
+                    @endif
             @if ($project->is_private) 
             Это частный проект. В нем только авторские фотографии.
             @else
