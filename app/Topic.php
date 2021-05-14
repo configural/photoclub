@@ -22,8 +22,8 @@ class Topic extends Model
         $page = ceil($posts_count/10);
         
         $last_post = \App\Post::where('topic_id', $id)->orderBy('id', 'desc')->first();
-        if ($last_post->id) {
-        echo "<a href='topic/" . $id . "?page=" 
+        if ($last_post) {
+        echo "<a href='" . url('forum/topic/')."/". $id . "?page=" 
                 . $page . "#" . $last_post->id ."'>" 
                 . $last_post->user->name . "<br>" 
                 . \Club::normal_date($last_post->updated_at)

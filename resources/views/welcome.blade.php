@@ -145,12 +145,14 @@
                         @endforeach
                 </div>
             </div>
-            
+@include('widgets.forum')            
                         <div class="panel panel-default">
 
 
                 <div class="panel-body dark">
-@include('widgets.weekphoto')
+
+                    
+                    @include('widgets.weekphoto')
                     
                     
                     
