@@ -4,7 +4,7 @@
 @if ($seotitle)
 {{ $seotitle }}
 @elseif ($cat_name)
-{{ $cat_name }}
+{{ strip_tags($cat_name) }}
 @else
 Фотоклуб Артема Кашканова
 @endif

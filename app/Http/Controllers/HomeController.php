@@ -48,7 +48,7 @@ class HomeController extends Controller
             session(['cat_id' => $cat_id]);
         } else {
             $photos = Photo::select()->orderby('id', 'desc')->where('is_private', 0)->paginate(20);
-            $cat_name = "Фотоклуб<br/>Артема<br/>Кашканова";
+            $cat_name = "Фотоклуб <br/>Артема <br/>Кашканова";
             $cat_description = "Фотосайт «для души». ";
             $cat_description .= "Цель проекта – конструктивное общение на фототемы в теплой атмосфере, свойственной фотосайтам начала 2000-х годов. "
                     . "Нам без разницы, какой у вас фотоаппарат и объектив. Если вам есть, что показать – "
