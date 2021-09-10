@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>404 - что-то пошло не так.</title>
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+       
 
         <style>
             html, body {
@@ -17,7 +20,7 @@
                 color: #B0BEC5;
                 display: table;
                 font-weight: 100;
-                font-family: 'Lato';
+                font-family: 'Arial';
             }
 
             .container {
