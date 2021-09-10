@@ -37,11 +37,9 @@ class XMLController extends Controller
     
     
     public function rssPhoto() {
-        $photo = Photo::select()->
-                where('deleted_at', NULL)->
-                where('created_at', '>=', Carbon::now()->subMonth())->
+        $photo = Photo::where('created_at', '>=', Carbon::now()->subDay())->
                 orderby('id', 'desc')->get();
-//SELECT sum(`k`+`o`+`t`)/( SELECT count(distinct photo_id) from recomendations) FROM `recomendations` WHERE 1               
+             
         
         return view("rss.photo", ['photo' => $photo]);
         
