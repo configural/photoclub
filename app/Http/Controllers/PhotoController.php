@@ -14,6 +14,7 @@ use App\Recomendation;
 use claviska\SimpleImage;
 use Carbon\Carbon;
 use DB;
+use Mail;
 
 
 class PhotoController extends Controller
@@ -285,8 +286,20 @@ class PhotoController extends Controller
            $comment = new Comment;
            $comment->fill($data);
            $comment->user_id = Auth::user()->id;
+           //dd($comment->photo->user->email);
            $comment->save();
-           
+		   
+           if ($comment->photo->user->subscribe) {
+		   Mail::send('email.newcomment', ['user' => $comment->photo->user->name, 
+                       'comment_user' => $comment->user->name, 
+                       'comment_text' => $comment->text,
+                       'photo_id' => $comment->photo->id], 
+		   function($message) use ($comment)
+			{
+				$message->to($comment->photo->user->email, $comment->photo->user->name)->subject('Новый комментарий в Фотоклубе!');
+                                //$message->to($comment->photo->user->email, $comment->photo->user->name)->subject('Новый комментарий в Фотоклубе!');
+			});
+                   }
            return redirect()->back();    
     }
     

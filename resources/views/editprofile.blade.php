@@ -38,6 +38,16 @@
                 <textarea name="description" class="form-control">{{ $user->description }}</textarea>
                 </p>
                 
+                <p>
+                @if ($user->subscribe)
+                    <input type="checkbox" name="subscribe" value="1" checked="">
+                @else
+                    <input type="checkbox" name="subscribe" value="1">
+                @endif 
+                <label for="name">Получать уведомления о новых комментариях к моим фото на электронную почту</label>
+                </p>
+                
+                
                 <p><button>Обновить информацию</button></p>
 
                 {{ csrf_field() }}

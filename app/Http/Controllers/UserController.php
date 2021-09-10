@@ -126,8 +126,16 @@ class UserController extends Controller
            $user->name = $request->name;;
            $user->email = $request->email;;
            $user->description = $request->description;
+           if ($request->subscribe) {
+               $user->subscribe = $request->subscribe;
+           } else {
+               $user->subscribe = NULL;
+           }
+           
            if ($avatar) $user->avatar = $avatar;
            $user->save();
+          // dd($request);
+          // dd($user);
 
            return redirect(url('/home'));
 
