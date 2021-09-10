@@ -38,7 +38,7 @@
             </p>
             
             @foreach($photos as $photo)
-            <h4><a href="{{url('/user')}}/{{$photo->user_id}}">{{ $photo->user->name }}</a>: {{ $photo->name}}</h4>
+            <h4><a href="{{url('/user')}}/{{$photo->user_id}}">{{ $photo->user->name }}</a>: <a href="{{ url('/')}}/photo/{{$photo->id}}">{{ $photo->name}}</a></h4>
             <div class="project_photo">
             
             <img src="{{url('/')}}/photos/{{ $photo->user_id }}/{{$photo->url}}" 
