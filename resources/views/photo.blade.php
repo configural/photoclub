@@ -47,7 +47,7 @@
 <div class="row">
     <div class="col-md-3">
             @include('layouts.kot')
-                @if (Auth::user()->status == 4)
+                @if (Auth::user() and Auth::user()->status == 4)
                 <ul>
                 @foreach($photo->recomendations as $rec)
                 <li>{{$rec->user->name}} –  
