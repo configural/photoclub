@@ -127,6 +127,14 @@
         <div class="col-sm-2">
             
             <div class="panel panel-default">
+                <div class="panel-heading">Подписка на обновления</div>
+                <div class="panel-body"><p><small>Хотите получать уведомления о новых фотографиях в Фотоклубе на почту?</small></p>
+                    <center><a href="https://feedburner.google.com/fb/a/mailverify?uri=artem-kashkanov/photoclub&amp;loc=ru_RU" class="btn btn-warning" target="_blank"><i class="fa fa-envelope"></i> Да, хочу!</a>
+                        </center>
+                </div>
+            </div>
+            
+            <div class="panel panel-default">
                 <div class="panel-heading">Фотопроекты
                     
                 
