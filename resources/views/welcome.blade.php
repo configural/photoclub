@@ -44,7 +44,7 @@
 
                 <div class="panel-body">
                     <p><a href="http://club.artem-kashkanov.ru/articles/3">Как вставить картинки в комментарии</a></p>
-                    <p><a href="http://lori.ru/?ref=54711">Как заработать на новый объектив? ;)</a></p>
+                    
                     
                     
                     
@@ -77,10 +77,13 @@
                 </div>
                     
                 <div class="panel-body">
-                    <p>
-                    <center>
-                    <h3>{{ $cat_name }}</h3>
-                    </center>
+                    <div class="container-fluid">
+                        <div class="row-fluid">
+                            <div class="col-lg-3"><h2 class="cat_name">{!! $cat_name!!}</h2>
+                            </div>
+                            <div class="col-lg-9">{{ $cat_description }}</div>
+                            </div>
+                    </div>
                     <hr>
                 </p>
                     @foreach($photos as $photo)
