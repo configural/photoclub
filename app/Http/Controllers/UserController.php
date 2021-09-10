@@ -22,6 +22,8 @@ class UserController extends Controller
     public function userPhotos (Request $request) {
 
         $user = User::where('id', $request->id)->first();
+        if (!$user) abort(404);
+        
         $articles = Article::select('id', 'name', 'description')
                 ->where('user_id', $request->id)
                 ->where('active', 1)

@@ -25,6 +25,7 @@ class PhotoController extends Controller
     
     $photo = Photo::select()
            ->where('id', Request()->id)->first();
+    if (!$photo) abort(404);
     
     $recK = Recomendation::select('K')->where('photo_id', $photo->id)->where('k', 1)->count();
     $recO = Recomendation::select('O')->where('photo_id', $photo->id)->where('o', 1)->count();
