@@ -42,24 +42,38 @@
 
                     
                 
-
+                </center>
 <div class="container">
 <div class="row">
     <div class="col-md-3">
             @include('layouts.kot')
-            <center>
-        <p> Просмотры: {{$photo->views}}&nbsp;&nbsp;&nbsp;&nbsp; Комментарии: {{$comments->count()}}</p>
-            </center>
+                @if (Auth::user()->status == 4)
+                <ul>
+                @foreach($photo->recomendations as $rec)
+                <li>{{$rec->user->name}} –  
+                   
+                    <span class="bukv">
+                     @if ($rec->k) К @endif
+                      @if ($rec->o) О @endif
+                       @if ($rec->t) Т @endif
+                    </span>
+                </li>
+                @endforeach
+                </ul>
+                @endif
+                <p> Просмотры: {{$photo->views}}&nbsp;&nbsp;&nbsp;&nbsp; Комментарии: {{$comments->count()}}</p>
+ 
     </div>
     
     <div class="col-md-6">
+        <center>
     
                     <div class="photo-nav">
                         @if ($previous) 
                         <a href="{{url('/')}}/photo/{{ $previous->id }}" title="Предыдущее фото" class="btn btn-default"><i class="fa fa-chevron-left"></i> Назад </a> 
                         @endif
                     @if ($photo->fullsize)
-                         <a href="{{$photo->fullsize}}" target="_blank" rel="nofollow" class="btn btn-primary">Открыть полноразмерное изображение</a>
+                         <a href="{{$photo->fullsize}}" target="_blank" rel="nofollow" class="btn btn-primary">Полный размер</a>
                     @endif
                         @if ($next)                        
                         <a href="{{url('/')}}/photo/{{ $next->id }}" title="Следующее фото"  class="btn btn-default"> Вперед <i class="fa fa-chevron-right"></i></a>
@@ -119,6 +133,7 @@
                     <p><center><a href="{{url('editphoto')}}/{{$photo->id}}" class="btn btn-default"><i class="fa fa-gear"></i> Редактировать описание</a></center></p>
                     @endif
                     @endif
+        </center>
     </div>                    
     <div class="col-md-3 photo-description">
         

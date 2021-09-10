@@ -1,6 +1,5 @@
 @if(Auth::user())
 
-
 <h3>Рекомендации</h3>
 <table class="kot_table">
     <tr>
@@ -23,12 +22,6 @@
     @endif
 </table>
 
-
-            
-                
-            
-                
-            </p>
 
     
 

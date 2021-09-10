@@ -27,6 +27,10 @@ class Photo extends Model
             return $this->hasOne('\App\User', 'id', 'user_id');
         }
         
+        public function recomendations() {
+            return $this->hasMany('App\Recomendation', 'photo_id', 'id');
+        }
+        
         public function category() {
             return $this->hasOne('\App\Category', 'id','category_id');
         }
