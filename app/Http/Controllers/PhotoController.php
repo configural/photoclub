@@ -289,7 +289,7 @@ class PhotoController extends Controller
            //dd($comment->photo->user->email);
            $comment->save();
 		   
-           if ($comment->photo->user->subscribe) {
+           if ($comment->photo->user->subscribe and $comment->user->id != $comment->photo->user->id) {
 		   Mail::send('email.newcomment', ['user' => $comment->photo->user->name, 
                        'comment_user' => $comment->user->name, 
                        'comment_text' => $comment->text,
