@@ -69,15 +69,18 @@
         <center>
     
                     <div class="photo-nav">
-                        @if ($previous) 
+                        <p>@if ($previous) 
                         <a href="{{url('/')}}/photo/{{ $previous->id }}" title="Предыдущее фото" class="btn btn-default"><i class="fa fa-chevron-left"></i> Назад </a> 
                         @endif
-                    @if ($photo->fullsize)
-                         <a href="{{$photo->fullsize}}" target="_blank" rel="nofollow" class="btn btn-primary">Полный размер</a>
-                    @endif
+
                         @if ($next)                        
                         <a href="{{url('/')}}/photo/{{ $next->id }}" title="Следующее фото"  class="btn btn-default"> Вперед <i class="fa fa-chevron-right"></i></a>
+                        </p>
                         @endif
+                    @if ($photo->fullsize)
+                    <p><a href="{{$photo->fullsize}}" target="_blank" rel="nofollow" class="btn btn-primary"><i class="fa fa-arrows"></i> Полный размер</a></p>
+                    @endif
+                    
                     </div>
                     
                     <div class="photo-description" id="description">            
