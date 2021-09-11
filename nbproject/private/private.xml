@@ -2,22 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/OpenServer/domains/photoclub/database/migrations/2021_05_04_191800_topic1.php</file>
-            <file>file:/C:/OpenServer/domains/photoclub/app/Topic.php</file>
-            <file>file:/C:/OpenServer/domains/photoclub/resources/views/forum_topic_add.blade.php</file>
-            <file>file:/C:/OpenServer/domains/photoclub/resources/views/layouts/app.blade.php</file>
-            <file>file:/C:/OpenServer/domains/photoclub/resources/views/forum.blade.php</file>
-            <file>file:/C:/OpenServer/domains/photoclub/resources/views/forum_branch.blade.php</file>
-            <file>file:/C:/OpenServer/domains/photoclub/app/Post.php</file>
-            <file>file:/C:/OpenServer/domains/photoclub/app/Http/routes.php</file>
-            <file>file:/C:/OpenServer/domains/photoclub/database/migrations/2021_05_04_184643_forum.php</file>
-            <file>file:/C:/OpenServer/domains/photoclub/resources/views/forum_topic_edit.blade.php</file>
-            <file>file:/C:/OpenServer/domains/photoclub/database/migrations/2021_05_04_192957_forum_posts.php</file>
-            <file>file:/C:/OpenServer/domains/photoclub/resources/views/forum_post_edit.blade.php</file>
-            <file>file:/C:/OpenServer/domains/photoclub/database/migrations/2021_05_04_190534_Topic.php</file>
-            <file>file:/C:/OpenServer/domains/photoclub/app/Http/Controllers/TopicController.php</file>
-            <file>file:/C:/OpenServer/domains/photoclub/resources/views/forum_topic.blade.php</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

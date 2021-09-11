@@ -40,7 +40,20 @@
                              alt="Фотография - {{ $photo->name}}, автор - {{ $photo->user->name }}" 
                              class="photo" id="photo" title="кликните чтобы увеличить/уменьшить">
 
+                     <div class="photo-nav">
+                        <p>@if ($previous) 
+                        <a href="{{url('/')}}/photo/{{ $previous->id }}" title="Предыдущее фото" class="btn btn-default"><i class="fa fa-chevron-left"></i> Назад </a> 
+                        @endif
+
+                        @if ($next)                        
+                        <a href="{{url('/')}}/photo/{{ $next->id }}" title="Следующее фото"  class="btn btn-default"> Вперед <i class="fa fa-chevron-right"></i></a>
+                        </p>
+                        @endif
+                    @if ($photo->fullsize)
+                    <p><a href="{{$photo->fullsize}}" target="_blank" rel="nofollow" class="btn btn-primary"><i class="fa fa-arrows"></i> Полный размер</a></p>
+                    @endif
                     
+                    </div>                   
                 
                 </center>
 <div class="container">
@@ -65,42 +78,27 @@
  
     </div>
     
-    <div class="col-md-6">
-        <center>
+    <div class="col-md-9">
     
-                    <div class="photo-nav">
-                        <p>@if ($previous) 
-                        <a href="{{url('/')}}/photo/{{ $previous->id }}" title="Предыдущее фото" class="btn btn-default"><i class="fa fa-chevron-left"></i> Назад </a> 
-                        @endif
 
-                        @if ($next)                        
-                        <a href="{{url('/')}}/photo/{{ $next->id }}" title="Следующее фото"  class="btn btn-default"> Вперед <i class="fa fa-chevron-right"></i></a>
-                        </p>
-                        @endif
-                    @if ($photo->fullsize)
-                    <p><a href="{{$photo->fullsize}}" target="_blank" rel="nofollow" class="btn btn-primary"><i class="fa fa-arrows"></i> Полный размер</a></p>
-                    @endif
-                    
-                    </div>
                     
                     <div class="photo-description" id="description">            
                     @if ($photo->description)
-                    {!! $photo->description !!}
+                    <p>{!! $photo->description !!}</p>
                     @endif
                     
                     @if ($photo->projects->count())
                     Фото участвует в проектах: 
-                    
+                    <p>
                      @foreach($photo->projects as $p)
                      <p> <i class="fa fa-camera red"></i> <a href="{{ url('/project')}}/{{$p->id}}">{{$p->name}}</a></p>
                     @endforeach
-                    
+                    </p>
                     @endif
-                    </div>
-
-                    <small>
+                    
+                    <p><small>
                      @if($photo->Model)   
-                        Камера: {{ $photo->Model }}<br/> 
+                        Камера: {{ $photo->Model }}. 
                      @endif
 
                      @if($photo->ExposureProgram)     
@@ -108,7 +106,7 @@
                      @endif
                      
                      @if($photo->FocalLength)     
-                       фокусное расстояние: {{$photo->FocalLength}} мм, 
+                       фокусное расстояние: {{ round($photo->FocalLength, 2)}} мм, 
                      @endif
                      
                      @if($photo->ExposureTime)
@@ -128,25 +126,18 @@
                      @endif
                         
                      @if($photo->Software)
-                        <br/> ПО: {{$photo->Software}} 
+                         ПО: {{$photo->Software}} 
                      @endif
-                    </small>
+                        </small>          
+        </p>
                     @if(Auth::user())
                     @if (Auth::user()->id == $photo->user_id || Auth::user()->admin)
                     <p><center><a href="{{url('editphoto')}}/{{$photo->id}}" class="btn btn-default"><i class="fa fa-gear"></i> Редактировать описание</a></center></p>
                     @endif
                     @endif
-        </center>
-    </div>                    
-    <div class="col-md-3 photo-description">
-        
-        @if ($photo->critic_level <> 1)
-        <div class="critic-{{$photo->critic_level}}">
-        <p>{{ $critic_levels[$photo->critic_level] }}</p>
-        </div>
-        @endif
-        
-    </div>               
+   
+                    </div>                    
+   </div>            
                         
     </div>
 
@@ -163,6 +154,12 @@
             <div class="row">
                 <div class="col-md-6 col-md-offset-2">
                 
+        @if ($photo->critic_level <> 1)
+        <div class="critic-{{$photo->critic_level}}">
+        <p>{{ $critic_levels[$photo->critic_level] }}</p>
+        </div>
+        @endif    
+                    
                 @foreach($comments as $comment)
                 <a name="{{ $comment->id }}"></a>
                 <div class="panel panel-default comment">
