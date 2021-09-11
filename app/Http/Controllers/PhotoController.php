@@ -291,16 +291,25 @@ class PhotoController extends Controller
            $comment->save();
 		   
            if ($comment->photo->user->subscribe and $comment->user->id != $comment->photo->user->id) {
-		   Mail::send('email.newcomment', ['user' => $comment->photo->user->name, 
+           $try_attempts = 0;
+           while($try_attempts < 1) {
+           try {	
+                   Mail::send('email.newcomment', ['user' => $comment->photo->user->name, 
                        'comment_user' => $comment->user->name, 
                        'comment_text' => $comment->text,
                        'photo_id' => $comment->photo->id], 
-		   function($message) use ($comment)
-			{
-				$message->to($comment->photo->user->email, $comment->photo->user->name)->subject('Новый комментарий в Фотоклубе!');
-                                //$message->to($comment->photo->user->email, $comment->photo->user->name)->subject('Новый комментарий в Фотоклубе!');
-			});
-                   }
+		   function($message) use ($comment) {
+                       $message->to($comment->photo->user->email, $comment->photo->user->name)->subject('Новый комментарий в Фотоклубе!');
+                       });
+           } catch(\Exception $e){
+                
+           } finally {
+                $try_attempts++;
+           }
+                        
+                        
+           }
+           }
            return redirect()->back();    
     }
     
