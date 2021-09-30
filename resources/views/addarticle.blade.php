@@ -17,12 +17,12 @@
                     <p><label>Название статьи: </label>
                         <input name="name" class="form-control" type="text" value="" required></p>
                     
+                    <p><label>Текст статьи:</label>
+                        <textarea name="text" class="form-control" placeholder="" style="height: 600px"></textarea>
+                    </p>
+
                     <p><label>Анонс статьи:</label>
                         <textarea name="description" class="form-control" placeholder=""></textarea>
-                    </p>
-                    
-                    <p><label>Текст статьи:</label>
-                        <textarea name="text" class="form-control" placeholder=""></textarea>
                     </p>
                     
                     <input type="hidden" name="user_id" value="{{ Auth::user()->id}}">

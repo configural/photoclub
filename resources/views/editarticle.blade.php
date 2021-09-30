@@ -7,7 +7,7 @@
 @section('content')
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+        <div class="col-md-12 col-md-offset-0">
             <div class="panel panel-default">
                 <div class="panel-heading"><h1>Редактирование статьи</h1></div>
 
@@ -17,15 +17,15 @@
                     <p><label>Название статьи: </label>
                         <input name="name" class="form-control" type="text" value="{{$article->name}}"></p>
                     
-                    <p><label>Анонс статьи:</label>
-                        <textarea name="description" class="form-control" placeholder="">{{$article->description}}</textarea>
-                    </p>
+
                     
                     <p><label>Текст статьи:</label>
-                        <textarea name="text" class="form-control" placeholder="">{{$article->text}}</textarea>
+                        <textarea name="text" class="form-control" placeholder="" style="height: 600px;">{{$article->text}}</textarea>
                     </p>
                     
-                    
+                    <p><label>Анонс статьи:</label>
+                        <textarea name="description" class="form-control" placeholder="">{{$article->description}}</textarea>
+                    </p>                    
                     <p><label>Опубликовано (1/0):</label>
                     <input name="active" type="text" value="{{$article->active}}">
                 {{ csrf_field() }}
