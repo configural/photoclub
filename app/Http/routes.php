@@ -55,6 +55,7 @@ Route::get('user/{id}/{cat_id}', 'UserController@userPhotos');
 
 Route::get('/camera/{model}', 'PhotoController@cameraPhoto');
 
+Route::get('/articles', function(){return view('articles');});
 Route::get('/articles/{id}', 'ArticleController@Show');
 Route::get('/addarticle', 'ArticleController@Add')->middleware('auth');
 Route::post('/addarticle', 'ArticleController@Store')->middleware('auth');
