@@ -6,9 +6,9 @@
 
 @section('content')
 <div class="container-fluid">
-    <div class="row height50">
+    <div class="row-fluid height50">
 
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-12">
             
             <h1>{{ $project->name }}</h1>
             <i><p>Администратор проекта: 
@@ -38,15 +38,18 @@
             </p>
             
             @foreach($photos as $photo)
+            <div class="col-lg-6">
             <h4><a href="{{url('/user')}}/{{$photo->user_id}}">{{ $photo->user->name }}</a>: <a href="{{ url('/')}}/photo/{{$photo->id}}">{{ $photo->name}}</a></h4>
             <div class="project_photo">
-            
+            <a href="{{ url('/')}}/photo/{{$photo->id}}">
             <img src="{{url('/')}}/photos/{{ $photo->user_id }}/{{$photo->url}}" 
                              alt="Фотография - {{ $photo->name}}, автор - {{ $photo->user->name }}" 
                              class="photo" id="" title="">
+            </a>
             </div>
-            <p>{!! $photo->description !!}</p>
-            <hr/>
+            <p>{!! @str_limit($photo->description, 200) !!}</p>
+            
+            </div>
             @endforeach
             <p>
                 {{ $photos->links() }}
