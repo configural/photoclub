@@ -51,6 +51,7 @@
             
             </div>
             @endforeach
+            <div class="clearfix"></div>
             <p>
                 {{ $photos->links() }}
             </p>
