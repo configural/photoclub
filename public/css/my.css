@@ -47,7 +47,11 @@ textarea {min-height: 200px;}
 .dark {background: #506a81; color: white;}
 .dark a {color: white;}
 
-.project_photo { display: block; text-align: center; }
+.project_photo { display: block; text-align: center; 
+
+max-width: 100%;
+
+height: auto; }
 .project_photo img {border: 3px solid white;}
 .project_preview img {max-width: 100%}
 .topic_name {font-size: 20px;}
