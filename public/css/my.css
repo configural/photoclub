@@ -48,12 +48,9 @@ textarea {min-height: 200px;}
 .dark a {color: white;}
 
 .project_photo { display: block; text-align: center; 
-
-max-width: 100%;
-
-height: auto; }
-.project_photo img {border: 3px solid white;}
-.project_preview img {max-width: 100%}
+ }
+.project_photo img {border: 3px solid white; max-height: 600px;}
+.project_preview img {max-width: 100%; max-height: 600px;}
 .topic_name {font-size: 20px;}
 .cat_name {margin: 0px; font-size: 25px; }
 .article-preview {margin: 20px; min-height: 100px;}

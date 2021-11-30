@@ -47,7 +47,7 @@
                              class="photo" id="" title="">
             </a>
             </div>
-            <p>{!! @str_limit($photo->description, 200) !!}</p>
+            
             
             </div>
             @endforeach
