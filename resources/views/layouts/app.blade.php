@@ -120,7 +120,7 @@ theme_advanced_resizing : true,
                     <li><a href="{{ url('/software') }}"><i class="fa fa-laptop lightblue"></i> Программы</a></li>
                     
                     <li><a href="{{ url('/contacts') }}"><i class="fa fa-phone lightblue"></i> Контакты</a></li>
-                    <li><a href="{{ url('/donate') }}"><i class="fa fa-money" style="color: orange"></i> Donate</a></li>
+                    <li><a href="{{ url('/donate') }}"><i class="fa fa-rouble" style="color: orange"></i> Поддержать рублем</a></li>
                     
         </ul>
 
