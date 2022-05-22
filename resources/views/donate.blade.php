@@ -45,7 +45,7 @@
             
             <br/>
             <p>В настоящее время единственный способ «задонатить» проект - <strong>Яндекс.деньги</strong>. Можно перечислить деньги с любой банковской карты.</p>
-            <p>    <a href="https://yasobe.ru/na/na_razvitie_fotokluba" target="_blank" class="btn btn-warning btn-lg"><i class='fa fa-rouble'></i> Страница сбора денег</a>
+            <p>    <a href="https://sobe.ru/na/ak_photoclub" target="_blank" class="btn btn-warning btn-lg"><i class='fa fa-rouble'></i> Страница сбора денег</a>
             </p>
             <p>Всем, кто поддержал проект – большое спасибо!
             </p>
