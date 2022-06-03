@@ -16,7 +16,7 @@
 
             <div class="panel panel-info">
                 <div class="panel-heading comment">
-                    <a href="{{ url('/user/')}}/{{$topic->user_id}}">{{ @$topic->user->name }}</a>
+                    <a href="{{ url('/user/')}}/{{$topic->user_id}}"><strong>{{ @$topic->user->name }}</strong></a>
                     <div class="reply-button">
                     <span onClick="javascript:reply('{{$topic->user->id}}', '{{ $topic->user->name }}');" class = "reply-button">[ответить]</span></div>
                 
@@ -38,7 +38,7 @@
             <a name="{{ $post->id }}"></a>
             <div class="panel panel-default">
                 <div class="panel-heading comment">
-                <a href="{{ url('/user/')}}/{{$post->user_id}}">{{ $post->user->name }}</a>
+                <a href="{{ url('/user/')}}/{{$post->user_id}}"><strong>{{ $post->user->name }}</strong></a>
                 <div class="reply-button">
                     <span onClick="javascript:reply('{{$post->user->id}}', '{{ $post->user->name }}');" class = "reply-button">[ответить]</span></div>
                     
