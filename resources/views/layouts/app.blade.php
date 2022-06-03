@@ -89,6 +89,14 @@ theme_advanced_resizing : true,
   VK.init({apiId: 6897661, onlyWidgets: true});
 </script>
 
+<!-- SAPE RTB JS -->
+<script
+    async="async"
+    src="https://cdn-rtb.sape.ru/rtb-b/js/614/2/132614.js"
+    type="text/javascript">
+</script>
+<!-- SAPE RTB END -->
+
 </head>
 <body id="app-layout">
     <nav class="navbar navbar-static-top navbar-blue">

@@ -119,7 +119,9 @@
                
             </div>
                             
-            @include("ads.adsense")
+<!-- SAPE RTB DIV 600x340 -->
+<div id="SRTB_765229"></div>
+<!-- SAPE RTB END -->
                             
                             
 
