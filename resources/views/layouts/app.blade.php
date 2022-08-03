@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="{{url('/')}}/css/my.css">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
-    <meta name="yandex-verification" content="4e35744005998cfa" />
+    <meta name="yandex-verification" content="b1584d1b2c4b97b7" />
     <style>
         body {
             font-family: 'Verdana';
