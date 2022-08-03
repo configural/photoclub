@@ -37,7 +37,7 @@
                 <li>Телефон: +792O2525268</li>
                 
                 <li><a href="https://vk.com/a.kashkanov" target="_blank">Я Вконтакте</a>                  
-                <li><a href="https://www.instagram.com/artemkashkanov/" target="_blank">Мой Instagram</a></li>
+
                     
             </ol>
             

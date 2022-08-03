@@ -111,20 +111,21 @@ theme_advanced_resizing : true,
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
-                        <i class="fa fa-camera orange"></i> Фотоклуб
-                </a>
+                
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
+                    <li>
+                    <a  href="{{ url('/') }}">
+                        <i class="fa fa-camera orange"></i> Главная
+                    </a></li>
                     <li><a href="{{ url('/home') }}"><i class='fa fa-home lightblue'></i> Моя страница</a></li>
                     <li><a href="{{ url('/comments') }}"><i class='fa fa-comments lightblue'></i> Комментарии</a></li>
                    <li><a href="{{ url('/projects') }}"><i class='fa fa-camera lightblue'></i> Фотопроекты</a></li>
                    <li><a href="{{ url('/forum') }}"><i class='fa fa-comments-o lightblue'></i> Форум</a></li>
                     <li><a href="{{ url('/rules') }}"><i class="fa fa-list lightblue"></i> Правила</a></li>
-                    <li><a href="{{ url('/books') }}"><i class="fa fa-book lightblue"></i> Книги</a></li>
                     <li><a href="{{ url('/software') }}"><i class="fa fa-laptop lightblue"></i> Программы</a></li>
                     
                     <li><a href="{{ url('/contacts') }}"><i class="fa fa-phone lightblue"></i> Контакты</a></li>
