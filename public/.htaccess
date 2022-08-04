@@ -17,6 +17,15 @@
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+    
+    # REDIRECT TO HTTPS
+    RewriteCond %{SERVER_PORT} !^443$
+    RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
+    
 </IfModule>
 
 Options -Indexes
+RewriteCond %{HTTP_HOST} ^club\.artem\-kashkanov\.ru$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.club\.artem\-kashkanov\.ru$
+RewriteRule ^/?$ "https\:\/\/diafragma8\.ru\/" [R=301,L]
+
