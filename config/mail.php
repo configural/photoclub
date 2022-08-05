@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.yandex.ru'),
+    'host' => env('MAIL_HOST', 'mail.diafragma8.ru'),
 
     /*
     |--------------------------------------------------------------------------
@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => "configural@yandex.ru", 'name' => "Фотоклуб - Диафрагма 8"], 
+    'from' => ['address' => "noreply@diafragma8.ru", 'name' => "Фотоклуб - Диафрагма 8"], 
 
     /*
     |--------------------------------------------------------------------------
