@@ -13,6 +13,7 @@
             <file>file:/C:/OpenServer/domains/photoclub/resources/views/donate.blade.php</file>
             <file>file:/C:/OpenServer/domains/photoclub/app/Http/Controllers/HomeController.php</file>
             <file>file:/C:/OpenServer/domains/photoclub/app/Http/routes.php</file>
+            <file>file:/C:/OpenServer/domains/photoclub/resources/views/email/newcomment.blade.php</file>
             <file>file:/C:/OpenServer/domains/photoclub/app/Http/Controllers/PhotoController.php</file>
         </group>
     </open-files>

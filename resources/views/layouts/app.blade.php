@@ -111,16 +111,15 @@ theme_advanced_resizing : true,
                 </button>
 
                 <!-- Branding Image -->
-                
+                <a  href="{{ url('/') }}">
+                <img src="{{url('/')}}/img/f8_logo.png" style="height: 36px; margin: 8px;" title="на главную">
+                </a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li>
-                    <a  href="{{ url('/') }}">
-                        <i class="fa fa-camera orange"></i> Главная
-                    </a></li>
+                    
                     <li><a href="{{ url('/home') }}"><i class='fa fa-home lightblue'></i> Моя страница</a></li>
                     <li><a href="{{ url('/comments') }}"><i class='fa fa-comments lightblue'></i> Комментарии</a></li>
                    <li><a href="{{ url('/projects') }}"><i class='fa fa-camera lightblue'></i> Фотопроекты</a></li>
