@@ -18,7 +18,7 @@ class ProjectController extends Controller
                 ->join('projects', 'projects.id', '=', 'photos2project.project_id')
                 ->where('projects.id', '=', $project->id)
                 ->orderby('photos.created_at', 'desc')
-                ->paginate(10);
+                ->paginate(12);
        
         return view('project', ['project'=> $project, 'photos' => $photos]);
         } else {

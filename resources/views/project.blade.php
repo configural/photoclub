@@ -38,14 +38,14 @@
             </p>
             
             @foreach($photos as $photo)
-            <div class="col-lg-6 col-md-6 col-sm-12">
-            <h4><a href="{{url('/user')}}/{{$photo->user_id}}">{{ $photo->user->name }}</a>: <a href="{{ url('/')}}/photo/{{$photo->id}}">{{ $photo->name}}</a></h4>
-            <div class="project_photo">
-            <a href="{{ url('/')}}/photo/{{$photo->id}}">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            {{--<h4><a href="{{url('/user')}}/{{$photo->user_id}}">{{ $photo->user->name }}</a>: <a href="{{ url('/')}}/photo/{{$photo->id}}">{{ $photo->name}}</a></h4>--}}
+            <div class="project_photo" data-id="{{$photo->id}}" data-src="{{url('/')}}/photos/{{ $photo->user_id }}/{{$photo->url}}">
+            
             <img src="{{url('/')}}/photos/{{ $photo->user_id }}/{{$photo->url}}" 
                              alt="Фотография - {{ $photo->name}}, автор - {{ $photo->user->name }}" 
-                             class="photo" id="" title="">
-            </a>
+                             class="photo" style="cursor:pointer" id="" title="">
+            
             </div>
             
             
@@ -63,4 +63,33 @@
         </div>
     </div>
 </div>
+
+<div id="fullscreen" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.9); z-index: 1000;">
+
+    
+</div>
+
+<script>
+    $(".project_photo").click(function(){
+        var h = $(window).height() * 0.8;
+        var w = $(window).width() * 0.9;
+        $("#fullscreen").show();
+        $("#fullscreen").html("<img class='fullscreenImage' src=" + $(this).data('src') + ">");
+    });
+    
+    $("#fullscreen").click(function(){
+        $("#fullscreen").hide();
+    });
+</script>
+
+<style>
+    .fullscreenImage {
+        display: block;
+        max-height: 95%;
+        max-width: 95%;
+        margin: 20px auto;
+        border: 2px solid white !important;
+        cursor:pointer;
+    }
+</style>
 @endsection

@@ -24,6 +24,12 @@
     
 </IfModule>
 
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # Redirect if index.php is in the URL
+    RewriteRule ^index.php/(.+) https://diafragma8.ru/$1 [R=301,L]
+</IfModule>
+
 Options -Indexes
 RewriteCond %{HTTP_HOST} ^club\.artem\-kashkanov\.ru$ [OR]
 RewriteCond %{HTTP_HOST} ^www\.club\.artem\-kashkanov\.ru$

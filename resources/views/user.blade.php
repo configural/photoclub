@@ -61,7 +61,7 @@
     </div>
 @endif
 
-                               @if (count($articles))
+               @if (count($articles))
             
                         <div class="panel panel-default">
                         <div class="panel-heading">Заметки</div>

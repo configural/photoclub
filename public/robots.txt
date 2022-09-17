@@ -1,2 +1,10 @@
+Host: https://diafragma8.ru
 User-agent: *
-Disallow:
+Disallow: /index.php
+Disallow: /comments
+Disallow: /contacts
+Disallow: /donate
+Disallow: /login
+Disallow: /register
+Disallow: /password
+Disallow: /forum

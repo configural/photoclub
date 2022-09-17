@@ -92,7 +92,7 @@ theme_advanced_resizing : true,
 <!-- SAPE RTB JS -->
 <script
     async="async"
-    src="https://cdn-rtb.sape.ru/rtb-b/js/614/2/132614.js"
+    src="https://cdn-rtb.sape.ru/rtb-b/js/165/2/134165.js"
     type="text/javascript">
 </script>
 <!-- SAPE RTB END -->

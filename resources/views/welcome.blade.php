@@ -38,27 +38,32 @@
                             </div>
                             </div>
 
-                            <div class="panel panel-default">
-                                <div class="panel-heading">F.A.Q.
+@include('widgets.forum')  
+
+<div class="panel panel-default">
+                                    <div class="panel-heading">Фотопроекты
+
+
+
+                                        @if (Auth::user())
+                                        @if (Auth::user()->photos()->count() >= 20)
+                                        <a href="{{ route('add_project')}}" class="btn btn-xs btn-default">Создать</a>
+                                        @endif
+                                        @endif
+                                    </div>
+                                    <div class="panel-body">
+                                        @foreach(\App\Project::where('active', 1)->orderby('name')->get() as $p)
+                                        @if ($p->photos->count())
+                                        <p><i class="fa fa-camera red"></i> <a href="{{ url('/project')}}/{{$p->id}}">{{ $p->name }}</a></p>
+                                        @endif
+                                        @endforeach
+                                    </div>
                                 </div>
 
-                                <div class="panel-body">
-                                    <p><a href="http://club.artem-kashkanov.ru/articles/3">Как вставить картинки в комментарии</a></p>
 
 
 
-
-
-
-                                </div>
-                            </div>
-
-
-
-
-
-
-                            </div>
+            </div>                
 
 
 
@@ -131,34 +136,8 @@
                             </div>
                             <div class="col-sm-2">
 
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">Подписка на обновления</div>
-                                    <div class="panel-body"><p><small>Хотите получать уведомления о новых фотографиях в Фотоклубе на почту?</small></p>
-                                        <center><a href="https://feedburner.google.com/fb/a/mailverify?uri=artem-kashkanov/photoclub&amp;loc=ru_RU" class="btn btn-warning" target="_blank"><i class="fa fa-envelope"></i> Да, хочу!</a>
-                                        </center>
-                                    </div>
-                                </div>
-
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">Фотопроекты
-
-
-
-                                        @if (Auth::user())
-                                        @if (Auth::user()->photos()->count() >= 20)
-                                        <a href="{{ route('add_project')}}" class="btn btn-xs btn-default">Создать</a>
-                                        @endif
-                                        @endif
-                                    </div>
-                                    <div class="panel-body">
-                                        @foreach(\App\Project::where('active', 1)->orderby('name')->get() as $p)
-                                        @if ($p->photos->count())
-                                        <p><i class="fa fa-camera red"></i> <a href="{{ url('/project')}}/{{$p->id}}">{{ $p->name }}</a></p>
-                                        @endif
-                                        @endforeach
-                                    </div>
-                                </div>
-                                @include('widgets.forum')            
+                                
+                                          
                                 <div class="panel panel-default">
 
 
