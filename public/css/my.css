@@ -54,3 +54,15 @@ textarea {min-height: 200px;}
 .topic_name {font-size: 20px;}
 .cat_name {margin: 0px; font-size: 25px; }
 .article-preview {margin: 20px; min-height: 100px;}
+
+.photo_label{
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    z-index: 999;
+    padding: 10px;
+    border-radius: 5px;
+    background: rgba(0,0,0,0.4);
+    color: white;
+    display: none;
+}
